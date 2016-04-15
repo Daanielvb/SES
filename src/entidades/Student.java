@@ -20,6 +20,9 @@ public class Student {
 	
 	private String email;
 	
+	public Student(){
+		
+	}
 	
 	public Student(String name,String cpf, String email){
 		this.name = name;

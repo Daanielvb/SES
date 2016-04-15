@@ -13,6 +13,8 @@
 	   <property name="show_sql">false</property>
        <property name="format_sql">true</property>
 	   <property name="hibernate.hbm2ddl.auto">update</property>
-	   <mapping class="entidades.Student"/>    
+	   <mapping class="entidades.Student"/>
+	   <mapping class="entidades.Lesson"/> 
+	   <mapping class="entidades.Video"/> 
     </session-factory>
 </hibernate-configuration>

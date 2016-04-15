@@ -1,0 +1,68 @@
+package entidades;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="videos")
+public class Video {
+	
+	@Id  
+	@GeneratedValue(strategy=GenerationType.AUTO)  
+	private long id;
+	
+	@Column(name="link")
+	private String link;
+	
+
+	@Column(name="name")
+	private String name;
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "lesson_id", referencedColumnName="id",nullable = false)
+	public Lesson lesson;
+	
+	public Video(){
+		
+	}
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public String getLink() {
+		return link;
+	}
+
+	public void setLink(String link) {
+		this.link = link;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public Lesson getLesson() {
+		return lesson;
+	}
+
+	public void setLesson(Lesson lesson) {
+		this.lesson = lesson;
+	}
+
+}
