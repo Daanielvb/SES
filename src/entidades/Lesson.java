@@ -28,7 +28,8 @@ public class Lesson implements Serializable{
 
 	@OneToMany(mappedBy="lesson")
     private List<Quiz> quizzes;
-
+	
+	@OneToMany(mappedBy="lesson")
     private List<Link> link;
 
 	
