@@ -1,7 +1,8 @@
 package entidades;
 
 import java.util.List;
-import java.util.Set;
+import java.io.Serializable;
+
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,20 +14,23 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="lessons")
-public class Lesson {
+public class Lesson implements Serializable{
 	
 	@Id  
 	@GeneratedValue(strategy=GenerationType.AUTO)  
 	private long id;
 	
-	@Column(name="theme")
-	private String theme;
-	
 	@OneToMany(mappedBy="lesson")
     private List<Video> videos;
+	
+	@OneToMany(mappedBy="lesson")
+    private List<Subjects> subjects;
 
 	@OneToMany(mappedBy="lesson")
     private List<Quiz> quizzes;
+
+    private List<Link> link;
+
 	
 	public Lesson(){
 	
@@ -35,14 +39,6 @@ public class Lesson {
 	public long getId() {
 		return id;
 	}
-	
-	public String getTheme() {
-		return theme;
-	}
-
-	public void setTheme(String theme) {
-		this.theme = theme;
-	}
 
 	public List<Video> getVideos() {
 		return videos;
@@ -50,6 +46,14 @@ public class Lesson {
 
 	public void setVideos(List<Video> videos) {
 		this.videos = videos;
+	}
+
+	public List<Subjects> getSubjects() {
+		return subjects;
+	}
+
+	public void setSubjects(List<Subjects> subjects) {
+		this.subjects = subjects;
 	}
 
 	public void setId(long id) {

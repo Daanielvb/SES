@@ -13,53 +13,50 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="videos")
-public class Video implements Serializable{
-	
-	@Id  
-	@GeneratedValue(strategy=GenerationType.AUTO)  
-	private long id;
-	
-	@Column(name="link")
-	private String link;
-	
+@Table(name="links")
+public class Link implements Serializable{
 
-	@Column(name="name")
-	private String name;
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private int id;
+	@Column(name="link_type")
+	private String linkType;
+	private String content;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "lesson_id", referencedColumnName="id",nullable = false)
-	public Lesson lesson;
+	private Lesson lesson;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "subjects_id", referencedColumnName="id",nullable = false)
 	private Subjects subjects;
-	public Video(){
+	
+	public Link(){
 		
 	}
 
-	public long getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
-	public String getLink() {
-		return link;
+	public String getLinkType() {
+		return linkType;
 	}
 
-	public void setLink(String link) {
-		this.link = link;
+	public void setLinkType(String linkType) {
+		this.linkType = linkType;
 	}
 
-	public String getName() {
-		return name;
+	public String getContent() {
+		return content;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setContent(String content) {
+		this.content = content;
 	}
 
 	public Lesson getLesson() {
@@ -68,6 +65,14 @@ public class Video implements Serializable{
 
 	public void setLesson(Lesson lesson) {
 		this.lesson = lesson;
+	}
+
+	public Subjects getSubjects() {
+		return subjects;
+	}
+
+	public void setSubjects(Subjects subjects) {
+		this.subjects = subjects;
 	}
 
 }
