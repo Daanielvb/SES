@@ -14,7 +14,12 @@
        <property name="format_sql">true</property>
 	   <property name="hibernate.hbm2ddl.auto">update</property>
 	   <mapping class="entidades.Student"/>
+	   <mapping class="entidades.User"/>
 	   <mapping class="entidades.Lesson"/> 
-	   <mapping class="entidades.Video"/> 
+	   <mapping class="entidades.Video"/>
+	   <mapping class="entidades.Question"/>
+	   <mapping class="entidades.Quiz"/> 
+	   <mapping class="entidades.QuizTracking"/> 
+	   <mapping class="entidades.Answer"/>
     </session-factory>
 </hibernate-configuration>

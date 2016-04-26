@@ -1,5 +1,6 @@
 package entidades;
 
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.Column;
@@ -22,7 +23,10 @@ public class Lesson {
 	private String theme;
 	
 	@OneToMany(mappedBy="lesson")
-    private Set<Video> videos;
+    private List<Video> videos;
+
+	@OneToMany(mappedBy="lesson")
+    private List<Quiz> quizzes;
 	
 	public Lesson(){
 	
@@ -40,11 +44,11 @@ public class Lesson {
 		this.theme = theme;
 	}
 
-	public Set<Video> getVideos() {
+	public List<Video> getVideos() {
 		return videos;
 	}
 
-	public void setVideos(Set<Video> videos) {
+	public void setVideos(List<Video> videos) {
 		this.videos = videos;
 	}
 
