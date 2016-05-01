@@ -14,7 +14,7 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table(name="quizzes_tracking")
+@Table(name="quiz_tracking")
 public class QuizTracking implements Serializable{
 	
 	@Id

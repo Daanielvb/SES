@@ -14,7 +14,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="questions")
+@Table(name="question")
 public class Question implements Serializable{
 	
 	@Id

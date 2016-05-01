@@ -13,7 +13,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="lessons")
+@Table(name="lesson")
 public class Lesson implements Serializable{
 	
 	@Id  
@@ -24,11 +24,12 @@ public class Lesson implements Serializable{
     private List<Video> videos;
 	
 	@OneToMany(mappedBy="lesson")
-    private List<Subjects> subjects;
+    private List<Subject> subjects;
 
 	@OneToMany(mappedBy="lesson")
     private List<Quiz> quizzes;
-
+	
+	@OneToMany(mappedBy="lesson")
     private List<Link> link;
 
 	
@@ -48,11 +49,11 @@ public class Lesson implements Serializable{
 		this.videos = videos;
 	}
 
-	public List<Subjects> getSubjects() {
+	public List<Subject> getSubjects() {
 		return subjects;
 	}
 
-	public void setSubjects(List<Subjects> subjects) {
+	public void setSubjects(List<Subject> subjects) {
 		this.subjects = subjects;
 	}
 
