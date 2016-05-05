@@ -13,7 +13,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="videos")
+@Table(name="video")
 public class Video implements Serializable{
 	
 	@Id  
@@ -33,7 +33,7 @@ public class Video implements Serializable{
 	
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "subjects_id", referencedColumnName="id",nullable = false)
-	private Subjects subjects;
+	private Subject subjects;
 	public Video(){
 		
 	}

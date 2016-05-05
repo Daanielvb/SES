@@ -15,8 +15,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="subjects")
-public class Subjects implements Serializable{
+@Table(name="subject")
+public class Subject implements Serializable{
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
@@ -38,7 +38,7 @@ public class Subjects implements Serializable{
 	@OneToMany(mappedBy="subjects")
     private List<Link> link;
 	
-	public Subjects(){
+	public Subject(){
 		
 	}
 

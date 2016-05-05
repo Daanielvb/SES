@@ -13,7 +13,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="links")
+@Table(name="link")
 public class Link implements Serializable{
 
 	@Id
@@ -29,7 +29,7 @@ public class Link implements Serializable{
 	
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "subjects_id", referencedColumnName="id",nullable = false)
-	private Subjects subjects;
+	private Subject subjects;
 	
 	public Link(){
 		
@@ -67,11 +67,11 @@ public class Link implements Serializable{
 		this.lesson = lesson;
 	}
 
-	public Subjects getSubjects() {
+	public Subject getSubjects() {
 		return subjects;
 	}
 
-	public void setSubjects(Subjects subjects) {
+	public void setSubjects(Subject subjects) {
 		this.subjects = subjects;
 	}
 
