@@ -3,6 +3,9 @@ package entidades;
 import java.awt.print.Book;
 import java.util.List;
 
+import javax.persistence.EntityManager;
+import javax.persistence.Query;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -14,7 +17,11 @@ public class StudentsDAO {
 	private Session currentSession;
 	
 	private Transaction currentTransaction;
+	
+	private EntityManager em;
 
+	
+	
 	public StudentsDAO() {
 	}
 
@@ -78,7 +85,21 @@ public class StudentsDAO {
 	public void delete(Student entity) {
 		getCurrentSession().delete(entity);
 	}
-
+	
+	public List<Student> findStudentByName(String name){
+		List <Student> result = null;
+		try{
+		Query q = em.createQuery("select s from Student s where s.name =:name");
+		q.setParameter("name", name);
+		result = q.getResultList();
+		return result;
+		}
+		catch(Exception e){
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
 	@SuppressWarnings("unchecked")
 	public List<Student> findAll() {
 		List<Student> students = (List<Student>) getCurrentSession().createQuery("from students").list();
