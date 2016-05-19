@@ -1,43 +1,62 @@
 package entidades;
 
-import java.lang.reflect.ParameterizedType;
-import java.util.List;
- 
 import javax.persistence.EntityManager;
 
- 
-@SuppressWarnings("unchecked")
-public class GenericDAO<PK, T> {
-    private EntityManager entityManager;
- 
-    public GenericDAO(EntityManager entityManager) {
-        this.entityManager = entityManager;
-    }
- 
-    public T getById(PK pk) {
-        return (T) entityManager.find(getTypeClass(), pk);
-    }
- 
-    public void save(T entity) {
-        entityManager.persist(entity);
-    }
- 
-    public void update(T entity) {
-        entityManager.merge(entity);
-    }
- 
-    public void delete(T entity) {
-        entityManager.remove(entity);
-    }
- 
-    public List<T> findAll() {
-        return entityManager.createQuery(("FROM " + getTypeClass().getName()))
-                .getResultList();
-    }
- 
-    private Class<?> getTypeClass() {
-        Class<?> clazz = (Class<?>) ((ParameterizedType) this.getClass()
-                .getGenericSuperclass()).getActualTypeArguments()[1];
-        return clazz;
-    }
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
+import org.hibernate.cfg.Configuration;
+
+public class GenericDAO{
+	
+	Session currentSession;
+	
+	Transaction currentTransaction;
+	
+	EntityManager em;
+
+	public Session openCurrentSession() {
+		currentSession = getSessionFactory().openSession();
+		return currentSession;
+	}
+
+	public Session openCurrentSessionwithTransaction() {
+		currentSession = getSessionFactory().openSession();
+		currentTransaction = currentSession.beginTransaction();
+		return currentSession;
+	}
+	
+	public void closeCurrentSession() {
+		currentSession.close();
+	}
+	
+	public void closeCurrentSessionwithTransaction() {
+		currentTransaction.commit();
+		currentSession.close();
+	}
+	
+	private static SessionFactory getSessionFactory() {
+		Configuration configuration = new Configuration().configure();
+		StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder()
+				.applySettings(configuration.getProperties());
+		SessionFactory sessionFactory = configuration.buildSessionFactory(builder.build());
+		return sessionFactory;
+	}
+
+	public Session getCurrentSession() {
+		return currentSession;
+	}
+
+	public void setCurrentSession(Session currentSession) {
+		this.currentSession = currentSession;
+	}
+
+	public Transaction getCurrentTransaction() {
+		return currentTransaction;
+	}
+
+	public void setCurrentTransaction(Transaction currentTransaction) {
+		this.currentTransaction = currentTransaction;
+	}
 }
