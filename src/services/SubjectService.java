@@ -1,10 +1,9 @@
 package services;
 
-import java.awt.print.Book;
 import java.util.List;
 
+import dao.SubjectDAO;
 import entidades.Subject;
-import entidades.SubjectDAO;
 
 public class SubjectService {
 	private static SubjectDAO subjectDAO;
@@ -27,23 +26,23 @@ public class SubjectService {
 
 	public Subject findById(String id) {
 		subjectDAO.openCurrentSession();
-		Subject student = subjectDAO.findById(id);
+		Subject subject = subjectDAO.findById(id);
 		subjectDAO.closeCurrentSession();
-		return student;
+		return subject;
 	}
 
 	public void delete(String id) {
 		subjectDAO.openCurrentSessionwithTransaction();
-		Subject student = subjectDAO.findById(id);
-		subjectDAO.delete(student);
+		Subject subject = subjectDAO.findById(id);
+		subjectDAO.delete(subject);
 		subjectDAO.closeCurrentSessionwithTransaction();
 	}
 
 	public List<Subject> findAll() {
 		subjectDAO.openCurrentSession();
-		List<Subject> students = subjectDAO.findAll();
+		List<Subject> subjects = subjectDAO.findAll();
 		subjectDAO.closeCurrentSession();
-		return students;
+		return subjects;
 	}
 
 	public void deleteAll() {

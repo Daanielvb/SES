@@ -1,5 +1,5 @@
-/controle/
+/dao/
 /entidades/
-/hibernate.cfg.xml
+/controle/
 /services/
 /testes/

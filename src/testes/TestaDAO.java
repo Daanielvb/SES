@@ -1,12 +1,9 @@
 package testes;
-import entidades.*;
 import java.sql.SQLException;
 
-import services.StudentService;
+import entidades.Lesson;
+import entidades.Subject;
 import services.SubjectService;
-import entidades.Student;
-import entidades.StudentsDAO;
-import entidades.SubjectDAO;
 
 public class TestaDAO {
 	public static void main(String[] args) throws SQLException {

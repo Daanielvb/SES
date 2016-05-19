@@ -1,6 +1,5 @@
-package entidades;
+package dao;
 
-import java.awt.print.Book;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -12,6 +11,8 @@ import org.hibernate.Transaction;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 
+import entidades.Student;
+
 public class StudentsDAO {
 
 	private Session currentSession;
@@ -19,8 +20,6 @@ public class StudentsDAO {
 	private Transaction currentTransaction;
 	
 	private EntityManager em;
-
-	
 	
 	public StudentsDAO() {
 	}

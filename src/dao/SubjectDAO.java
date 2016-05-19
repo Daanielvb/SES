@@ -1,12 +1,8 @@
-package entidades;
+package dao;
 
 import java.util.List;
 
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
-import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
-import org.hibernate.cfg.Configuration;
+import entidades.Subject;
 
 public class SubjectDAO extends GenericDAO{
 	
@@ -31,6 +27,7 @@ public class SubjectDAO extends GenericDAO{
 			getCurrentSession().delete(entity);
 		}
 		public List<Subject> findAll() {
+			@SuppressWarnings("unchecked")
 			List<Subject> subjects = (List<Subject>) getCurrentSession().createQuery("from subject").list();
 			return subjects;
 		}
