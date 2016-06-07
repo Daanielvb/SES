@@ -21,7 +21,7 @@ public class TestaDAO {
 		List <VideoTracking> videos = vs.findByUser(1);
 		videos.get(0).setCreatedAt(new Date());
 		vs.update(videos.get(0));
-//		System.out.println(videos.toString());
+		System.out.println(videos.toString());
 		//sv.persist(s);
 		//Student ss = sv.findByName("daniel");
 //		User u = sv.findUserByName("daniel");

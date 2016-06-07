@@ -76,5 +76,30 @@ private Session currentSession;
 		}
 		return null;
 	}
+	
+	public User findUserByEmail(String email){
+		try{
+			User u = null;
+			Query query = getCurrentSession().createQuery("select from User u where u.email =:email");
+			query.setParameter("email", email);
+			List list = query.list();
+			if (!list.isEmpty())
+				u = (User) list.get(0);
+			return u;
+		}
+		catch(Exception e){
+				e.printStackTrace();
+			}
+		return null;	
+	}
+	
+	//Exemplo complexo
+	
+	// todas as respostas do aluno baseado no lesson e no userId
+	// Queremos o quiz_tracking
+	//	Query q = getCurrentSession().createQuery("select from QuizTracking qt inner join qt.user u"
+	//			+ "inner join qt.quiz q inner join fetch q.lesson l where l.id =: lessonId AND u.id =: userId");
+	//	q.setParameter("lessonId",lessonId);
+	//	q.setParameter("userId",userId);
 
 }
