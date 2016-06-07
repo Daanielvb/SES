@@ -2,9 +2,8 @@ package services;
 
 import java.util.List;
 
-import model.VideoTracking;
 import dao.VideoTrackingDAO;
-
+import model.VideoTracking;
 
 public class VideoTrackingService {
 	private static VideoTrackingDAO videoTrackingDAO;
@@ -25,8 +24,6 @@ public class VideoTrackingService {
 		videoTrackingDAO.closeCurrentSessionwithTransaction();
 	}
 
-
-
 	public List<VideoTracking> findAll() {
 		videoTrackingDAO.openCurrentSession();
 		List<VideoTracking> videoTrackings = videoTrackingDAO.findAll();
@@ -40,19 +37,16 @@ public class VideoTrackingService {
 		videoTrackingDAO.deleteAll();
 		videoTrackingDAO.closeCurrentSessionwithTransaction();
 	}
-	
-	public List<VideoTracking> findByUser(int userId){
+
+	public List<VideoTracking> findByUser(int userId) {
 		videoTrackingDAO.openCurrentSessionwithTransaction();
 		List<VideoTracking> s = videoTrackingDAO.findVideoTrackingByUserId(userId);
 		videoTrackingDAO.closeCurrentSession();
 		return s;
 	}
 
-
 	public VideoTrackingDAO videoTrackingDAO() {
 		return videoTrackingDAO;
 	}
 
-
 }
-

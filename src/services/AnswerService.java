@@ -5,7 +5,6 @@ import java.util.List;
 import dao.AnswerDAO;
 import model.Answer;
 
-
 public class AnswerService {
 	private static AnswerDAO answerDAO;
 

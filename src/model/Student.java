@@ -7,31 +7,30 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-
 @Entity
-@Table(name="students")
+@Table(name = "students")
 public class Student {
-	
+
 	private long id;
-	
+
 	private String name;
-	
+
 	private String cpf;
-	
+
 	private String email;
-	
-	public Student(){
-		
+
+	public Student() {
+
 	}
-	
-	public Student(String name,String cpf, String email){
+
+	public Student(String name, String cpf, String email) {
 		this.name = name;
 		this.cpf = cpf;
 		this.email = email;
 	}
-	
-	@Id  
-	@GeneratedValue(strategy=GenerationType.AUTO)  
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	public long getId() {
 		return id;
 	}
@@ -47,8 +46,8 @@ public class Student {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
-	@Column(name="cpf")  
+
+	@Column(name = "cpf")
 	public String getCpf() {
 		return cpf;
 	}
@@ -56,8 +55,8 @@ public class Student {
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
-	
-	@Column(name="email")  
+
+	@Column(name = "email")
 	public String getEmail() {
 		return email;
 	}
@@ -65,7 +64,5 @@ public class Student {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
-	
 
 }

@@ -9,15 +9,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
-import model.Student;
 import dao.StudentsDAO;
+import model.Student;
 import services.StudentService;
 
-
-@WebServlet(name = "StudentController", urlPatterns = {"/StudentController"})
+@WebServlet(name = "StudentController", urlPatterns = { "/StudentController" })
 public class StudentController extends HttpServlet {
-	
+
 	private StudentService sc;
 	private StudentsDAO sd;
 
@@ -25,57 +23,57 @@ public class StudentController extends HttpServlet {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	
-	/* Servlet de processamento do formulario de entrada
+
+	/*
+	 * Servlet de processamento do formulario de entrada
 	 * 
 	 */
 	protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException, SQLException {
+			throws ServletException, IOException, SQLException {
 		response.setContentType("text/html;charset=UTF-8");
-        String acao = request.getParameter("action");
-		    if (acao.equals("saveStudent")) {
-		    	saveStudent(request,response);
-		    	
+		String acao = request.getParameter("action");
+		if (acao.equals("saveStudent")) {
+			saveStudent(request, response);
 
-    }
+		}
 	}
-	
-	
-	public void saveStudent(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException{
+
+	public void saveStudent(HttpServletRequest request, HttpServletResponse response)
+			throws SQLException, ServletException, IOException {
 		String name = request.getParameter("name");
-    	String email = request.getParameter("email");
-    	String cpf = request.getParameter("cpf");
-    	Student s = new Student(name,email,cpf);
-    	this.sc.persist(s);
-    	response.setHeader("Location", "/sucess.jsp");
-}
-	
+		String email = request.getParameter("email");
+		String cpf = request.getParameter("cpf");
+		Student s = new Student(name, email, cpf);
+		this.sc.persist(s);
+		response.setHeader("Location", "/sucess.jsp");
+	}
+
 	@Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        try {
-        	this.sc = new StudentService();
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		try {
+			this.sc = new StudentService();
 			processRequest(request, response);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-    }
+	}
 
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        try {
-        	this.sc = new StudentService();
+	@Override
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		try {
+			this.sc = new StudentService();
 			processRequest(request, response);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-    }
+	}
 
-    @Override
-    public String getServletInfo() {
-        return "Servlet de processamento de dados de estudantes";
-    }
+	@Override
+	public String getServletInfo() {
+		return "Servlet de processamento de dados de estudantes";
+	}
 }

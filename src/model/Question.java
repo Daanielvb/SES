@@ -14,23 +14,23 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="question")
-public class Question implements Serializable{
-	
+@Table(name = "question")
+public class Question implements Serializable {
+
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)  
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
-	
+
 	private String question;
-	
+
 	private int difficulty;
-	
+
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "quiz_id", referencedColumnName="id",nullable = false)
+	@JoinColumn(name = "quiz_id", referencedColumnName = "id", nullable = false)
 	public Quiz quiz;
-	
-	@OneToMany(mappedBy="question")
-    private List<Answer> answers;
+
+	@OneToMany(mappedBy = "question")
+	private List<Answer> answers;
 
 	public int getId() {
 		return id;
@@ -55,8 +55,7 @@ public class Question implements Serializable{
 	public void setDifficulty(int difficulty) {
 		this.difficulty = difficulty;
 	}
-	
-	
+
 	public Quiz getQuiz() {
 		return quiz;
 	}
@@ -73,7 +72,7 @@ public class Question implements Serializable{
 		this.answers = answers;
 	}
 
-	public Question(){
+	public Question() {
 	}
 
 }

@@ -13,29 +13,29 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="video")
-public class Video implements Serializable{
-	
-	@Id  
-	@GeneratedValue(strategy=GenerationType.AUTO)  
-	private long id;
-	
-	@Column(name="link")
-	private String link;
-	
+@Table(name = "video")
+public class Video implements Serializable {
 
-	@Column(name="name")
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private long id;
+
+	@Column(name = "link")
+	private String link;
+
+	@Column(name = "name")
 	private String name;
-	
+
 	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "lesson_id", referencedColumnName="id",nullable = false)
+	@JoinColumn(name = "lesson_id", referencedColumnName = "id", nullable = false)
 	public Lesson lesson;
-	
+
 	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "subjects_id", referencedColumnName="id",nullable = false)
+	@JoinColumn(name = "subjects_id", referencedColumnName = "id", nullable = false)
 	private Subject subjects;
-	public Video(){
-		
+
+	public Video() {
+
 	}
 
 	public long getId() {
@@ -72,10 +72,8 @@ public class Video implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Video [id=" + id + ", link=" + link + ", name=" + name
-				+ ", lesson=" + lesson + ", subjects=" + subjects + "]";
+		return "Video [id=" + id + ", link=" + link + ", name=" + name + ", lesson=" + lesson + ", subjects=" + subjects
+				+ "]";
 	}
-	
-	
 
 }

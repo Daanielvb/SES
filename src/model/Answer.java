@@ -12,24 +12,24 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="answer")
-public class Answer implements Serializable{
-	
+@Table(name = "answer")
+public class Answer implements Serializable {
+
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)  
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
-	
+
 	private String title;
-	
+
 	private boolean isCorrect;
-	
+
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "question_id", referencedColumnName="id",nullable = false)
+	@JoinColumn(name = "question_id", referencedColumnName = "id", nullable = false)
 	public Question question;
 
 	public int getId() {
@@ -55,8 +55,7 @@ public class Answer implements Serializable{
 	public void setCorrect(boolean isCorrect) {
 		this.isCorrect = isCorrect;
 	}
-	
-	
+
 	public Question getQuestion() {
 		return question;
 	}
@@ -64,9 +63,8 @@ public class Answer implements Serializable{
 	public void setQuestion(Question question) {
 		this.question = question;
 	}
-	
-	
-	public Answer(){
+
+	public Answer() {
 	}
-	
+
 }

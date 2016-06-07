@@ -14,13 +14,13 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="link_tracking")
-public class LinkTracking implements Serializable{
-	
-	@Id  
-	@GeneratedValue(strategy=GenerationType.AUTO)  
+@Table(name = "link_tracking")
+public class LinkTracking implements Serializable {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
-	
+
 	public int getId() {
 		return id;
 	}
@@ -29,19 +29,19 @@ public class LinkTracking implements Serializable{
 		this.id = id;
 	}
 
-	@Column(name="date_acessed")
+	@Column(name = "date_acessed")
 	private Date dateAccessed;
-	
+
 	@OneToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "user_id", referencedColumnName="id",nullable = false)
+	@JoinColumn(name = "user_id", referencedColumnName = "id", nullable = false)
 	private User user;
-	
+
 	@OneToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "link_id", referencedColumnName="id",nullable = false)
+	@JoinColumn(name = "link_id", referencedColumnName = "id", nullable = false)
 	private Link link;
-	
-	public LinkTracking(){
-		
+
+	public LinkTracking() {
+
 	}
 
 	public Date getDateAccessed() {

@@ -14,13 +14,13 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="video_tracking")
-public class VideoTracking implements Serializable{
-	
-	@Id  
-	@GeneratedValue(strategy=GenerationType.AUTO)  
+@Table(name = "video_tracking")
+public class VideoTracking implements Serializable {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
-	
+
 	public int getId() {
 		return id;
 	}
@@ -29,19 +29,19 @@ public class VideoTracking implements Serializable{
 		this.id = id;
 	}
 
-	@Column(name="created_at")
+	@Column(name = "created_at")
 	private Date createdAt;
-	
+
 	@OneToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "user_id", referencedColumnName="id",nullable = false)
+	@JoinColumn(name = "user_id", referencedColumnName = "id", nullable = false)
 	private User user;
-	
+
 	@OneToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "video_id", referencedColumnName="id",nullable = false)
+	@JoinColumn(name = "video_id", referencedColumnName = "id", nullable = false)
 	private Video video;
-	
-	public VideoTracking(){
-		
+
+	public VideoTracking() {
+
 	}
 
 	public Date getCreatedAt() {
@@ -70,9 +70,7 @@ public class VideoTracking implements Serializable{
 
 	@Override
 	public String toString() {
-		return "VideoTracking [id=" + id + ", createdAt=" + createdAt
-				+ ", user=" + user + ", video=" + video + "]";
+		return "VideoTracking [id=" + id + ", createdAt=" + createdAt + ", user=" + user + ", video=" + video + "]";
 	}
-	
-	
+
 }

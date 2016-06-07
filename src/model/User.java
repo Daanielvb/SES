@@ -1,6 +1,5 @@
 package model;
 
-
 import java.io.Serializable;
 
 import javax.persistence.Entity;
@@ -10,19 +9,20 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="user")
-public class User implements Serializable{
-	
+@Table(name = "user")
+public class User implements Serializable {
+
 	private int id;
 	private String name;
 	private String cpf;
 	private String email;
-	
-	public User(){
-		
+
+	public User() {
+
 	}
+
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	public int getId() {
 		return id;
 	}
@@ -54,11 +54,10 @@ public class User implements Serializable{
 	public void setEmail(String email) {
 		this.email = email;
 	}
+
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", name=" + name + ", cpf=" + cpf
-				+ ", email=" + email + "]";
+		return "User [id=" + id + ", name=" + name + ", cpf=" + cpf + ", email=" + email + "]";
 	}
-	
-	
+
 }

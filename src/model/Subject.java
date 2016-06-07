@@ -15,31 +15,31 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="subject")
-public class Subject implements Serializable{
-	
+@Table(name = "subject")
+public class Subject implements Serializable {
+
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	private String name;
-	@Column(name="text_beginner")
+	@Column(name = "text_beginner")
 	private String textBeginner;
-	@Column(name="text_adv")
+	@Column(name = "text_adv")
 	private String textAdv;
 	private int difficulty;
-	
+
 	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "lesson_id", referencedColumnName="id",nullable = false)
+	@JoinColumn(name = "lesson_id", referencedColumnName = "id", nullable = false)
 	private Lesson lesson;
-	
-	@OneToMany(mappedBy="subjects")
-    private List<Video> videos;
-	
-	@OneToMany(mappedBy="subjects")
-    private List<Link> link;
-	
-	public Subject(){
-		
+
+	@OneToMany(mappedBy = "subjects")
+	private List<Video> videos;
+
+	@OneToMany(mappedBy = "subjects")
+	private List<Link> link;
+
+	public Subject() {
+
 	}
 
 	public int getId() {
@@ -89,5 +89,5 @@ public class Subject implements Serializable{
 	public void setLesson(Lesson lesson) {
 		this.lesson = lesson;
 	}
-	
+
 }

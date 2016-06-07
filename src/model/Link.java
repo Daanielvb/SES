@@ -13,26 +13,26 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="link")
-public class Link implements Serializable{
+@Table(name = "link")
+public class Link implements Serializable {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
-	@Column(name="link_type")
+	@Column(name = "link_type")
 	private String linkType;
 	private String content;
-	
+
 	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "lesson_id", referencedColumnName="id",nullable = false)
+	@JoinColumn(name = "lesson_id", referencedColumnName = "id", nullable = false)
 	private Lesson lesson;
-	
+
 	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "subjects_id", referencedColumnName="id",nullable = false)
+	@JoinColumn(name = "subjects_id", referencedColumnName = "id", nullable = false)
 	private Subject subjects;
-	
-	public Link(){
-		
+
+	public Link() {
+
 	}
 
 	public int getId() {

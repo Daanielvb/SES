@@ -14,13 +14,13 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="lesson_tracking")
-public class LessonTracking implements Serializable{
-	
-	@Id  
-	@GeneratedValue(strategy=GenerationType.AUTO)  
+@Table(name = "lesson_tracking")
+public class LessonTracking implements Serializable {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
-	
+
 	public int getId() {
 		return id;
 	}
@@ -29,19 +29,19 @@ public class LessonTracking implements Serializable{
 		this.id = id;
 	}
 
-	@Column(name="created_at")
+	@Column(name = "created_at")
 	private Date createdAt;
-	
+
 	@OneToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "lesson_id", referencedColumnName="id",nullable = false)
+	@JoinColumn(name = "lesson_id", referencedColumnName = "id", nullable = false)
 	private Lesson lesson;
-	
+
 	@OneToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "user_id", referencedColumnName="id",nullable = false)
+	@JoinColumn(name = "user_id", referencedColumnName = "id", nullable = false)
 	private User user;
-	
-	public LessonTracking(){
-		
+
+	public LessonTracking() {
+
 	}
 
 	public Date getCreatedAt() {
@@ -67,5 +67,5 @@ public class LessonTracking implements Serializable{
 	public void setUser(User user) {
 		this.user = user;
 	}
-	
+
 }
