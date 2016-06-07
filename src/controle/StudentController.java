@@ -9,9 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import model.Student;
+import dao.StudentsDAO;
 import services.StudentService;
-import entidades.Student;
-import entidades.StudentsDAO;
 
 @WebServlet(name = "StudentController", urlPatterns = {"/StudentController"})
 public class StudentController extends HttpServlet {

@@ -29,7 +29,7 @@
 			<!-- Brand and toggle get grouped for better mobile display -->
 			<div class="navbar-header">
 
-				<a class="navbar-brand" href="index.jsp">Mais Brasil</a>
+				<a class="navbar-brand" href="index.jsp">SAS</a>
 			</div>
 			<!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
 			<div class="collapse navbar-collapse navbar-ex1-collapse">
@@ -52,7 +52,6 @@
 				<div class="row" id="logoRow">
 					<div class="col-lg-12">
 						<h1 class="page-header">Cadastro de aluno</h1>
-						<img src="images/logo2.png" id="logo">
 					</div>
 				</div>
 				<div class="row">
@@ -74,6 +73,9 @@
 									<input type="hidden" name="action" value="saveStudent">
 									<button type="submit">OK</button>
 								</form>
+								
+								
+								<iframe src="https://trinket.io/embed/python/27965ff4ab" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 							</div>
 						</div>
 						<span class="pull-right"><i class="fa fa-arrow-circle-left"></i><a href="index.jsp">Voltar</a></span>

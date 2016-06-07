@@ -1,16 +1,19 @@
 package services;
 
-import java.awt.print.Book;
 import java.util.List;
 
-import entidades.Student;
-import entidades.StudentsDAO;
+import model.Student;
+import model.User;
+import dao.StudentsDAO;
+import dao.UserDAO;
 
 public class StudentService {
 	private static StudentsDAO studentDAO;
+	private static UserDAO userDAO;
 
 	public StudentService() {
 		studentDAO = new StudentsDAO();
+		userDAO = new UserDAO();
 	}
 
 	public void persist(Student entity) {
@@ -50,6 +53,13 @@ public class StudentService {
 		studentDAO.openCurrentSessionwithTransaction();
 		studentDAO.deleteAll();
 		studentDAO.closeCurrentSessionwithTransaction();
+	}
+	
+	public User findUserByName(String name){
+		userDAO.openCurrentSession();
+		User u = userDAO.findUserByName(name);
+		userDAO.closeCurrentSession();
+		return u;
 	}
 
 	public StudentsDAO studentDAO() {
