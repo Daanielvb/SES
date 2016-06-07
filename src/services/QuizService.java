@@ -4,11 +4,7 @@ import java.awt.print.Book;
 import java.util.List;
 
 import dao.QuizDAO;
-<<<<<<< HEAD
 import model.Quiz;
-=======
-import entidades.Quiz;
->>>>>>> 8f6d55ee6c26bc05e99a7264373c5bda78e8d35e
 
 public class QuizService {
 	private static QuizDAO quizDAO;

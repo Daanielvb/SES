@@ -2,18 +2,12 @@ package dao;
 
 import java.util.List;
 
-<<<<<<< HEAD
+
 import model.Video;
 
 public class VideoDAO extends GenericDAO{
 
-=======
-import entidades.Video;
 
-public class VideoDAO extends GenericDAO{
-public Video VideoData;
->>>>>>> 8f6d55ee6c26bc05e99a7264373c5bda78e8d35e
-	
 	public VideoDAO(){
 	}
 		public void persist(Video entity) {

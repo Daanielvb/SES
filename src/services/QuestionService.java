@@ -3,11 +3,7 @@ package services;
 import java.util.List;
 
 import dao.QuestionDAO;
-<<<<<<< HEAD
 import model.Question;
-=======
-import entidades.Question;
->>>>>>> 8f6d55ee6c26bc05e99a7264373c5bda78e8d35e
 
 public class QuestionService {
 	private static QuestionDAO questionDAO;

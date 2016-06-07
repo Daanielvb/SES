@@ -2,23 +2,27 @@ package dao;
 
 import java.util.List;
 
-
 import javax.persistence.EntityManager;
-import javax.persistence.NoResultException;
+import javax.persistence.Query;
 
-import model.VideoTracking;
-
-import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
-import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 
-public class VideoTrackingDAO extends GenericDAO {
 
+import model.Student;
+
+public class StudentsDAO {
+
+	private Session currentSession;
 	
-	public VideoTrackingDAO() {
+	private Transaction currentTransaction;
+	
+	private EntityManager em;
+	
+	public StudentsDAO() {
 	}
 
 	public Session openCurrentSession() {
@@ -65,50 +69,33 @@ public class VideoTrackingDAO extends GenericDAO {
 		this.currentTransaction = currentTransaction;
 	}
 
-	public void persist(VideoTracking entity) {
+	public void persist(Student entity) {
 		getCurrentSession().save(entity);
 	}
 
-	public void update(VideoTracking entity) {
+	public void update(Student entity) {
 		getCurrentSession().update(entity);
 	}
 
-	public VideoTracking findById(String id) {
-		VideoTracking vt = (VideoTracking) getCurrentSession().get(VideoTracking.class, id);
-		return vt; 
+	public Student findById(String id) {
+		Student student = (Student) getCurrentSession().get(Student.class, id);
+		return student; 
 	}
 
-	public void delete(VideoTracking entity) {
+	public void delete(Student entity) {
 		getCurrentSession().delete(entity);
 	}
 	
-	public List<VideoTracking> findVideoTrackingByUserId(int userId){
-		try{
-			List <VideoTracking> videos = null;
-			Query query = getCurrentSession().createQuery("select vt from VideoTracking vt "
-					+ "inner join vt.user u where u.id =:userId");
-			query.setParameter("userId", userId);
-			videos = (List<VideoTracking>) query.list();		
-			return videos;
-			}
-			catch(Exception e){
-				e.printStackTrace();
-			}
-			return null;
-	}	
-		
-	
 	@SuppressWarnings("unchecked")
-	public List<VideoTracking> findAll() {
-		List<VideoTracking> vTrackings = (List<VideoTracking>) getCurrentSession().createQuery("from video_tracking").list();
-		return vTrackings;
+	public List<Student> findAll() {
+		List<Student> students = (List<Student>) getCurrentSession().createQuery("from students").list();
+		return students;
 	}
 
 	public void deleteAll() {
-		List<VideoTracking> entityList = findAll();
-		for (VideoTracking entity : entityList) {
+		List<Student> entityList = findAll();
+		for (Student entity : entityList) {
 			delete(entity);
 		}
 	}
 }
-
