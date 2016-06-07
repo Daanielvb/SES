@@ -20,5 +20,12 @@ public class UserService {
 		return u;
 	}
 	
+	public User findUserByEmail(String email){
+		userDAO.openCurrentSession();
+		User u = userDAO.findUserByEmail(email);
+		userDAO.closeCurrentSession();
+		return u;
+	}
+	
 
 }
