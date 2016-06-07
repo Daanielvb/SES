@@ -8,12 +8,12 @@ import org.hibernate.Transaction;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 
-public class GenericDAO{
-	
+public class GenericDAO {
+
 	Session currentSession;
-	
+
 	Transaction currentTransaction;
-	
+
 	EntityManager em;
 
 	public Session openCurrentSession() {
@@ -26,16 +26,16 @@ public class GenericDAO{
 		currentTransaction = currentSession.beginTransaction();
 		return currentSession;
 	}
-	
+
 	public void closeCurrentSession() {
 		currentSession.close();
 	}
-	
+
 	public void closeCurrentSessionwithTransaction() {
 		currentTransaction.commit();
 		currentSession.close();
 	}
-	
+
 	private static SessionFactory getSessionFactory() {
 		Configuration configuration = new Configuration().configure();
 		StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder()

@@ -5,7 +5,6 @@ import java.util.List;
 import dao.LinkDAO;
 import model.Link;
 
-
 public class LinkService {
 	private static LinkDAO linkDAO;
 

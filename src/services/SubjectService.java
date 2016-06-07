@@ -5,7 +5,6 @@ import java.util.List;
 import dao.SubjectDAO;
 import model.Subject;
 
-
 public class SubjectService {
 	private static SubjectDAO subjectDAO;
 

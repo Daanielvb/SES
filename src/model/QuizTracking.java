@@ -12,25 +12,25 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-
 @Entity
-@Table(name="quiz_tracking")
-public class QuizTracking implements Serializable{
-	
+@Table(name = "quiz_tracking")
+public class QuizTracking implements Serializable {
+
 	@Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    private Long                 id;
-	
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id")
+	private Long id;
+
 	@OneToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "quiz_id")
-    private Quiz quiz;
-    
-    @OneToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "user_id")
-    private User user;
-	
-    public QuizTracking(){}
+	@JoinColumn(name = "quiz_id")
+	private Quiz quiz;
+
+	@OneToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "user_id")
+	private User user;
+
+	public QuizTracking() {
+	}
 
 	public Long getId() {
 		return id;
@@ -55,7 +55,5 @@ public class QuizTracking implements Serializable{
 	public void setUser(User user) {
 		this.user = user;
 	}
-    
-    
 
 }

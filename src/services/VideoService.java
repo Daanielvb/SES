@@ -5,7 +5,6 @@ import java.util.List;
 import dao.VideoDAO;
 import model.Video;
 
-
 public class VideoService {
 	private static VideoDAO videoDAO;
 

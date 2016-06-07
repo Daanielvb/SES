@@ -16,11 +16,11 @@ import model.Student;
 public class StudentsDAO {
 
 	private Session currentSession;
-	
+
 	private Transaction currentTransaction;
-	
+
 	private EntityManager em;
-	
+
 	public StudentsDAO() {
 	}
 
@@ -34,16 +34,16 @@ public class StudentsDAO {
 		currentTransaction = currentSession.beginTransaction();
 		return currentSession;
 	}
-	
+
 	public void closeCurrentSession() {
 		currentSession.close();
 	}
-	
+
 	public void closeCurrentSessionwithTransaction() {
 		currentTransaction.commit();
 		currentSession.close();
 	}
-	
+
 	private static SessionFactory getSessionFactory() {
 		Configuration configuration = new Configuration().configure();
 		StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder()
@@ -78,27 +78,26 @@ public class StudentsDAO {
 
 	public Student findById(String id) {
 		Student student = (Student) getCurrentSession().get(Student.class, id);
-		return student; 
+		return student;
 	}
 
 	public void delete(Student entity) {
 		getCurrentSession().delete(entity);
 	}
-	
-	public List<Student> findStudentByName(String name){
-		List <Student> result = null;
-		try{
-		Query q = em.createQuery("select s from Student s where s.name =:name");
-		q.setParameter("name", name);
-		result = q.getResultList();
-		return result;
-		}
-		catch(Exception e){
+
+	public List<Student> findStudentByName(String name) {
+		List<Student> result = null;
+		try {
+			Query q = em.createQuery("select s from Student s where s.name =:name");
+			q.setParameter("name", name);
+			result = q.getResultList();
+			return result;
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return null;
 	}
-	
+
 	@SuppressWarnings("unchecked")
 	public List<Student> findAll() {
 		List<Student> students = (List<Student>) getCurrentSession().createQuery("from students").list();

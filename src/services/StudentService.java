@@ -2,13 +2,10 @@ package services;
 
 import java.util.List;
 
-
-import model.Student;
-import model.User;
 import dao.StudentsDAO;
 import dao.UserDAO;
-
-
+import model.Student;
+import model.User;
 
 public class StudentService {
 	private static StudentsDAO studentDAO;
@@ -57,8 +54,8 @@ public class StudentService {
 		studentDAO.deleteAll();
 		studentDAO.closeCurrentSessionwithTransaction();
 	}
-	
-	public User findUserByName(String name){
+
+	public User findUserByName(String name) {
 		userDAO.openCurrentSession();
 		User u = userDAO.findUserByName(name);
 		userDAO.closeCurrentSession();

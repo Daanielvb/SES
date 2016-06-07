@@ -1,20 +1,19 @@
 package dao;
 
 import java.util.List;
-import model.User;
 
 import org.hibernate.Query;
-
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 
+import model.User;
 
 public class UserDAO {
-private Session currentSession;
-	
+	private Session currentSession;
+
 	private Transaction currentTransaction;
 
 	public Session openCurrentSession() {
@@ -27,16 +26,16 @@ private Session currentSession;
 		currentTransaction = currentSession.beginTransaction();
 		return currentSession;
 	}
-	
+
 	public void closeCurrentSession() {
 		currentSession.close();
 	}
-	
+
 	public void closeCurrentSessionwithTransaction() {
 		currentTransaction.commit();
 		currentSession.close();
 	}
-	
+
 	private static SessionFactory getSessionFactory() {
 		Configuration configuration = new Configuration().configure();
 		StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder()
@@ -60,25 +59,23 @@ private Session currentSession;
 	public void setCurrentTransaction(Transaction currentTransaction) {
 		this.currentTransaction = currentTransaction;
 	}
-	
-	
-	public User findUserByName(String name){
-		try{
-		User u = null;
-		Query query = getCurrentSession().createQuery("from User u where u.name =:name ");
-		query.setParameter("name", name);
-		List list = query.list();
-		u = (User)list.get(0);
-		return u;
-		}
-		catch(Exception e){
+
+	public User findUserByName(String name) {
+		try {
+			User u = null;
+			Query query = getCurrentSession().createQuery("from User u where u.name =:name ");
+			query.setParameter("name", name);
+			List list = query.list();
+			u = (User) list.get(0);
+			return u;
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return null;
 	}
-	
-	public User findUserByEmail(String email){
-		try{
+
+	public User findUserByEmail(String email) {
+		try {
 			User u = null;
 			Query query = getCurrentSession().createQuery("select from User u where u.email =:email");
 			query.setParameter("email", email);
@@ -86,20 +83,9 @@ private Session currentSession;
 			if (!list.isEmpty())
 				u = (User) list.get(0);
 			return u;
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
-		catch(Exception e){
-				e.printStackTrace();
-			}
-		return null;	
+		return null;
 	}
-	
-	//Exemplo complexo
-	
-	// todas as respostas do aluno baseado no lesson e no userId
-	// Queremos o quiz_tracking
-	//	Query q = getCurrentSession().createQuery("select from QuizTracking qt inner join qt.user u"
-	//			+ "inner join qt.quiz q inner join fetch q.lesson l where l.id =: lessonId AND u.id =: userId");
-	//	q.setParameter("lessonId",lessonId);
-	//	q.setParameter("userId",userId);
-
 }
