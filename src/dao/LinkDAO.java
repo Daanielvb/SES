@@ -2,10 +2,18 @@ package dao;
 
 import java.util.List;
 
+<<<<<<< HEAD
 import model.Link;
 
 public class LinkDAO extends GenericDAO{
 	
+=======
+import entidades.Link;
+
+public class LinkDAO extends GenericDAO{
+	
+public Link LinkData;
+>>>>>>> 8f6d55ee6c26bc05e99a7264373c5bda78e8d35e
 	
 	public LinkDAO(){
 	}

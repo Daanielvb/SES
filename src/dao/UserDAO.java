@@ -2,17 +2,21 @@ package dao;
 
 import java.util.List;
 
+<<<<<<< HEAD
 import javax.persistence.TypedQuery;
 
 import model.User;
 
 import org.hibernate.Query;
+=======
+>>>>>>> 8f6d55ee6c26bc05e99a7264373c5bda78e8d35e
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 
+<<<<<<< HEAD
 public class UserDAO {
 private Session currentSession;
 	
@@ -61,6 +65,11 @@ private Session currentSession;
 	public void setCurrentTransaction(Transaction currentTransaction) {
 		this.currentTransaction = currentTransaction;
 	}
+=======
+import entidades.User;
+
+public class UserDAO extends GenericDAO{
+>>>>>>> 8f6d55ee6c26bc05e99a7264373c5bda78e8d35e
 
 	public void persist(User entity) {
 		getCurrentSession().save(entity);
@@ -91,6 +100,7 @@ private Session currentSession;
 			delete(entity);
 		}
 	}
+<<<<<<< HEAD
 	
 //	List<Student> students = (List<Student>) getCurrentSession().createQuery("from students").list();
 //	return students;
@@ -110,5 +120,7 @@ private Session currentSession;
 		}
 		return null;
 	}
+=======
+>>>>>>> 8f6d55ee6c26bc05e99a7264373c5bda78e8d35e
 
 }

@@ -2,10 +2,18 @@ package dao;
 
 import java.util.List;
 
+<<<<<<< HEAD
 import model.Subject;
 
 public class SubjectDAO extends GenericDAO{
 	
+=======
+import entidades.Subject;
+
+public class SubjectDAO extends GenericDAO{
+	
+	public Subject subjectData;
+>>>>>>> 8f6d55ee6c26bc05e99a7264373c5bda78e8d35e
 	
 	public SubjectDAO(){
 	}

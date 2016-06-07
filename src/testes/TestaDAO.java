@@ -1,8 +1,8 @@
 package testes;
-
 import java.sql.SQLException;
 import java.util.Date;
 import java.util.List;
+
 
 import model.Student;
 import model.VideoTracking;
@@ -40,7 +40,6 @@ public class TestaDAO {
 //		vt.setVideo(v);
 //		VideoTrackingService vs = new VideoTrackingService();
 //		vs.persist(vt);
-		
 
-	}
+}
 }

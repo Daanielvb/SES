@@ -2,9 +2,16 @@ package dao;
 
 import java.util.List;
 
+<<<<<<< HEAD
 import model.Lesson;
 
 public class LessonDAO extends GenericDAO{
+=======
+import entidades.Lesson;
+
+public class LessonDAO extends GenericDAO{
+public Lesson LessonData;
+>>>>>>> 8f6d55ee6c26bc05e99a7264373c5bda78e8d35e
 	
 	public LessonDAO(){
 	}

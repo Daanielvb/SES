@@ -32,7 +32,16 @@ public class Lesson implements Serializable{
 	@OneToMany(mappedBy="lesson")
     private List<Link> link;
 
+	private String theme;
 	
+	public String getTheme() {
+		return theme;
+	}
+
+	public void setTheme(String theme) {
+		this.theme = theme;
+	}
+
 	public Lesson(){
 	
 	}

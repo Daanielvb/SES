@@ -3,7 +3,11 @@ package services;
 import java.util.List;
 
 import dao.VideoDAO;
+<<<<<<< HEAD
 import model.Video;
+=======
+import entidades.Video;
+>>>>>>> 8f6d55ee6c26bc05e99a7264373c5bda78e8d35e
 
 public class VideoService {
 	private static VideoDAO videoDAO;

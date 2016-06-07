@@ -8,9 +8,8 @@ import javax.persistence.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
-import org.hibernate.cfg.Configuration;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
-
+import org.hibernate.cfg.Configuration;
 
 import model.Student;
 
@@ -84,6 +83,20 @@ public class StudentsDAO {
 
 	public void delete(Student entity) {
 		getCurrentSession().delete(entity);
+	}
+	
+	public List<Student> findStudentByName(String name){
+		List <Student> result = null;
+		try{
+		Query q = em.createQuery("select s from Student s where s.name =:name");
+		q.setParameter("name", name);
+		result = q.getResultList();
+		return result;
+		}
+		catch(Exception e){
+			e.printStackTrace();
+		}
+		return null;
 	}
 	
 	@SuppressWarnings("unchecked")
