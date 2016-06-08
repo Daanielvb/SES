@@ -84,7 +84,7 @@ public class LessonTrackingDAO extends GenericDAO {
 		try {
 			List<LessonTracking> lessons = null;
 			Query query = getCurrentSession()
-					.createQuery("select lt from LessonTracking lt " + "inner join lt.user u where u.id =:userId");
+					.createQuery("select lt from LessonTracking lt " + "inner join lt.user u where u.id=:userId");
 			query.setParameter("userId", userId);
 			lessons = (List<LessonTracking>) query.list();
 			return lessons;
@@ -96,8 +96,8 @@ public class LessonTrackingDAO extends GenericDAO {
 	
 	public List<LessonTracking> findLessonTrackingByUserAndLessonId(Lesson lesson, User user) {
 		try {
-			Query q = getCurrentSession().createQuery("select from LessonTracking lt inner join lt.user u"
-					+ "inner join lt.lesson l where l.id =: lessonId AND u.id =: userId");
+			Query q = getCurrentSession().createQuery("select lt from LessonTracking lt inner join lt.user u"
+					+ "inner join lt.lesson l where l.id=:lessonId AND u.id=:userId");
 			q.setParameter("userId", user.getId());
 			q.setParameter("lessonId", lesson.getId());
 			List<LessonTracking> list = q.list();
