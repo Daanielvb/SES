@@ -33,7 +33,7 @@ public class HomeController extends HttpServlet {
 	protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, SQLException {
 		response.setContentType("text/html;charset=UTF-8");
-        getStudent(request,response);
+        //getStudent(request,response);
 		    
     }
 	

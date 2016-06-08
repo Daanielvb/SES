@@ -46,7 +46,7 @@ public class LoginController extends HttpServlet{
 			String email = request.getParameter("email");
 	    	User u = us.findUserByEmail(email);
 	    	request.setAttribute("user", u);
-			request.getRequestDispatcher("index.jsp").forward(request, response);
+			request.getRequestDispatcher("home.jsp").forward(request, response);
 		}
 		
 		
@@ -55,11 +55,12 @@ public class LoginController extends HttpServlet{
 			String email = request.getParameter("email");
 	    	User u = us.findUserByEmail(email);
 	    	if( u != null){
-	    		request.setAttribute("user", u);
+	    		//request.setAttribute("user", u);
+	    		request.getSession().setAttribute("user", u);
 	    		int userId = u.getId();
 		    	List<LessonTracking> lessonTrackings = lts.findLessonTrackingByUserId(userId);
-		    	request.setAttribute("lessonTrackings", lessonTrackings);
-				request.getRequestDispatcher("index.jsp").forward(request, response);
+		    	request.getSession().setAttribute("lessonTrackings", lessonTrackings);
+				request.getRequestDispatcher("home.jsp").forward(request, response);
 	    	}
 	    	else{
 	    		request.setAttribute("failed", true);

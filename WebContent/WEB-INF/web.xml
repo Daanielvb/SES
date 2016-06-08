@@ -28,6 +28,15 @@
   <url-pattern>/LoginController</url-pattern>
 </servlet-mapping>
 
+<servlet>
+  <servlet-name>HomeController</servlet-name>
+  <servlet-class>controle.HomeController</servlet-class>
+</servlet>
+<servlet-mapping>
+  <servlet-name>HomeController</servlet-name>
+  <url-pattern>/HomeController</url-pattern>
+</servlet-mapping>
+
 <listener>  
     <listener-class>controle.HibernateListener</listener-class>  
 </listener> 

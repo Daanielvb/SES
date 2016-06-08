@@ -1,9 +1,10 @@
-<?xml version="1.0" encoding="ISO-8859-1" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <%@page import="model.Lesson"%>
 <%@page import="dao.LessonDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
@@ -22,12 +23,6 @@
     <!-- Custom CSS -->
     <link href="css/heroic-features.css" rel="stylesheet">
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
 
 </head>
 
@@ -50,14 +45,14 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="#"><span class="glyphicon glyphicon-th-list"></span> Lições</a>
+                        <a href="#"><span class="glyphicon glyphicon-th-list"></span> LiÃ§Ãµes</a>
                     </li>
                     <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon glyphicon-user"></span> Usuario <span class="glyphicon glyphicon-triangle-bottom"></span></a>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon glyphicon-user"></span> ${fn:toUpperCase(user.name)} <span class="glyphicon glyphicon-triangle-bottom"></span></a>
                         <ul class="dropdown-menu">
                             <li>
                                 <a href="estatisticas.jsp"><span class="glyphicon glyphicon-stats"></span> Estatisticas</a>
-                                <a href="alterarUser.jsp"><span class="glyphicon glyphicon glyphicon-cog"></span> Configurações</a>
+                                <a href="alterarUser.jsp"><span class="glyphicon glyphicon glyphicon-cog"></span> ConfiguraÃ§Ãµes</a>
                             </li>
                             <li role="separator" class="divider"></li>
                             <li>
@@ -79,14 +74,15 @@
         <!-- Title -->
         <div class="row">
             <div class="col-lg-12">
-                <h3>Lições</h3>
+                <h3>LiÃ§Ãµes</h3>
             </div>
         </div>
         </hr>
         <hr>
         <div class="row">
+        LiÃ§Ãµes jÃ¡ iniciadas
         	<div class="col-lg-12">
-        		<h1>lição 1</h1>
+        		<h1>liÃ§Ã£o 1</h1>
         	</div>
         	<div class="col-lg-12">
         		<div class="progress">
@@ -103,7 +99,7 @@
         <hr>
         <div class="row">
         	<div class="col-lg-12">
-        		<h1>lição 2</h1>
+        		<h1>liÃ§Ã£o 2</h1>
         	</div>
         	<div class="col-lg-12">
         		<div class="progress">

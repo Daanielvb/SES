@@ -17,7 +17,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-   <link href="css/style.css" rel="stylesheet">
+    <link href="css/heroic-features.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -44,7 +44,6 @@
                 <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-home"></span> PyLearning</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
-            
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
@@ -99,7 +98,6 @@ Sed eget lacinia orci, ultricies tempor est.</p>
         <!-- Title -->
         <h1> Bem vindo, <span>${user.name}</h1>
         <div class="row">
-        
             <div class="col-lg-12">
                 <h3>Lições correntes</h3>
             </div>
