@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 
 <head>
 
@@ -11,13 +11,12 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>PyLearning</title>
+    <title>Plataforma</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom CSS -->
-   <link href="css/style.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -41,27 +40,16 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-home"></span> PyLearning</a>
+                <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-home"></span> Plataforma</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
-            
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
+                <ul class="nav navbar-nav">
                     <li>
-                        <a href="licao.jsp"><span class="glyphicon glyphicon-th-list"></span> Lições</a>
+                        <a href="#"><span class="glyphicon glyphicon-th-list"></span>Lições</a>
                     </li>
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon glyphicon-user"></span> Usuario <span class="glyphicon glyphicon-triangle-bottom"></span></a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="estatisticas.jsp"><span class="glyphicon glyphicon-stats"></span> Estatisticas</a>
-                                <a href="alterarUser.jsp"><span class="glyphicon glyphicon glyphicon-cog"></span> Configurações</a>
-                            </li>
-                            <li role="separator" class="divider"></li>
-                            <li>
-                                <a href="#"><span class="glyphicon glyphicon glyphicon-log-out"></span> Sair</a>
-                            </li>
-                        </ul>
+                    <li>
+                        <a href="#"><span class="glyphicon glyphicon-stats"></span> Estatisticas</a>
                     </li>
                 </ul>
             </div>
@@ -75,33 +63,19 @@
 
         <!-- Jumbotron Header -->
         <header class="jumbotron hero-spacer">
-            <h1>PyLearning</h1>
+            <h1>Plataforma de Programação</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, ipsam, eligendi, in quo sunt possimus non incidunt odit vero aliquid similique quaerat nam nobis illo aspernatur vitae fugiat numquam repellat.</p>
-            <div class="text-right">
-            	<a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-    				Saiba mais
-  				</a>
-            </div>
-            <div class="collapse" id="collapseExample">
-             <hr>
-            	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed volutpat aliquam felis. Suspendisse imperdiet cursus augue, eget vulputate nulla vulputate eu. Sed sed dolor blandit, rhoncus odio quis, pretium erat. In tellus ex, tincidunt eu magna et, pulvinar convallis ex. Pellentesque gravida dolor ut augue scelerisque iaculis. Phasellus massa nibh, molestie et diam eget, convallis ultrices sapien. Donec pharetra diam at ipsum convallis, ac lobortis metus cursus. Aliquam bibendum turpis viverra interdum dictum. Donec aliquet sapien sit amet dignissim suscipit. Duis quis tortor at libero cursus convallis. Vivamus aliquet, neque sit amet hendrerit congue, nisi ligula ultrices purus, et eleifend odio purus eget nisi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus non elementum augue, quis cursus erat. Aliquam et elit a dolor auctor elementum.
-
-Nulla mollis nec eros nec pretium. Donec vel nibh nec urna blandit molestie. Cras at risus elementum, lobortis nunc vel, gravida sem. Proin non sollicitudin orci, ac tristique nisl. Donec consequat ut massa in ultricies. Integer fermentum, lorem nec volutpat fringilla, tortor eros facilisis dui, sed lacinia ante mi in neque. Ut at bibendum ex. Donec eget erat lorem. Pellentesque accumsan vulputate nibh sed hendrerit. Maecenas posuere, nisi non cursus fermentum, erat tellus eleifend nisi, sed placerat quam augue eget risus. Ut porta, ex porttitor tempor euismod, orci justo euismod orci, eget eleifend felis mi vehicula est. Aliquam in hendrerit lacus. Aliquam et orci dapibus, aliquet dolor nec, lacinia mi.
-
-Maecenas arcu quam, blandit at sollicitudin eu, elementum ut enim. Nam ultricies consequat dignissim. Sed condimentum scelerisque iaculis. Sed scelerisque purus ac lorem tincidunt gravida. Suspendisse potenti. Praesent fermentum massa ac interdum vehicula. Nam fringilla leo in velit molestie, sed mollis quam convallis. Suspendisse sapien lacus, finibus quis ullamcorper sed, porttitor sed velit. Phasellus suscipit mollis felis vitae imperdiet.
-
-Sed eget lacinia orci, ultricies tempor est.</p>
-            </div>
         </header>
 
         <hr>
 
         <!-- Title -->
-        <h1> Bem vindo, <span>${user.name}</h1>
         <div class="row">
+        <h1> Bem vindo, <span>${user.name}</h1>
         
+
             <div class="col-lg-12">
-                <h3>Lições correntes</h3>
+                <h3>Últimas lições</h3>
             </div>
         </div>
         <!-- /.row -->
@@ -116,7 +90,7 @@ Sed eget lacinia orci, ultricies tempor est.</p>
                         <h3>Tipos primitivos e variáveis</h3>
                         <p>Lição sobre os conceitos basicos de tipos primitivos e variáveis</p>
                         <p>
-                            <a href="licao.jsp" class="btn btn-primary text-center">Continuar</a> 
+                            <a href="#" class="btn btn-primary text-center">Continue</a> 
                         </p>
                         <c:forEach items="${lessonTrackings}" var="lts" varStatus="myIndex">
 							<c:if test="${lts.lesson.id == 1}">
@@ -134,7 +108,7 @@ Sed eget lacinia orci, ultricies tempor est.</p>
                         <h3>Operações</h3>
                         <p>Lição sobre operações aritmeticas, lógicas e com strings</p>
                         <p>
-                            <a href="licao.jsp" class="btn btn-primary text-center">Continuar</a> 
+                            <a href="#" class="btn btn-primary text-center">Continue</a> 
                         </p>
                         <c:forEach items="${lessonTrackings}" var="lts" varStatus="myIndex">
 							<c:if test="${lts.lesson.id == 2}">
@@ -152,7 +126,7 @@ Sed eget lacinia orci, ultricies tempor est.</p>
                         <h3>Estruturas de controle</h3>
                         <p>Lição sobre as estruturas existentes no controle do código</p>
                         <p>
-                            <a href="licao.jsp" class="btn btn-primary text-center">Continuar</a> 
+                            <a href="#" class="btn btn-primary text-center">Continue</a> 
                         </p>
                         <c:forEach items="${lessonTrackings}" var="lts" varStatus="myIndex">
 							<c:if test="${lts.lesson.id == 3}">
@@ -170,7 +144,7 @@ Sed eget lacinia orci, ultricies tempor est.</p>
                         <h3>Funções</h3>
                         <p>Lição sobre o que são funções e como utilizá-las</p>
                         <p>
-                            <a href="licao.jsp" class="btn btn-primary text-center">Continuar</a> 
+                            <a href="#" class="btn btn-primary text-center">Continue</a> 
                         </p>
                         <c:forEach items="${lessonTrackings}" var="lts" varStatus="myIndex">
 							<c:if test="${lts.lesson.id == 4}">

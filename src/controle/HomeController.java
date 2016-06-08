@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import model.LessonTracking;
 import model.User;
 import services.LessonTrackingService;
 import services.UserService;
@@ -32,7 +33,7 @@ public class HomeController extends HttpServlet {
 	protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, SQLException {
 		response.setContentType("text/html;charset=UTF-8");
-        String acao = request.getParameter("action");
+        getStudent(request,response);
 		    
     }
 	
@@ -42,8 +43,15 @@ public class HomeController extends HttpServlet {
 		String email = request.getParameter("email");
     	User u = us.findUserByEmail(email);
     	request.setAttribute("user", u);
-		request.getRequestDispatcher("home.jsp").forward(request, response);
-}
+		request.getRequestDispatcher("index.jsp").forward(request, response);
+	}
+	
+	public void getLessons(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException{
+		String userId = request.getParameter("userId");
+    	//LessonTracking lessons = lts.findById(userId);
+    	//request.setAttribute("lesson", lessons);
+		//request.getRequestDispatcher("home.jsp").forward(request, response);
+	}
 	
 	@Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)

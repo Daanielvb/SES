@@ -66,6 +66,7 @@ public class UserDAO {
 			Query query = getCurrentSession().createQuery("from User u where u.name =:name ");
 			query.setParameter("name", name);
 			List list = query.list();
+			
 			u = (User) list.get(0);
 			return u;
 		} catch (Exception e) {
@@ -77,7 +78,7 @@ public class UserDAO {
 	public User findUserByEmail(String email) {
 		try {
 			User u = null;
-			Query query = getCurrentSession().createQuery("select from User u where u.email =:email");
+			Query query = getCurrentSession().createQuery("select u from User u where u.email =:email");
 			query.setParameter("email", email);
 			List list = query.list();
 			if (!list.isEmpty())

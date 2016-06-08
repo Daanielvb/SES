@@ -68,7 +68,7 @@ public class LessonTrackingDAO extends GenericDAO {
 		getCurrentSession().update(entity);
 	}
 
-	public LessonTracking findById(String id) {
+	public LessonTracking findById(int id) {
 		LessonTracking lt = (LessonTracking) getCurrentSession().get(LessonTracking.class, id);
 		return lt;
 	}
