@@ -73,6 +73,20 @@ public class UserDAO {
 		}
 		return null;
 	}
+	
+	public User findUserById(String id) {
+		try {
+			User u = null;
+			Query query = getCurrentSession().createQuery("from User u where u.id =:id ");
+			query.setParameter("id", id);
+			List list = query.list();
+			u = (User) list.get(0);
+			return u;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
 
 	public User findUserByEmail(String email) {
 		try {

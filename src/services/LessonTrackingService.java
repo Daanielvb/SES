@@ -4,7 +4,7 @@ import java.util.List;
 
 import model.Lesson;
 import model.LessonTracking;
-import dao.LessonDAO;
+import dao.LessonTrackingDAO;
 
 public class LessonTrackingService {
 	private static LessonTrackingDAO lessonTrackingDAO;
@@ -25,23 +25,23 @@ public class LessonTrackingService {
 		lessonTrackingDAO.closeCurrentSessionwithTransaction();
 	}
 
-	public Lesson findById(String id) {
+	public LessonTracking findById(int id) {
 		lessonTrackingDAO.openCurrentSession();
-		Lesson Lesson = lessonTrackingDAO.findById(id);
+		LessonTracking lt = lessonTrackingDAO.findById(id);
 		lessonTrackingDAO.closeCurrentSession();
-		return Lesson;
+		return lt;
 	}
 
-	public void delete(String id) {
+	public void delete(int id) {
 		lessonTrackingDAO.openCurrentSessionwithTransaction();
-		Lesson Lesson = lessonTrackingDAO.findById(id);
-		lessonTrackingDAO.delete(Lesson);
+		LessonTracking lt = lessonTrackingDAO.findById(id);
+		lessonTrackingDAO.delete(lt);
 		lessonTrackingDAO.closeCurrentSessionwithTransaction();
 	}
 
-	public List<Lesson> findAll() {
+	public List<LessonTracking> findAll() {
 		lessonTrackingDAO.openCurrentSession();
-		List<Lesson> Lessons = lessonTrackingDAO.findAll();
+		List<LessonTracking> Lessons = lessonTrackingDAO.findAll();
 		lessonTrackingDAO.closeCurrentSession();
 		return Lessons;
 	}
@@ -51,7 +51,15 @@ public class LessonTrackingService {
 		lessonTrackingDAO.deleteAll();
 		lessonTrackingDAO.closeCurrentSessionwithTransaction();
 	}
-
+	
+	public List <LessonTracking> findLessonTrackingByUserId(int userId){
+		lessonTrackingDAO.openCurrentSessionwithTransaction();
+		List<LessonTracking> lts = lessonTrackingDAO.findLessonTrackingByUserId(userId);
+		lessonTrackingDAO.closeCurrentSessionwithTransaction();
+		return lts;
+	}
+	
+	
 	public LessonTrackingDAO LessonTrackingDAO() {
 		return lessonTrackingDAO;
 	}
