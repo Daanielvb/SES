@@ -114,7 +114,7 @@ public class LessonTrackingDAO extends GenericDAO {
 	
 	try {
 		List<LessonTracking> list = findLessonTrackingByUserAndLessonId(lesson, user);
-		if (list.equals(null) || list.isEmpty()){
+		if (list == null || list.isEmpty()){
 			LessonTracking lt = new LessonTracking();
 			lt.setLesson(lesson);
 			lt.setUser(user);
