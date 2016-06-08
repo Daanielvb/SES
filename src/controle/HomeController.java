@@ -47,8 +47,7 @@ public class HomeController extends HttpServlet {
 		catch (Exception e) {
 			e.printStackTrace();
 		}
-        //getStudent(request,response);
-		    
+        	    
     }
 	
 	
@@ -98,7 +97,7 @@ public class HomeController extends HttpServlet {
 
     @Override
     public String getServletInfo() {
-        return "Servlet de processamento de login inicial";
+        return "Servlet de processamento da home";
     }
 
 }

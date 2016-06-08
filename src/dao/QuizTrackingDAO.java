@@ -84,7 +84,7 @@ public class QuizTrackingDAO extends GenericDAO {
 		try {
 			List<QuizTracking> quizzes = null;
 			Query query = getCurrentSession()
-					.createQuery("select qt from QuizTracking qt inner join qt.user u where u.id =:userId");
+					.createQuery("select qt from QuizTracking qt inner join qt.user u where u.id=:userId");
 			query.setParameter("userId", userId);
 			quizzes = (List<QuizTracking>) query.list();
 			return quizzes;
@@ -104,7 +104,7 @@ public class QuizTrackingDAO extends GenericDAO {
 		public List<QuizTracking> findQuizTrackingByUserAndQuizId(Quiz quiz, User user) {
 			try {
 				Query q = getCurrentSession().createQuery("select from QuizTracking qt inner join qt.user u"
-						+ "inner join qt.quiz q where q.id =: quizId AND u.id =: userId");
+						+ "inner join qt.quiz q where q.id=:quizId AND u.id=:userId");
 				q.setParameter("userId", user.getId());
 				q.setParameter("quizId", quiz.getId());
 				List<QuizTracking> list = q.list();
@@ -121,7 +121,7 @@ public class QuizTrackingDAO extends GenericDAO {
 		
 		try {
 			List<QuizTracking> list = findQuizTrackingByUserAndQuizId(quiz, user);
-			if (list.isEmpty()){
+			if (list == null || list.isEmpty()){
 				QuizTracking qt = new QuizTracking();
 				qt.setQuiz(quiz);
 				qt.setUser(user);
@@ -134,8 +134,8 @@ public class QuizTrackingDAO extends GenericDAO {
 	
 	public List findQuizTrackingByUserID(int userId) {
 		try {
-			Query q = getCurrentSession().createQuery("select from QuizTracking qt inner join qt.user u"
-					+ "inner join qt.quiz q inner join fetch q.lesson l where l.id =: lessonId AND u.id =: userId");
+			Query q = getCurrentSession().createQuery("select qt from QuizTracking qt inner join qt.user u"
+					+ "inner join qt.quiz q inner join fetch q.lesson l where l.id=:lessonId AND u.id=:userId");
 			q.setParameter("userId", userId);
 			List list = q.list();
 			return list;

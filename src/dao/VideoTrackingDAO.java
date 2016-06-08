@@ -84,7 +84,7 @@ public class VideoTrackingDAO extends GenericDAO {
 		try {
 			List<VideoTracking> videos = null;
 			Query query = getCurrentSession()
-					.createQuery("select vt from VideoTracking vt " + "inner join vt.user u where u.id =:userId");
+					.createQuery("select vt from VideoTracking vt " + "inner join vt.user u where u.id=:userId");
 			query.setParameter("userId", userId);
 			videos = (List<VideoTracking>) query.list();
 			return videos;
@@ -96,8 +96,8 @@ public class VideoTrackingDAO extends GenericDAO {
 	
 	public List<VideoTracking> findVideoTrackingByUserAndQuizId(Video video, User user) {
 		try {
-			Query q = getCurrentSession().createQuery("select from VideoTracking vt inner join vt.user u"
-					+ "inner join vt.video v where v.id =: videoId AND u.id =: userId");
+			Query q = getCurrentSession().createQuery("select vt from VideoTracking vt inner join vt.user u"
+					+ "inner join vt.video v where v.id=:videoId AND u.id=:userId");
 			q.setParameter("userId", user.getId());
 			q.setParameter("videoId", video.getId());
 			List<VideoTracking> list = q.list();
@@ -114,7 +114,7 @@ public class VideoTrackingDAO extends GenericDAO {
 	
 	try {
 		List<VideoTracking> list = findVideoTrackingByUserAndQuizId(video, user);
-		if (list.isEmpty()){
+		if (list == null || list.isEmpty()){
 			VideoTracking vt = new VideoTracking();
 			vt.setVideo(video);
 			vt.setUser(user);
