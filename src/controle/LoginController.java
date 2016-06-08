@@ -10,12 +10,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dao.LessonTrackingDAO;
+import dao.UserDAO;
 import model.LessonTracking;
 import model.User;
 import services.LessonTrackingService;
 import services.UserService;
-import dao.LessonTrackingDAO;
-import dao.UserDAO;
 
 @WebServlet(name = "LoginController", urlPatterns = {"/LoginController"})
 public class LoginController extends HttpServlet{

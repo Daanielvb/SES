@@ -9,7 +9,6 @@ import org.hibernate.Transaction;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 
-import dao.UserDAO;
 import model.Quiz;
 import model.QuizTracking;
 import model.User;

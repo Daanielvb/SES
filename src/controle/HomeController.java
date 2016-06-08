@@ -9,12 +9,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dao.UserDAO;
 import model.Lesson;
 import model.User;
 import services.LessonService;
 import services.LessonTrackingService;
 import services.UserService;
-import dao.UserDAO;
 
 @WebServlet(name = "HomeController", urlPatterns = {"/HomeController"})
 public class HomeController extends HttpServlet {
@@ -49,8 +49,6 @@ public class HomeController extends HttpServlet {
 		}
         	    
     }
-	
-	
 	
 	public void getStudent(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException{
 		String email = request.getParameter("email");

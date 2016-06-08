@@ -25,5 +25,12 @@ public class UserService {
 		return u;
 	}
 	
+	public User findUserById(String id){
+		userDAO.openCurrentSession();
+		User u = userDAO.findUserById(id);
+		userDAO.closeCurrentSession();
+		return u;
+	}
+	
 
 }

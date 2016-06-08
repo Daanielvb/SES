@@ -128,5 +128,26 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
+    
+    <script>
+	
+	function createLessonTracking(lessonId){
+			console.log("FUI CHAMADO");
+	         $.ajax({
+	            url:'LinkController',
+	            data:{linkId:linkId},
+	            type:'get',
+	            cache:false,
+	            success:function(data){
+	               alert(data);
+	            },
+	            error:function(){
+	              alert('error');
+	            }
+	         }
+	    );
+	}
+	
+	</script>
 		
 </body>

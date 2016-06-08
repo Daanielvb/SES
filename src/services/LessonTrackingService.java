@@ -2,10 +2,10 @@ package services;
 
 import java.util.List;
 
+import dao.LessonTrackingDAO;
 import model.Lesson;
 import model.LessonTracking;
 import model.User;
-import dao.LessonTrackingDAO;
 
 public class LessonTrackingService {
 	private static LessonTrackingDAO lessonTrackingDAO;

@@ -2,8 +2,6 @@ package dao;
 
 import java.util.List;
 
-import org.hibernate.Query;
-
 import model.Quiz;
 
 public class QuizDAO extends GenericDAO {

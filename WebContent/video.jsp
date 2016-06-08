@@ -82,7 +82,7 @@
         		<h1>Tópico 1</h1>
         	</div>
         		<div class="text-right">
-        		<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+        		<button type="button" onclick = "createVideoTracking(1)" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
  				 Visualizar
 				</button>
         		</div>
@@ -94,7 +94,7 @@
         		<h1>Tópico 2</h1>
         	</div>
         		<div class="text-right">
-        		<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+        		<button type="button" onclick = "createVideoTracking(2)" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
  				 Visualizar
 				</button>
         		</div>
@@ -129,5 +129,24 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
-		
+    <script>
+	
+	function createVideoTracking(videoId){
+			console.log("FUI CHAMADO");
+	         $.ajax({
+	            url:'VideoController',
+	            data:{videoId:videoId,action:"video "},
+	            type:'get',
+	            cache:false,
+	            success:function(data){
+	               alert(data);
+	            },
+	            error:function(){
+	              alert('error');
+	            }
+	         }
+	    );
+	}
+	
+	</script>
 </body>

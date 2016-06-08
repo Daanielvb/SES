@@ -37,6 +37,15 @@
   <url-pattern>/HomeController</url-pattern>
 </servlet-mapping>
 
+<servlet>
+  <servlet-name>VideoController</servlet-name>
+  <servlet-class>controle.VideoController</servlet-class>
+</servlet>
+<servlet-mapping>
+  <servlet-name>VideoController</servlet-name>
+  <url-pattern>/VideoController</url-pattern>
+</servlet-mapping>
+
 <listener>  
     <listener-class>controle.HibernateListener</listener-class>  
 </listener> 

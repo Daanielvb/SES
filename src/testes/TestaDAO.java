@@ -2,7 +2,6 @@ package testes;
 
 import java.sql.SQLException;
 
-import model.Lesson;
 import services.LessonService;
 
 public class TestaDAO {
