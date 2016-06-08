@@ -19,7 +19,6 @@ import services.UserService;
 @WebServlet(name = "HomeController", urlPatterns = {"/HomeController"})
 public class HomeController extends HttpServlet {
 
-	private UserDAO ud;
 	private UserService us;
 	private LessonTrackingService lts;
 	private LessonService ls;
@@ -41,8 +40,7 @@ public class HomeController extends HttpServlet {
 		Lesson l = ls.findById(Integer.valueOf(lessonId));
 		User u = (User) request.getSession().getAttribute("user");
 		lts.createLessonTracking(l, u);
-		String lesson = "aula" + lessonId + ".jsp";
-		request.getRequestDispatcher(lesson).forward(request, response);
+		response.getWriter().write("Success Data");
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -50,6 +48,7 @@ public class HomeController extends HttpServlet {
         	    
     }
 	
+<<<<<<< HEAD
 	public void getStudent(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException{
 		String email = request.getParameter("email");
     	User u = us.findUserByEmail(email);
@@ -64,6 +63,8 @@ public class HomeController extends HttpServlet {
 		//request.getRequestDispatcher("home.jsp").forward(request, response);
 	}
 	
+=======
+>>>>>>> 14f79e08187ef0d2df05127c04942dc2a19528ec
 	@Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -73,7 +74,7 @@ public class HomeController extends HttpServlet {
         	this.lts = new LessonTrackingService();
         	this.ls = new LessonService();
 			processRequest(request, response);
-		} catch (SQLException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -87,7 +88,7 @@ public class HomeController extends HttpServlet {
         	this.lts = new LessonTrackingService();
         	this.ls = new LessonService();
 			processRequest(request, response);
-		} catch (SQLException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}

@@ -32,43 +32,7 @@
 <body>
 
     <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-home"></span> PyLearning</a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="licao.jsp"><span class="glyphicon glyphicon-th-list"></span> Lições</a>
-                    </li>
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon glyphicon-user"></span> ${fn:toUpperCase(user.name)}  <span class="glyphicon glyphicon-triangle-bottom"></span></a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="estatisticas.jsp"><span class="glyphicon glyphicon-stats"></span> Estatisticas</a>
-                                <a href="alterarUser.jsp"><span class="glyphicon glyphicon glyphicon-cog"></span> Configurações</a>
-                            </li>
-                            <li role="separator" class="divider"></li>
-                            <li>
-                                <a href="#"><span class="glyphicon glyphicon glyphicon-log-out"></span> Sair</a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
+    <%@ include file="header.jsp" %>
 
     <!-- Page Content -->
     <div class="container">
@@ -115,7 +79,7 @@
                         <h3>Tipos primitivos e variáveis</h3>
                         <p>Lição sobre os conceitos basicos de tipos primitivos e variáveis</p>
                         <p>
-                            <a href="#" onclick="createLessonTracking(1)" class="btn btn-primary text-center">Continuar</a> 
+                            <a href="" onclick="createLessonTracking(1)" class="btn btn-primary text-center">Continuar</a> 
                         </p>
                         <c:forEach items="${lessonTrackings}" var="lts" varStatus="myIndex">
 							<c:if test="${lts.lesson.id == 1}">
@@ -133,7 +97,7 @@
                         <h3>Operações</h3>
                         <p>Lição sobre operações aritmeticas, lógicas e com strings</p>
                         <p>
-                            <a href="#" onclick="createLessonTracking(2)" class="btn btn-primary text-center">Continuar</a> 
+                            <a href="" onclick="createLessonTracking(2)" class="btn btn-primary text-center">Continuar</a> 
                         </p>
                         <c:forEach items="${lessonTrackings}" var="lts" varStatus="myIndex">
 							<c:if test="${lts.lesson.id == 2}">
@@ -151,7 +115,7 @@
                         <h3>Estruturas de controle</h3>
                         <p>Lição sobre as estruturas existentes no controle do código</p>
                         <p>
-                            <a href="#" onclick="createLessonTracking(3)" class="btn btn-primary text-center">Continuar</a> 
+                            <a href="" onclick="createLessonTracking(3)" class="btn btn-primary text-center">Continuar</a> 
                         </p>
                         <c:forEach items="${lessonTrackings}" var="lts" varStatus="myIndex">
 							<c:if test="${lts.lesson.id == 3}">
@@ -169,7 +133,7 @@
                         <h3>Funções</h3>
                         <p>Lição sobre o que são funções e como utilizá-las</p>
                         <p>
-                            <a href="#" onclick="createLessonTracking(4)" class="btn btn-primary text-center">Continuar</a> 
+                            <a href="" onclick="createLessonTracking(4)" class="btn btn-primary text-center">Continuar</a> 
                         </p>
                         <c:forEach items="${lessonTrackings}" var="lts" varStatus="myIndex">
 							<c:if test="${lts.lesson.id == 4}">
@@ -203,7 +167,20 @@
 	            type:'get',
 	            cache:false,
 	            success:function(data){
-	               alert(data);
+	            	switch(lessonId) {
+	                case 1:
+	                	window.location = "/ProjetoSI/aula1.jsp";
+	                    break;
+	                case 2:
+	                	window.location = ("/ProjetoSI/aula2.jsp");
+	                    break;
+	                case 3:
+	                	window.location = ("/ProjetoSI/aula3.jsp");
+	                    break;
+	                default:
+	                	window.location = ("/ProjetoSI/aula4.jsp");
+                    	break;
+	            	}
 	            },
 	            error:function(){
 	              alert('error');

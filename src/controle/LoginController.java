@@ -53,7 +53,7 @@ public class LoginController extends HttpServlet{
 		
 		public void getStudentAndLessons(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException{
 			String email = request.getParameter("email");
-	    	User u = us.findUserByEmail(email);
+			User u = us.findUserByEmail(email);
 	    	if( u != null){
 	    		//request.setAttribute("user", u);
 	    		request.getSession().setAttribute("user", u);
