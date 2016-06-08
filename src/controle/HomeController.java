@@ -19,7 +19,6 @@ import dao.UserDAO;
 @WebServlet(name = "HomeController", urlPatterns = {"/HomeController"})
 public class HomeController extends HttpServlet {
 
-	private UserDAO ud;
 	private UserService us;
 	private LessonTrackingService lts;
 	private LessonService ls;
@@ -41,30 +40,13 @@ public class HomeController extends HttpServlet {
 		Lesson l = ls.findById(Integer.valueOf(lessonId));
 		User u = (User) request.getSession().getAttribute("user");
 		lts.createLessonTracking(l, u);
-		String lesson = "aula" + lessonId + ".jsp";
-		request.getRequestDispatcher(lesson).forward(request, response);
+		response.getWriter().write("Success Data");
 		}
 		catch (Exception e) {
 			e.printStackTrace();
 		}
         	    
     }
-	
-	
-	
-	public void getStudent(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException{
-		String email = request.getParameter("email");
-    	User u = us.findUserByEmail(email);
-    	request.setAttribute("user", u);
-		request.getRequestDispatcher("index.jsp").forward(request, response);
-	}
-	
-	public void getLessons(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException{
-		String userId = request.getParameter("userId");
-    	//LessonTracking lessons = lts.findById(userId);
-    	//request.setAttribute("lesson", lessons);
-		//request.getRequestDispatcher("home.jsp").forward(request, response);
-	}
 	
 	@Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -75,7 +57,7 @@ public class HomeController extends HttpServlet {
         	this.lts = new LessonTrackingService();
         	this.ls = new LessonService();
 			processRequest(request, response);
-		} catch (SQLException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -89,7 +71,7 @@ public class HomeController extends HttpServlet {
         	this.lts = new LessonTrackingService();
         	this.ls = new LessonService();
 			processRequest(request, response);
-		} catch (SQLException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
