@@ -1,6 +1,5 @@
-<?xml version="1.0" encoding="ISO-8859-1" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <%@page import="model.Lesson"%>
-<%@page import="dao.LessonDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -50,14 +49,14 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="#"><span class="glyphicon glyphicon-th-list"></span> Lições</a>
+                        <a href="licao.jsp"><span class="glyphicon glyphicon-th-list"></span> LiÃ§Ãµes</a>
                     </li>
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon glyphicon-user"></span> Usuario <span class="glyphicon glyphicon-triangle-bottom"></span></a>
                         <ul class="dropdown-menu">
                             <li>
                                 <a href="estatisticas.jsp"><span class="glyphicon glyphicon-stats"></span> Estatisticas</a>
-                                <a href="alterarUser.jsp"><span class="glyphicon glyphicon glyphicon-cog"></span> Configurações</a>
+                                <a href="alterarUser.jsp"><span class="glyphicon glyphicon glyphicon-cog"></span> ConfiguraÃ§Ãµes</a>
                             </li>
                             <li role="separator" class="divider"></li>
                             <li>
@@ -79,44 +78,55 @@
         <!-- Title -->
         <div class="row">
             <div class="col-lg-12">
-                <h3>Lições</h3>
+                <h3>Exercicios</h3>
             </div>
         </div>
         </hr>
-        <hr>
-        <div class="row">
-        	<div class="col-lg-12">
-        		<h1>lição 1</h1>
-        	</div>
-        	<div class="col-lg-12">
-        		<div class="progress">
-        			<div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-        			 60%
-        			</div>
-        		</div>
-        		<div class="text-right">
-        		<a href="aula.jsp" class="btn btn-primary text-center">Continuar</a>
-        		</div>
-        	</div>       
-        </div>
-        </hr>
-        <hr>
-        <div class="row">
-        	<div class="col-lg-12">
-        		<h1>lição 2</h1>
-        	</div>
-        	<div class="col-lg-12">
-        		<div class="progress">
-        			<div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
-        			 0%
-        			</div>
-        		</div>
-        		<div class="text-right">
-        		<a href="#" class="btn btn-primary text-center">Iniciar</a>
-        		</div>
-        	</div>       
-        </div>
-        </hr>
+       	<hr>
+       	<div class="panel panel-primary">
+       		<div class="panel-heading">
+       			<h3 class="panel-title">VariÃ¡veis</h3>
+       		</div>
+       		<div class="panel-body">
+       			<div class="panel panel-default">
+       				<div class="panel-heading">
+       					QuestÃ£o 1. - O que nÃ£o pode fazer parte do nome de uma variÃ¡vel?
+       				</div>
+       				<div class="panel-body">
+       					<div class="input-group">
+       						<input type="radio" name="answer"/>
+       						Underline
+       					</div>
+       					<hr />
+       					<div class="input-group">
+       						<input type="radio" name="answer"/>
+       						Letras maiÃºsculas
+       					</div>
+       					<hr />
+       					<div class="input-group">
+       						<input type="radio" name="answer"/>
+       						NÃºmeros
+       					</div>
+       					<hr />
+       					<div class="input-group">
+       						<input type="radio" name="answer"/>
+       						Letras maiÃºsculas e minÃºsculas misturadas
+       					</div>
+       					<hr />
+       					<div class="input-group">
+       						<input type="radio" name="answer" />
+       						Caracteres especiais
+       					</div>
+       				</div>
+       			</div>
+       			<div class="text-right">
+       					<a href="#" class="btn btn-default text-center">Pular</a>
+       					<a href="#" class="btn btn-primary text-center">Responder</a>
+       				</div>
+       			
+       		</div>	
+       	</div>
+       	</hr>
     </div>
     <!-- /.container -->
 

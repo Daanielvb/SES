@@ -2,6 +2,7 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
   <display-name>Pylearning</display-name>
   <welcome-file-list>
+  	<welcome-file>login.jsp</welcome-file>
     <welcome-file>index.html</welcome-file>
     <welcome-file>index.htm</welcome-file>
     <welcome-file>index.jsp</welcome-file>
@@ -17,6 +18,16 @@
   <servlet-name>StudentController</servlet-name>
   <url-pattern>/StudentController</url-pattern>
 </servlet-mapping>
+
+<servlet>
+  <servlet-name>LoginController</servlet-name>
+  <servlet-class>controle.LoginController</servlet-class>
+</servlet>
+<servlet-mapping>
+  <servlet-name>LoginController</servlet-name>
+  <url-pattern>/LoginController</url-pattern>
+</servlet-mapping>
+
 <listener>  
     <listener-class>controle.HibernateListener</listener-class>  
 </listener> 
