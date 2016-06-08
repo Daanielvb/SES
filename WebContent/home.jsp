@@ -115,7 +115,7 @@
                         <h3>Tipos primitivos e variáveis</h3>
                         <p>Lição sobre os conceitos basicos de tipos primitivos e variáveis</p>
                         <p>
-                            <a href="#" on-click="createLessonTracking(1)" class="btn btn-primary text-center">Continuar</a> 
+                            <a href="#" onclick="createLessonTracking(1)" class="btn btn-primary text-center">Continuar</a> 
                         </p>
                         <c:forEach items="${lessonTrackings}" var="lts" varStatus="myIndex">
 							<c:if test="${lts.lesson.id == 1}">
@@ -133,7 +133,7 @@
                         <h3>Operações</h3>
                         <p>Lição sobre operações aritmeticas, lógicas e com strings</p>
                         <p>
-                            <a href="licao.jsp" class="btn btn-primary text-center">Continuar</a> 
+                            <a href="#" onclick="createLessonTracking(2)" class="btn btn-primary text-center">Continuar</a> 
                         </p>
                         <c:forEach items="${lessonTrackings}" var="lts" varStatus="myIndex">
 							<c:if test="${lts.lesson.id == 2}">
@@ -151,7 +151,7 @@
                         <h3>Estruturas de controle</h3>
                         <p>Lição sobre as estruturas existentes no controle do código</p>
                         <p>
-                            <a href="licao.jsp" class="btn btn-primary text-center">Continuar</a> 
+                            <a href="#" onclick="createLessonTracking(3)" class="btn btn-primary text-center">Continuar</a> 
                         </p>
                         <c:forEach items="${lessonTrackings}" var="lts" varStatus="myIndex">
 							<c:if test="${lts.lesson.id == 3}">
@@ -169,7 +169,7 @@
                         <h3>Funções</h3>
                         <p>Lição sobre o que são funções e como utilizá-las</p>
                         <p>
-                            <a href="licao.jsp" class="btn btn-primary text-center">Continuar</a> 
+                            <a href="#" onclick="createLessonTracking(4)" class="btn btn-primary text-center">Continuar</a> 
                         </p>
                         <c:forEach items="${lessonTrackings}" var="lts" varStatus="myIndex">
 							<c:if test="${lts.lesson.id == 4}">

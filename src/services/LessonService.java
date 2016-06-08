@@ -25,14 +25,14 @@ public class LessonService {
 		lessonDAO.closeCurrentSessionwithTransaction();
 	}
 
-	public Lesson findById(String id) {
+	public Lesson findById(int id) {
 		lessonDAO.openCurrentSession();
 		Lesson Lesson = lessonDAO.findById(id);
 		lessonDAO.closeCurrentSession();
 		return Lesson;
 	}
 
-	public void delete(String id) {
+	public void delete(int id) {
 		lessonDAO.openCurrentSessionwithTransaction();
 		Lesson Lesson = lessonDAO.findById(id);
 		lessonDAO.delete(Lesson);

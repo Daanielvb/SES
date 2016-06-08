@@ -94,10 +94,10 @@ public class LessonTrackingDAO extends GenericDAO {
 		return null;
 	}
 	
-	public List<LessonTracking> findLessonTrackingByUserAndQuizId(Lesson lesson, User user) {
+	public List<LessonTracking> findLessonTrackingByUserAndLessonId(Lesson lesson, User user) {
 		try {
-			Query q = getCurrentSession().createQuery("select from LessonTracking lt inner join lt.user u"
-					+ "inner join lt.lesson l where l.id =: lessonId AND u.id =: userId");
+			Query q = getCurrentSession().createQuery("select lt from LessonTracking lt inner join lt.user u "
+					+ "inner join lt.lesson l where l.id =:lessonId AND u.id =:userId");
 			q.setParameter("userId", user.getId());
 			q.setParameter("lessonId", lesson.getId());
 			List<LessonTracking> list = q.list();
@@ -113,8 +113,8 @@ public class LessonTrackingDAO extends GenericDAO {
 	public void createLessonTracking(Lesson lesson, User user){
 	
 	try {
-		List<LessonTracking> list = findLessonTrackingByUserAndQuizId(lesson, user);
-		if (list.isEmpty()){
+		List<LessonTracking> list = findLessonTrackingByUserAndLessonId(lesson, user);
+		if (list == null || list.isEmpty()){
 			LessonTracking lt = new LessonTracking();
 			lt.setLesson(lesson);
 			lt.setUser(user);

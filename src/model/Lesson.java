@@ -16,7 +16,7 @@ public class Lesson implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long id;
+	private int id;
 
 	@OneToMany(mappedBy = "lesson")
 	private List<Video> videos;
@@ -44,7 +44,7 @@ public class Lesson implements Serializable {
 
 	}
 
-	public long getId() {
+	public int getId() {
 		return id;
 	}
 
@@ -64,7 +64,7 @@ public class Lesson implements Serializable {
 		this.subjects = subjects;
 	}
 
-	public void setId(long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 

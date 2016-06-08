@@ -17,7 +17,7 @@ public class LessonDAO extends GenericDAO {
 		getCurrentSession().update(entity);
 	}
 
-	public Lesson findById(String id) {
+	public Lesson findById(int id) {
 		Lesson Lesson = (Lesson) getCurrentSession().get(Lesson.class, id);
 		return Lesson;
 	}

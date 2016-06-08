@@ -1,27 +1,15 @@
 package testes;
 
 import java.sql.SQLException;
-import java.util.Date;
-import java.util.List;
 
-import dao.StudentsDAO;
-import model.Student;
-import model.VideoTracking;
-import services.StudentService;
-import services.UserService;
-import services.VideoTrackingService;
+import model.Lesson;
+import services.LessonService;
 
 public class TestaDAO {
 	public static void main(String[] args) throws SQLException {
-		Student s = new Student("mike", "912312312", "email");
-		StudentsDAO sd = new StudentsDAO();
-		StudentService sv = new StudentService();
-		UserService us = new UserService();
-		VideoTrackingService vs = new VideoTrackingService();
-		List<VideoTracking> videos = vs.findByUser(1);
-		videos.get(0).setCreatedAt(new Date());
-		vs.update(videos.get(0));
-		System.out.println(videos.toString());
+		LessonService ls = new LessonService();
+		int i = 3;
+
 		// sv.persist(s);
 		// Student ss = sv.findByName("daniel");
 		// User u = sv.findUserByName("daniel");

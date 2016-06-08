@@ -4,6 +4,7 @@ import java.util.List;
 
 import model.Lesson;
 import model.LessonTracking;
+import model.User;
 import dao.LessonTrackingDAO;
 
 public class LessonTrackingService {
@@ -57,6 +58,12 @@ public class LessonTrackingService {
 		List<LessonTracking> lts = lessonTrackingDAO.findLessonTrackingByUserId(userId);
 		lessonTrackingDAO.closeCurrentSessionwithTransaction();
 		return lts;
+	}
+	
+	public void createLessonTracking(Lesson l, User u){
+		lessonTrackingDAO.openCurrentSessionwithTransaction();
+		lessonTrackingDAO.createLessonTracking(l, u);
+		lessonTrackingDAO.closeCurrentSessionwithTransaction();
 	}
 	
 	
