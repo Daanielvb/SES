@@ -1,5 +1,6 @@
 package dao;
 
+import java.util.Date;
 import java.util.List;
 
 import org.hibernate.Query;
@@ -9,6 +10,8 @@ import org.hibernate.Transaction;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 
+import model.User;
+import model.Video;
 import model.VideoTracking;
 
 public class VideoTrackingDAO extends GenericDAO {
@@ -90,6 +93,38 @@ public class VideoTrackingDAO extends GenericDAO {
 		}
 		return null;
 	}
+	
+	public List<VideoTracking> findVideoTrackingByUserAndQuizId(Video video, User user) {
+		try {
+			Query q = getCurrentSession().createQuery("select from VideoTracking vt inner join vt.user u"
+					+ "inner join vt.video v where v.id =: videoId AND u.id =: userId");
+			q.setParameter("userId", user.getId());
+			q.setParameter("videoId", video.getId());
+			List<VideoTracking> list = q.list();
+			return list;
+		}
+
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
+	public void createVideoTracking(Video video, User user){
+	
+	try {
+		List<VideoTracking> list = findVideoTrackingByUserAndQuizId(video, user);
+		if (list.isEmpty()){
+			VideoTracking vt = new VideoTracking();
+			vt.setVideo(video);
+			vt.setUser(user);
+			vt.setCreatedAt(new Date());
+			persist(vt);
+		}
+	}catch(Exception e) {
+		e.printStackTrace();
+	}
+}
 
 	@SuppressWarnings("unchecked")
 	public List<VideoTracking> findAll() {

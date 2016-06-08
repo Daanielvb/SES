@@ -1,5 +1,6 @@
 package dao;
 
+import java.util.Date;
 import java.util.List;
 
 import org.hibernate.Query;
@@ -9,7 +10,9 @@ import org.hibernate.Transaction;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 
+import model.Lesson;
 import model.LessonTracking;
+import model.User;
 
 public class LessonTrackingDAO extends GenericDAO {
 
@@ -90,6 +93,39 @@ public class LessonTrackingDAO extends GenericDAO {
 		}
 		return null;
 	}
+	
+	public List<LessonTracking> findLessonTrackingByUserAndQuizId(Lesson lesson, User user) {
+		try {
+			Query q = getCurrentSession().createQuery("select from LessonTracking lt inner join lt.user u"
+					+ "inner join lt.lesson l where l.id =: lessonId AND u.id =: userId");
+			q.setParameter("userId", user.getId());
+			q.setParameter("lessonId", lesson.getId());
+			List<LessonTracking> list = q.list();
+			return list;
+		}
+
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
+	public void createLessonTracking(Lesson lesson, User user){
+	
+	try {
+		List<LessonTracking> list = findLessonTrackingByUserAndQuizId(lesson, user);
+		if (list.isEmpty()){
+			LessonTracking lt = new LessonTracking();
+			lt.setLesson(lesson);
+			lt.setUser(user);
+			lt.setCreatedAt(new Date());
+			persist(lt);
+		}
+	}catch(Exception e) {
+		e.printStackTrace();
+	}
+}
+	
 
 	@SuppressWarnings("unchecked")
 	public List<LessonTracking> findAll() {

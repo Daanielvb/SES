@@ -41,19 +41,4 @@ public class QuizDAO extends GenericDAO {
 
 		}
 	}
-
-	public List findQuizTrackingByUserID(int userId) {
-		try {
-			Query q = getCurrentSession().createQuery("select from QuizTracking qt inner join qt.user u"
-					+ "inner join qt.quiz q inner join fetch q.lesson l where l.id =: lessonId AND u.id =: userId");
-			q.setParameter("userId", userId);
-			List list = q.list();
-			return list;
-		}
-
-		catch (Exception e) {
-			e.printStackTrace();
-		}
-		return null;
-	}
 }
