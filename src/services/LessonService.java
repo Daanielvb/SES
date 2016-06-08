@@ -3,15 +3,17 @@ package services;
 import java.util.List;
 
 import dao.LessonDAO;
-
+import dao.LessonTrackingDAO;
 import model.Lesson;
 
 public class LessonService {
+	private static LessonTrackingDAO lessonTrackingDAO;	
 	private static LessonDAO lessonDAO;
 
 	public LessonService() {
 		lessonDAO = new LessonDAO();
 	}
+	
 
 	public void persist(Lesson entity) {
 		lessonDAO.openCurrentSessionwithTransaction();

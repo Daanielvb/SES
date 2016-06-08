@@ -18,8 +18,9 @@ import dao.UserDAO;
 
 @WebServlet(name = "HomeController", urlPatterns = {"/HomeController"})
 public class HomeController extends HttpServlet {
-	private UserService us;
+
 	private UserDAO ud;
+	private UserService us;
 	private LessonTrackingService lts;
 	private LessonService ls;
 	//private LessonTrackingDAO ld;
@@ -40,7 +41,8 @@ public class HomeController extends HttpServlet {
 		Lesson l = ls.findById(Integer.valueOf(lessonId));
 		User u = (User) request.getSession().getAttribute("user");
 		lts.createLessonTracking(l, u);
-		request.getRequestDispatcher("aula" + lessonId + ".jsp").forward(request, response);
+		String lesson = "aula" + lessonId + ".jsp";
+		request.getRequestDispatcher(lesson).forward(request, response);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -69,6 +71,7 @@ public class HomeController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {
+        	
         	this.us = new UserService();
         	this.lts = new LessonTrackingService();
         	this.ls = new LessonService();
@@ -82,7 +85,7 @@ public class HomeController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        try {
+        try {   	
         	this.us = new UserService();
         	this.lts = new LessonTrackingService();
         	this.ls = new LessonService();
