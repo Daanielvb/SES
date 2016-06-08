@@ -114,7 +114,7 @@ public class VideoTrackingDAO extends GenericDAO {
 	
 	try {
 		List<VideoTracking> list = findVideoTrackingByUserAndQuizId(video, user);
-		if (list.isEmpty()){
+		if (list.equals(null) || list.isEmpty()){
 			VideoTracking vt = new VideoTracking();
 			vt.setVideo(video);
 			vt.setUser(user);

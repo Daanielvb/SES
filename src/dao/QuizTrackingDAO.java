@@ -121,7 +121,7 @@ public class QuizTrackingDAO extends GenericDAO {
 		
 		try {
 			List<QuizTracking> list = findQuizTrackingByUserAndQuizId(quiz, user);
-			if (list.isEmpty()){
+			if (list.equals(null) || list.isEmpty()){
 				QuizTracking qt = new QuizTracking();
 				qt.setQuiz(quiz);
 				qt.setUser(user);
