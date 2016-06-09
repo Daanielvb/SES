@@ -75,7 +75,7 @@ public class UserDAO {
 		return null;
 	}
 	
-	public User findUserById(String id) {
+	public User findUserById(int id) {
 		try {
 			User u = null;
 			Query query = getCurrentSession().createQuery("from User u where u.id =:id ");

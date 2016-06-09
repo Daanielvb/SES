@@ -33,12 +33,15 @@ public class VideoController extends HttpServlet {
             throws ServletException, IOException, SQLException {
 		response.setContentType("text/html;charset=UTF-8");
 		String acao = request.getParameter("action");
-		String videoId = request.getParameter("videoId");
-		String userId = request.getParameter("userId");
+		Long videoId = Long.parseLong(request.getParameter("videoId"));
+		User u = (User) request.getSession().getAttribute("user");
 		String linkId = request.getParameter("linkId");
 		request.getParameter("action");
 		if (acao.equals("video")){
-			createVideoTracking(videoId, userId);
+			createVideoTracking(videoId, u);
+		}
+		else{
+//			createLinkTracking(linkId,userId);
 		}
 		
 		try{
@@ -50,21 +53,16 @@ public class VideoController extends HttpServlet {
         	    
     }
 	
-	public void createVideoTracking(String videoId, String userId){
+	public void createVideoTracking(Long videoId, User u){
 		VideoTrackingService vts = new VideoTrackingService();
 		VideoService vs = new VideoService();
 		Video v = vs.findById(videoId);
-		User u = us.findUserById(userId);
-		
-		VideoTracking vt = new VideoTracking();
-		vt.setUser(u);
-		vt.setVideo(v);
-		
-		vts.persist(vt);
-		
+		VideoTracking vt = vts.createVideoTracking(v, u);
+		if(vt != null)
+			vts.persist(vt);
 	}
 	
-//	public void createLinkTracking(String linkId, String userId){
+	public void createLinkTracking(String linkId, String userId){
 //		LinkTrackingService lts = new LinkTrackingService();
 //		LinkService ls = new LinkService();
 //		Link l = ls.findById(linkId);
@@ -75,7 +73,7 @@ public class VideoController extends HttpServlet {
 //		lt.setUser(u);
 //		
 //		lts.persist(lt);
-//	}
+	}
 	
 	
 	@Override

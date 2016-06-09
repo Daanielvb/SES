@@ -48,13 +48,12 @@ public class HomeController extends HttpServlet {
         	    
     }
 	
-<<<<<<< HEAD
-	public void getStudent(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException{
-		String email = request.getParameter("email");
-    	User u = us.findUserByEmail(email);
-    	request.setAttribute("user", u);
-		request.getRequestDispatcher("index.jsp").forward(request, response);
-	}
+//	public void getStudent(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException{
+//		String email = request.getParameter("email");
+//    	User u = us.findUserByEmail(email);
+//    	request.setAttribute("user", u);
+//		request.getRequestDispatcher("index.jsp").forward(request, response);
+//	}
 	
 	public void getLessons(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException{
 		String userId = request.getParameter("userId");
@@ -62,9 +61,7 @@ public class HomeController extends HttpServlet {
     	//request.setAttribute("lesson", lessons);
 		//request.getRequestDispatcher("home.jsp").forward(request, response);
 	}
-	
-=======
->>>>>>> 14f79e08187ef0d2df05127c04942dc2a19528ec
+
 	@Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {

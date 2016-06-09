@@ -16,6 +16,7 @@
 		<c:if test="${failed == true}">
 	   	<p>Usuário não encontrado<p>
 		</c:if>
+		<input type="hidden" name="action" value="login"/>
 		<button type="submit">OK</button>
 	</form>
 </body>

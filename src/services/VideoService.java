@@ -24,14 +24,14 @@ public class VideoService {
 		videoDAO.closeCurrentSessionwithTransaction();
 	}
 
-	public Video findById(String id) {
+	public Video findById(Long id) {
 		videoDAO.openCurrentSession();
 		Video video = videoDAO.findById(id);
 		videoDAO.closeCurrentSession();
 		return video;
 	}
 
-	public void delete(String id) {
+	public void delete(Long id) {
 		videoDAO.openCurrentSessionwithTransaction();
 		Video video = videoDAO.findById(id);
 		videoDAO.delete(video);

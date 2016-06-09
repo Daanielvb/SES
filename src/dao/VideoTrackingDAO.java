@@ -94,14 +94,19 @@ public class VideoTrackingDAO extends GenericDAO {
 		return null;
 	}
 	
-	public List<VideoTracking> findVideoTrackingByUserAndQuizId(Video video, User user) {
+	public VideoTracking findVideoTrackingByUserAndVideoId(Video video, User user) {
 		try {
-			Query q = getCurrentSession().createQuery("select vt from VideoTracking vt inner join vt.user u"
+			Query q = getCurrentSession().createQuery("select vt from VideoTracking vt inner join vt.user u "
 					+ "inner join vt.video v where v.id=:videoId AND u.id=:userId");
 			q.setParameter("userId", user.getId());
 			q.setParameter("videoId", video.getId());
 			List<VideoTracking> list = q.list();
-			return list;
+			if (list != null && !list.isEmpty()){
+				return (VideoTracking) list.get(0);
+			}
+			else{
+				return null;
+			}
 		}
 
 		catch (Exception e) {
@@ -110,20 +115,20 @@ public class VideoTrackingDAO extends GenericDAO {
 		return null;
 	}
 	
-	public void createVideoTracking(Video video, User user){
-	
+	public VideoTracking createVideoTracking(Video video, User user){
 	try {
-		List<VideoTracking> list = findVideoTrackingByUserAndQuizId(video, user);
-		if (list == null || list.isEmpty()){
-			VideoTracking vt = new VideoTracking();
-			vt.setVideo(video);
-			vt.setUser(user);
-			vt.setCreatedAt(new Date());
-			persist(vt);
+		VideoTracking vt = findVideoTrackingByUserAndVideoId(video, user);
+		if (vt == null){
+			VideoTracking vtr = new VideoTracking();
+			vtr.setVideo(video);
+			vtr.setUser(user);
+			vtr.setCreatedAt(new Date());
+			return vtr;
 		}
 	}catch(Exception e) {
 		e.printStackTrace();
 	}
+	return null;
 }
 
 	@SuppressWarnings("unchecked")

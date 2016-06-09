@@ -2,8 +2,10 @@ package services;
 
 import java.util.List;
 
-import dao.VideoTrackingDAO;
+import model.User;
+import model.Video;
 import model.VideoTracking;
+import dao.VideoTrackingDAO;
 
 public class VideoTrackingService {
 	private static VideoTrackingDAO videoTrackingDAO;
@@ -47,6 +49,14 @@ public class VideoTrackingService {
 
 	public VideoTrackingDAO videoTrackingDAO() {
 		return videoTrackingDAO;
+	}
+	
+	
+	public VideoTracking createVideoTracking(Video v, User u){
+		videoTrackingDAO.openCurrentSessionwithTransaction();
+		VideoTracking vt = videoTrackingDAO.createVideoTracking(v, u);
+		videoTrackingDAO.closeCurrentSession();
+		return vt;
 	}
 
 }

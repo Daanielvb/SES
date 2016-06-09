@@ -25,7 +25,7 @@ public class UserService {
 		return u;
 	}
 	
-	public User findUserById(String id){
+	public User findUserById(int id){
 		userDAO.openCurrentSession();
 		User u = userDAO.findUserById(id);
 		userDAO.closeCurrentSession();

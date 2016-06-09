@@ -17,7 +17,7 @@ public class VideoDAO extends GenericDAO {
 		getCurrentSession().update(entity);
 	}
 
-	public Video findById(String id) {
+	public Video findById(Long id) {
 		Video Video = (Video) getCurrentSession().get(Video.class, id);
 		return Video;
 	}

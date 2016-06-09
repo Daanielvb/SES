@@ -97,7 +97,7 @@
                         <h3>Operações</h3>
                         <p>Lição sobre operações aritmeticas, lógicas e com strings</p>
                         <p>
-                            <a href="" onclick="createLessonTracking(2)" class="btn btn-primary text-center">Continuar</a> 
+                            <a href="#" onclick="createLessonTracking(2)" class="btn btn-primary text-center">Continuar</a> 
                         </p>
                         <c:forEach items="${lessonTrackings}" var="lts" varStatus="myIndex">
 							<c:if test="${lts.lesson.id == 2}">
@@ -115,7 +115,7 @@
                         <h3>Estruturas de controle</h3>
                         <p>Lição sobre as estruturas existentes no controle do código</p>
                         <p>
-                            <a href="" onclick="createLessonTracking(3)" class="btn btn-primary text-center">Continuar</a> 
+                            <a href="#" onclick="createLessonTracking(3)" class="btn btn-primary text-center">Continuar</a> 
                         </p>
                         <c:forEach items="${lessonTrackings}" var="lts" varStatus="myIndex">
 							<c:if test="${lts.lesson.id == 3}">
@@ -133,7 +133,7 @@
                         <h3>Funções</h3>
                         <p>Lição sobre o que são funções e como utilizá-las</p>
                         <p>
-                            <a href="" onclick="createLessonTracking(4)" class="btn btn-primary text-center">Continuar</a> 
+                            <a href="#" onclick="createLessonTracking(4)" class="btn btn-primary text-center">Continuar</a> 
                         </p>
                         <c:forEach items="${lessonTrackings}" var="lts" varStatus="myIndex">
 							<c:if test="${lts.lesson.id == 4}">
@@ -169,16 +169,16 @@
 	            success:function(data){
 	            	switch(lessonId) {
 	                case 1:
-	                	window.location = "/ProjetoSI/aula1.jsp";
+	                	window.location = "/ProjetoSI/aulaLicao1.jsp";
 	                    break;
 	                case 2:
-	                	window.location = ("/ProjetoSI/aula2.jsp");
+	                	window.location = ("/ProjetoSI/aulaLicao2.jsp");
 	                    break;
 	                case 3:
-	                	window.location = ("/ProjetoSI/aula3.jsp");
+	                	window.location = ("/ProjetoSI/aulaLicao3.jsp");
 	                    break;
 	                default:
-	                	window.location = ("/ProjetoSI/aula4.jsp");
+	                	window.location = ("/ProjetoSI/aulaLicao4.jsp");
                     	break;
 	            	}
 	            },
