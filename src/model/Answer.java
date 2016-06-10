@@ -25,7 +25,9 @@ public class Answer implements Serializable {
 	private int id;
 
 	private String title;
-
+	
+	
+	
 	private boolean isCorrect;
 
 	@ManyToOne(fetch = FetchType.LAZY)
@@ -48,7 +50,7 @@ public class Answer implements Serializable {
 		this.title = title;
 	}
 
-	public boolean isCorrect() {
+	public boolean getIsCorrect() {
 		return isCorrect;
 	}
 

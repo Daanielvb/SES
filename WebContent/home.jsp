@@ -160,7 +160,6 @@
 	<script>
 	
 	function createLessonTracking(lessonId){
-			console.log("FUI CHAMADO");
 	         $.ajax({
 	            url:'HomeController',
 	            data:{lessonId:lessonId},
@@ -183,7 +182,7 @@
 	            	}
 	            },
 	            error:function(){
-	              alert('error');
+	              //alert('error');
 	            }
 	         }
 	    );

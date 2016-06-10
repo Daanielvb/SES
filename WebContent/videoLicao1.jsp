@@ -181,17 +181,16 @@
     <script>
 	
 	function createVideoTracking(videoId){
-			console.log("FUI CHAMADO");
 	         $.ajax({
 	            url:'VideoController',
 	            data:{videoId:videoId,action:"video"},
 	            type:'get',
 	            cache:false,
 	            success:function(data){
-	               alert(data);
+	               console.log("saved");
 	            },
 	            error:function(){
-	              alert('error');
+	              
 	            }
 	         }
 	    );

@@ -50,6 +50,13 @@ public class QuizService {
 		quizDAO.deleteAll();
 		quizDAO.closeCurrentSessionwithTransaction();
 	}
+	
+	public Quiz findQuizByLessonId(int lessonId){
+		quizDAO.openCurrentSession();
+		Quiz quiz = quizDAO.findByLessonId(lessonId);
+		quizDAO.closeCurrentSession();
+		return quiz;
+	}
 
 	public QuizDAO quizDAO() {
 		return quizDAO;

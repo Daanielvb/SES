@@ -12,6 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 import model.User;
 import model.Video;
 import model.VideoTracking;
+import services.LessonService;
+import services.LessonTrackingService;
 import services.UserService;
 import services.VideoService;
 import services.VideoTrackingService;
@@ -20,6 +22,7 @@ import services.VideoTrackingService;
 public class VideoController extends HttpServlet {
 
 	private UserService us;
+	private VideoTrackingService vts;
 
 	/**
 	 * 
@@ -54,7 +57,7 @@ public class VideoController extends HttpServlet {
     }
 	
 	public void createVideoTracking(Long videoId, User u){
-		VideoTrackingService vts = new VideoTrackingService();
+		//VideoTrackingService vts = new VideoTrackingService();
 		VideoService vs = new VideoService();
 		Video v = vs.findById(videoId);
 		VideoTracking vt = vts.createVideoTracking(v, u);
@@ -80,6 +83,9 @@ public class VideoController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {        	
+        	this.us = new UserService();
+        	this.vts = new VideoTrackingService();
+    
 			processRequest(request, response);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -91,6 +97,8 @@ public class VideoController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {   	
+        	this.us = new UserService();
+        	this.vts = new VideoTrackingService();
 			processRequest(request, response);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

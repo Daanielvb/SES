@@ -29,7 +29,7 @@ public class Question implements Serializable {
 	@JoinColumn(name = "quiz_id", referencedColumnName = "id", nullable = false)
 	public Quiz quiz;
 
-	@OneToMany(mappedBy = "question")
+	@OneToMany(fetch = FetchType.EAGER,mappedBy = "question")
 	private List<Answer> answers;
 
 	public int getId() {

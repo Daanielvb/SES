@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<%@page import="model.Lesson"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
@@ -32,44 +31,7 @@
 
 <body>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="index.html"><span class="glyphicon glyphicon-home"></span> PyLearning</a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="licao.jsp"><span class="glyphicon glyphicon-th-list"></span> Lições</a>
-                    </li>
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon glyphicon-user"></span> Usuario <span class="glyphicon glyphicon-triangle-bottom"></span></a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="estatisticas.jsp"><span class="glyphicon glyphicon-stats"></span> Estatisticas</a>
-                                <a href="alterarUser.jsp"><span class="glyphicon glyphicon glyphicon-cog"></span> Configurações</a>
-                            </li>
-                            <li role="separator" class="divider"></li>
-                            <li>
-                                <a href="#"><span class="glyphicon glyphicon glyphicon-log-out"></span> Sair</a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
+   <%@ include file="header.jsp" %>
 
     <!-- Page Content -->
     <div class="container">
@@ -78,50 +40,35 @@
         <!-- Title -->
         <div class="row">
             <div class="col-lg-12">
-                <h3>Exercicios</h3>
+                <h3>Exercícios</h3>
             </div>
         </div>
         </hr>
        	<hr>
        	<div class="panel panel-primary">
        		<div class="panel-heading">
-       			<h3 class="panel-title">Variáveis</h3>
+       			<h3 class="panel-title">${quiz.lesson.theme} </h3>
        		</div>
        		<div class="panel-body">
-       			<div class="panel panel-default">
-       				<div class="panel-heading">
-       					Questão 1. - O que não pode fazer parte do nome de uma variável?
-       				</div>
-       				<div class="panel-body">
-       					<div class="input-group">
-       						<input type="radio" name="answer"/>
-       						Underline
-       					</div>
-       					<hr />
-       					<div class="input-group">
-       						<input type="radio" name="answer"/>
-       						Letras maiúsculas
-       					</div>
-       					<hr />
-       					<div class="input-group">
-       						<input type="radio" name="answer"/>
-       						Números
-       					</div>
-       					<hr />
-       					<div class="input-group">
-       						<input type="radio" name="answer"/>
-       						Letras maiúsculas e minúsculas misturadas
-       					</div>
-       					<hr />
-       					<div class="input-group">
-       						<input type="radio" name="answer" />
-       						Caracteres especiais
-       					</div>
-       				</div>
-       			</div>
+       			<c:forEach items="${questions}" var="qts" varStatus="myQuest">
+       				<div class="panel panel-default" >
+		       			<div class="panel-heading">	
+		       					Questão ${myQuest.index + 1} - ${qts.question}
+		       			</div>
+						
+					<c:forEach items="${qts.answers}" var="qtsA" varStatus="myQuestA">
+					<div class="input-group">
+       						<input type="radio" id="${qtsA.id}" name="${qtsA.id}" value="${qtsA.isCorrect}" />
+       						${qtsA.title}
+       					</div>	
+       					<hr />										
+					</c:forEach>	
+					</div>			
+				</c:forEach>
+       			</div>    			
        			<div class="text-right">
        					<a href="#" class="btn btn-default text-center">Pular</a>
-       					<a href="#" class="btn btn-primary text-center">Responder</a>
+       					<a href="#" onclick="submitQuiz(1)" class="btn btn-primary text-center">Responder</a>
        				</div>
        			
        		</div>	
@@ -135,7 +82,20 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
-
+	<script>
+	
+	function submitQuiz(quizId){
+		score = 0;
+		var answers = $('input[type=radio]:checked');
+		for (i = 0; i < answers.length; i++){
+			if(answers[i].value == "true")
+				score++;
+		}
+		console.log(score);
+	}
+	
+	
+	</script>
 </body>
 
 

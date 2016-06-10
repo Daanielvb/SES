@@ -3,6 +3,9 @@ package dao;
 import java.util.List;
 
 import model.Quiz;
+import model.VideoTracking;
+
+import org.hibernate.Query;
 
 public class QuizDAO extends GenericDAO {
 
@@ -38,5 +41,23 @@ public class QuizDAO extends GenericDAO {
 			delete(entity);
 
 		}
+	}
+
+	public Quiz findByLessonId(int lessonId) {
+		try {
+			Query q = getCurrentSession().createQuery("select q from Quiz q where q.lesson.id =:lessonId");
+			q.setParameter("lessonId", lessonId);
+			List<Quiz> list = q.list();
+			if (list != null && !list.isEmpty()){
+				return (Quiz) list.get(0);
+			}
+			else{
+				return null;
+			}
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
 	}
 }

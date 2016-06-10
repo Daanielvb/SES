@@ -24,8 +24,8 @@ public class Quiz implements Serializable {
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "lesson_id", referencedColumnName = "id", nullable = false)
 	public Lesson lesson;
-
-	@OneToMany(mappedBy = "quiz")
+	
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "quiz")
 	private List<Question> questions;
 
 	public int getId() {

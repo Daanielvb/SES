@@ -134,7 +134,7 @@
                 	<div class="row">
                 		<h3><span class="glyphicon glyphicon-pencil" style="color: #337ab7"></span> Exercícios</h3>
                 		<p>Exercite o conhecimento adquirido</p>
-                		<a class="btn btn-primary" href="exercicio.jsp">Exercícios <span class="glyphicon glyphicon-chevron-right"></span></a>
+                		<a class="btn btn-primary" onclick="loadQuestions(1)" >Exercícios <span class="glyphicon glyphicon-chevron-right"></span></a>
                 	</div>
             </div>
         </div>
@@ -149,6 +149,26 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
-		
+	<script>
+	
+	
+	function loadQuestions(lessonId){
+         $.ajax({
+            url:'LessonController',
+            data:{lessonId:lessonId},
+            type:'get',
+            cache:false,
+            success:function(data){
+            	window.location = ("/ProjetoSI/exercicio.jsp");
+            },
+            error:function(){
+             	console.log("deu ruim");
+            }
+         }
+    );
+}
+	
+	
+	</script>
 	</body>
 </html>
