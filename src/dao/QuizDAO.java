@@ -3,7 +3,7 @@ package dao;
 import java.util.List;
 
 import model.Quiz;
-import model.VideoTracking;
+import model.QuizTracking;
 
 import org.hibernate.Query;
 
@@ -15,12 +15,16 @@ public class QuizDAO extends GenericDAO {
 	public void persist(Quiz entity) {
 		getCurrentSession().save(entity);
 	}
+	
+	public void persist(QuizTracking entity) {
+		getCurrentSession().save(entity);
+	}
 
 	public void update(Quiz entity) {
 		getCurrentSession().update(entity);
 	}
 
-	public Quiz findById(String id) {
+	public Quiz findById(int id) {
 		Quiz Quiz = (Quiz) getCurrentSession().get(Quiz.class, id);
 		return Quiz;
 	}
@@ -50,6 +54,26 @@ public class QuizDAO extends GenericDAO {
 			List<Quiz> list = q.list();
 			if (list != null && !list.isEmpty()){
 				return (Quiz) list.get(0);
+			}
+			else{
+				return null;
+			}
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	public QuizTracking findByQuizAndUser(int userId, int quizId) {
+		try {
+			Query q = getCurrentSession().createQuery("select qt from QuizTracking qt"
+					+ " where qt.user.id =:userId AND qt.quiz.id =:quizId");
+			q.setParameter("userId", userId);
+			q.setParameter("quizId", quizId);
+			List<QuizTracking> list = q.list();
+			if (list != null && !list.isEmpty()){
+				return (QuizTracking) list.get(0);
 			}
 			else{
 				return null;

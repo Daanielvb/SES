@@ -55,10 +55,11 @@
 		       			<div class="panel-heading">	
 		       					Questão ${myQuest.index + 1} - ${qts.question}
 		       			</div>
+		       			<input type="hidden" value="${qts.id}"/>
 						
 					<c:forEach items="${qts.answers}" var="qtsA" varStatus="myQuestA">
 					<div class="input-group">
-       						<input type="radio" id="${qtsA.id}" name="${qtsA.id}" value="${qtsA.isCorrect}" />
+       						<input type="radio" id="${qtsA.id}" name="${qts.id}" value="${qtsA.isCorrect}" />
        						${qtsA.title}
        					</div>	
        					<hr />										
@@ -87,11 +88,31 @@
 	function submitQuiz(quizId){
 		score = 0;
 		var answers = $('input[type=radio]:checked');
-		for (i = 0; i < answers.length; i++){
+		var questions = $("input[type=hidden]");
+		var questionsId = [];
+		for (var i = 0; i < answers.length; i++){
+			questionsId.push(questions[i].value);
 			if(answers[i].value == "true")
 				score++;
 		}
+		
 		console.log(score);
+		console.log(questionsId);
+		console.log(quizId);
+		
+		$.ajax({
+            url:'QuizController',
+            data:{quizId:quizId,questionsId:questionsId,score:score},
+            type:'get',
+            cache:false,
+            success:function(data){
+            	window.location = ("/ProjetoSI/exercicio.jsp");
+            },
+            error:function(){
+             	console.log("deu ruim");
+            }
+         }
+    );
 	}
 	
 	

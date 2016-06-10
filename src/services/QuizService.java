@@ -2,8 +2,9 @@ package services;
 
 import java.util.List;
 
-import dao.QuizDAO;
 import model.Quiz;
+import model.QuizTracking;
+import dao.QuizDAO;
 
 public class QuizService {
 	private static QuizDAO quizDAO;
@@ -17,6 +18,13 @@ public class QuizService {
 		quizDAO.persist(entity);
 		quizDAO.closeCurrentSessionwithTransaction();
 	}
+	
+	public void persist(QuizTracking entity) {
+		quizDAO.openCurrentSessionwithTransaction();
+		quizDAO.persist(entity);
+		quizDAO.closeCurrentSessionwithTransaction();
+	}
+
 
 	public void update(Quiz entity) {
 		quizDAO.openCurrentSessionwithTransaction();
@@ -24,14 +32,14 @@ public class QuizService {
 		quizDAO.closeCurrentSessionwithTransaction();
 	}
 
-	public Quiz findById(String id) {
+	public Quiz findById(int id) {
 		quizDAO.openCurrentSession();
 		Quiz quiz = quizDAO.findById(id);
 		quizDAO.closeCurrentSession();
 		return quiz;
 	}
 
-	public void delete(String id) {
+	public void delete(int id) {
 		quizDAO.openCurrentSessionwithTransaction();
 		Quiz quiz = quizDAO.findById(id);
 		quizDAO.delete(quiz);
@@ -56,6 +64,13 @@ public class QuizService {
 		Quiz quiz = quizDAO.findByLessonId(lessonId);
 		quizDAO.closeCurrentSession();
 		return quiz;
+	}
+	
+	public QuizTracking findQuizTrackingByQuizAndUserId(int userId,int quizId){
+		quizDAO.openCurrentSession();
+		QuizTracking qt = quizDAO.findByQuizAndUser(userId,quizId);
+		quizDAO.closeCurrentSession();
+		return qt;
 	}
 
 	public QuizDAO quizDAO() {

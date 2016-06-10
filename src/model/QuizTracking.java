@@ -28,6 +28,8 @@ public class QuizTracking implements Serializable {
 	@OneToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "user_id")
 	private User user;
+	
+	private float score;
 
 	public QuizTracking() {
 	}
@@ -55,5 +57,15 @@ public class QuizTracking implements Serializable {
 	public void setUser(User user) {
 		this.user = user;
 	}
+
+	public float getScore() {
+		return score;
+	}
+
+	public void setScore(float score) {
+		this.score = score;
+	}
+	
+	
 
 }

@@ -10,16 +10,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import model.Quiz;
+import model.QuizTracking;
 import model.User;
-import model.Video;
-import model.VideoTracking;
 import services.QuizService;
 import services.UserService;
-import services.VideoService;
-import services.VideoTrackingService;
 
-@WebServlet(name = "LessonController", urlPatterns = {"/LessonController"})
-public class LessonController extends HttpServlet {
+@WebServlet(name = "QuizController", urlPatterns = {"/QuizController"})
+public class QuizController extends HttpServlet {
 
 	private UserService us;
 	
@@ -34,11 +31,19 @@ public class LessonController extends HttpServlet {
             throws ServletException, IOException, SQLException {
 		try{
 			response.setContentType("text/html;charset=UTF-8");
-			int lessonId = Integer.parseInt(request.getParameter("lessonId"));
-			Quiz q = qs.findQuizByLessonId(lessonId);
-			request.getSession().setAttribute("quiz" , q);
-			request.getSession().setAttribute("questions" , q.getQuestions());
-			request.getRequestDispatcher("exercicio.jsp").forward(request, response);
+			int quizId = Integer.parseInt(request.getParameter("quizId"));
+			float score = Float.parseFloat(request.getParameter("score"));
+			String questionId = request.getParameter("questionsId");
+			Quiz q = qs.findById(quizId);
+			User u = (User) request.getSession().getAttribute("user");
+			QuizTracking qt = qs.findQuizTrackingByQuizAndUserId(u.getId(), quizId);
+			if(qt == null){
+				QuizTracking qtr = new QuizTracking();
+				qtr.setQuiz(q);
+				qtr.setUser(u);
+				qtr.setScore(score);
+				qs.persist(qtr);
+			}
 			//return response.setStatus(HttpServletResponse.SC_ACCEPTED);
 		}
 		catch (Exception e) {
@@ -73,7 +78,7 @@ public class LessonController extends HttpServlet {
 
     @Override
     public String getServletInfo() {
-        return "Servlet de processamento da lesson";
+        return "Servlet de processamento de quiz";
     }
 
 }
