@@ -158,35 +158,40 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
 	<script>
-	
 	function createLessonTracking(lessonId){
-	         $.ajax({
-	            url:'HomeController',
-	            data:{lessonId:lessonId},
-	            type:'get',
-	            cache:false,
-	            success:function(data){
-	            	switch(lessonId) {
-	                case 1:
-	                	window.location = "/ProjetoSI/aulaLicao1.jsp";
-	                    break;
-	                case 2:
-	                	window.location = ("/ProjetoSI/aulaLicao2.jsp");
-	                    break;
-	                case 3:
-	                	window.location = ("/ProjetoSI/aulaLicao3.jsp");
-	                    break;
-	                default:
-	                	window.location = ("/ProjetoSI/aulaLicao4.jsp");
-                    	break;
-	            	}
-	            },
-	            error:function(){
-	              //alert('error');
-	            }
-	         }
-	    );
+		$.ajax({
+	        type: "GET",
+	        data:{lessonId:lessonId},
+	        async: true,
+	        url:'HomeController',
+	        success: function(data) {
+	            console.log("FUNFOU!");
+	        },
+	        error: function(data) {
+	            console.log("NÃO FUNFOU!");
+	        },
+	        complete: function(data) {
+	            console.log("SEMPRE FUNFA!"); 
+	            console.log(lessonId);
+	            switch(lessonId) {
+	            
+                case 1:
+                	window.location = ("/ProjetoSI/aulaLicao1.jsp");
+                    break;
+                case 2:
+                	window.location = ("/ProjetoSI/aulaLicao2.jsp");
+                    break;
+                case 3:
+                	window.location = ("/ProjetoSI/aulaLicao3.jsp");
+                    break;
+                default:
+                	window.location = ("/ProjetoSI/aulaLicao4.jsp");
+                	break;
+            	}
+	        }
+	    });
 	}
+
 	
 	</script>
 </body>

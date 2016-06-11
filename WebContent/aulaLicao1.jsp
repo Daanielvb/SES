@@ -124,7 +124,7 @@
             		<div class="row">
                 		<h3><span class="glyphicon glyphicon-facetime-video" style="color: #337ab7"></span> Vídeos</h3>
                 		<p>Material em vídeo</p>
-                		<a class="btn btn-primary" href="videoLicao1.jsp">Vídeos <span class="glyphicon glyphicon-chevron-right"></span></a>
+                		<a class="btn btn-primary" onclick="loadVideos(1)">Vídeos <span class="glyphicon glyphicon-chevron-right"></span></a>
                 	</div>
                 	<div class="row">
                 		<h3><span class="glyphicon glyphicon-book" style="color: #337ab7"></span> Material extra</h3>
@@ -151,11 +151,25 @@
     <script src="js/bootstrap.min.js"></script>
 	<script>
 	
+	function loadVideos(lessonId){
+		$.ajax({
+            url:'LessonController',
+            data:{lessonId:lessonId,action:"video"},
+            type:'get',
+            cache:false,
+            success:function(data){
+            	window.location = ("/ProjetoSI/videoLicao" + lessonId + ".jsp");
+            },
+            error:function(){
+            	window.location = ("/ProjetoSI/videoLicao" + lessonId + ".jsp");
+            }
+		})
+	}
 	
 	function loadQuestions(lessonId){
          $.ajax({
             url:'LessonController',
-            data:{lessonId:lessonId},
+            data:{lessonId:lessonId,action:"question"},
             type:'get',
             cache:false,
             success:function(data){
@@ -163,6 +177,7 @@
             },
             error:function(){
              	console.log("deu ruim");
+             	window.location = ("/ProjetoSI/exercicio.jsp");
             }
          }
     );

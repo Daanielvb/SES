@@ -16,7 +16,7 @@
     	<link href="css/bootstrap.min.css" rel="stylesheet">
 
     	<!-- Custom CSS -->
-    	<link href="css/heroic-features.css" rel="stylesheet">
+    	<link href="css/style.css" rel="stylesheet">
     	<style type="text/css">
     		.aula{
     			text-align: justify;
@@ -46,15 +46,31 @@
         		<h1>Tópico 1.2</h1>
         	</div>
         		<div class="text-right">
+        		
         		<button type="button" onclick="createVideoTracking(1)" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal1">
  				 Video 1
 				</button>
+				 <c:forEach items="${vtracking}" var="vts" varStatus="myIndex">
+							<c:if test="${vts.video.id == 1}">
+								<p class="seen"> Já assistida </p>
+							</c:if>
+				</c:forEach>
                 <button type="button" onclick="createVideoTracking(2)" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal2">
                  Video 2
                 </button>
+                 <c:forEach items="${vtracking}" var="vts" varStatus="myIndex">
+							<c:if test="${vts.video.id == 2}">
+								<p class="seen"> Já assistida </p>
+							</c:if>
+				</c:forEach>
                 <button type="button" onclick="createVideoTracking(3)" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal3">
                  Video 3
                 </button>
+                 <c:forEach items="${vtracking}" var="vts" varStatus="myIndex">
+							<c:if test="${vts.video.id == 3}">
+								<p class="seen"> Já assistida </p>
+							</c:if>
+				</c:forEach>
         		</div>
         	</div>
         </hr>
@@ -67,9 +83,19 @@
                 <button type="button" onclick="createVideoTracking(4)" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal4">
                  Video 1
                 </button>
+                 <c:forEach items="${vtracking}" var="vts" varStatus="myIndex">
+							<c:if test="${vts.video.id == 4}">
+								<p class="seen"> Já assistida </p>
+							</c:if>
+				</c:forEach>
                 <button type="button" onclick="createVideoTracking(5)" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal5">
                  Video 2
                 </button>
+                 <c:forEach items="${vtracking}" var="vts" varStatus="myIndex">
+							<c:if test="${vts.video.id == 5}">
+								<p class="seen"> Já assistida </p>
+							</c:if>
+				</c:forEach>
                 </div>
             </div>
         </hr>       

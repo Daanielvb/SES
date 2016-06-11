@@ -35,12 +35,7 @@ public class LoginController extends HttpServlet{
 		protected void processRequest(HttpServletRequest request, HttpServletResponse response)
 	            throws ServletException, IOException, SQLException {
 			response.setContentType("text/html;charset=UTF-8");
-			
-	        String acao = request.getParameter("action");
-	        String lessonId = request.getParameter("lessonId");
-	        //getStudent(request,response);
-	        if(acao != null)
-	        	getStudentAndLessons(request,response);
+	        getStudentAndLessons(request,response);
 	        
 	        
 			    
@@ -65,7 +60,7 @@ public class LoginController extends HttpServlet{
 		    	List<LessonTracking> lessonTrackings = lts.findLessonTrackingByUserId(userId);
 		    	request.getSession().setAttribute("lessonTrackings", lessonTrackings);
 		    	//response.sendRedirect("home.jsp");
-		    	request.getRequestDispatcher("home.jsp").forward(request, response);
+		    	//request.getRequestDispatcher("home.jsp").forward(request, response);
 
 	    	}
 	    	else{

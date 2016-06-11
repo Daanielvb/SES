@@ -40,7 +40,7 @@ public class HomeController extends HttpServlet {
 		Lesson l = ls.findById(Integer.valueOf(lessonId));
 		User u = (User) request.getSession().getAttribute("user");
 		lts.createLessonTracking(l, u);
-		response.getWriter().write("Success Data");
+		response.sendRedirect("aulaLicao1.jsp");
 		}
 		catch (Exception e) {
 			e.printStackTrace();

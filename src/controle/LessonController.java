@@ -2,6 +2,7 @@ package controle;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -24,6 +25,8 @@ public class LessonController extends HttpServlet {
 	private UserService us;
 	
 	private QuizService qs;
+	
+	private VideoTrackingService vts;
 
 	private static final long serialVersionUID = 1L;
 	
@@ -35,10 +38,18 @@ public class LessonController extends HttpServlet {
 		try{
 			response.setContentType("text/html;charset=UTF-8");
 			int lessonId = Integer.parseInt(request.getParameter("lessonId"));
-			Quiz q = qs.findQuizByLessonId(lessonId);
-			request.getSession().setAttribute("quiz" , q);
-			request.getSession().setAttribute("questions" , q.getQuestions());
-			request.getRequestDispatcher("exercicio.jsp").forward(request, response);
+			String action = request.getParameter("action");
+			User u = (User)request.getSession().getAttribute("user");
+			if(action.equals("question")){
+				Quiz q = qs.findQuizByLessonId(lessonId);
+				request.getSession().setAttribute("quiz" , q);
+				request.getSession().setAttribute("questions" , q.getQuestions());
+			}
+			else if(action.equals("video")){
+				List<VideoTracking> vt = vts.findByUser(u.getId());
+				request.getSession().setAttribute("vtracking" , vt);
+			}
+			//request.getRequestDispatcher("exercicio.jsp").forward(request, response);
 			//return response.setStatus(HttpServletResponse.SC_ACCEPTED);
 		}
 		catch (Exception e) {
@@ -52,6 +63,7 @@ public class LessonController extends HttpServlet {
             throws ServletException, IOException {
         try {        	
         	this.qs = new QuizService();
+        	this.vts = new VideoTrackingService();
 			processRequest(request, response);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -64,6 +76,7 @@ public class LessonController extends HttpServlet {
             throws ServletException, IOException {
         try {   	
         	this.qs = new QuizService();
+        	this.vts = new VideoTrackingService();
 			processRequest(request, response);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
