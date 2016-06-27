@@ -10,13 +10,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import model.Question;
 import model.Quiz;
+import model.QuizTracking;
 import model.User;
-import model.Video;
 import model.VideoTracking;
+import services.QuestionService;
 import services.QuizService;
 import services.UserService;
-import services.VideoService;
 import services.VideoTrackingService;
 
 @WebServlet(name = "LessonController", urlPatterns = {"/LessonController"})
@@ -25,6 +26,8 @@ public class LessonController extends HttpServlet {
 	private UserService us;
 	
 	private QuizService qs;
+	
+	private QuestionService qes;
 	
 	private VideoTrackingService vts;
 
@@ -41,9 +44,20 @@ public class LessonController extends HttpServlet {
 			String action = request.getParameter("action");
 			User u = (User)request.getSession().getAttribute("user");
 			if(action.equals("question")){
-				Quiz q = qs.findQuizByLessonId(lessonId);
+				Quiz q = qs.findQuizByLessonId(lessonId);			
+				QuizTracking qt = qs.findQuizTrackingByQuizAndUserId(u.getId(), q.getId());
+				
+				if(qt == null){
+					List<Question> ques = qes.findEasyQuestionsByLessonId(lessonId);
+					request.getSession().setAttribute("questions" , ques);
+				}
+				else {
+					List<Question> ques = qes.findHardQuestionsByLessonId(lessonId);
+					request.getSession().setAttribute("questions" , ques);
+				}
 				request.getSession().setAttribute("quiz" , q);
-				request.getSession().setAttribute("questions" , q.getQuestions());
+				request.getSession().setAttribute("qtracking", qt);
+				
 			}
 			else if(action.equals("video")){
 				List<VideoTracking> vt = vts.findByUser(u.getId());
@@ -64,6 +78,7 @@ public class LessonController extends HttpServlet {
         try {        	
         	this.qs = new QuizService();
         	this.vts = new VideoTrackingService();
+        	this.qes = new QuestionService();
 			processRequest(request, response);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -77,6 +92,7 @@ public class LessonController extends HttpServlet {
         try {   	
         	this.qs = new QuizService();
         	this.vts = new VideoTrackingService();
+        	this.qes = new QuestionService();
 			processRequest(request, response);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

@@ -2,7 +2,10 @@ package dao;
 
 import java.util.List;
 
+import org.hibernate.Query;
+
 import model.Question;
+import model.Quiz;
 
 public class QuestionDAO extends GenericDAO {
 
@@ -38,5 +41,47 @@ public class QuestionDAO extends GenericDAO {
 			delete(entity);
 
 		}
+	}
+	
+	public List<Question> findEasyQuestionsByLessonId(int lessonId){
+		try {
+			Query q = getCurrentSession().createQuery("select qe from Question qe "
+					+ "inner join fetch qe.quiz q "
+					+ "where q.lesson.id =:lessonId order by qe.difficulty ASC");
+			q.setParameter("lessonId", lessonId);
+			q.setMaxResults(8);
+			List<Question> list = q.list();
+			if (list != null && !list.isEmpty()){
+				return list;
+			}
+			else{
+				return null;
+			}
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
+	public List<Question> findHardQuestionsByLessonId(int lessonId){
+		try {
+			Query q = getCurrentSession().createQuery("select qe from Question qe "
+					+ "inner join fetch qe.quiz q "
+					+ "where q.lesson.id =:lessonId order by qe.difficulty DESC");
+			q.setParameter("lessonId", lessonId);
+			q.setMaxResults(7);
+			List<Question> list = q.list();
+			if (list != null && !list.isEmpty()){
+				return list;
+			}
+			else{
+				return null;
+			}
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
 	}
 }

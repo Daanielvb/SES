@@ -31,6 +31,12 @@ public class QuizService {
 		quizDAO.update(entity);
 		quizDAO.closeCurrentSessionwithTransaction();
 	}
+	
+	public void update(QuizTracking entity) {
+		quizDAO.openCurrentSessionwithTransaction();
+		quizDAO.update(entity);
+		quizDAO.closeCurrentSessionwithTransaction();
+	}
 
 	public Quiz findById(int id) {
 		quizDAO.openCurrentSession();
@@ -65,6 +71,7 @@ public class QuizService {
 		quizDAO.closeCurrentSession();
 		return quiz;
 	}
+
 	
 	public QuizTracking findQuizTrackingByQuizAndUserId(int userId,int quizId){
 		quizDAO.openCurrentSession();

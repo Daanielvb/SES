@@ -124,17 +124,19 @@
             		<div class="row">
                 		<h3><span class="glyphicon glyphicon-facetime-video" style="color: #337ab7"></span> Vídeos</h3>
                 		<p>Material em vídeo</p>
-                		<a class="btn btn-primary" onclick="loadVideos(1)">Vídeos <span class="glyphicon glyphicon-chevron-right"></span></a>
+                		<!--<a class="btn btn-primary" onclick="loadVideos(1)">Vídeos <span class="glyphicon glyphicon-chevron-right"></span></a>-->
+                		 <a class="btn btn-primary" onclick="loadVideos(3)">Vídeos <span class="glyphicon glyphicon-chevron-right"></span></a> 
                 	</div>
                 	<div class="row">
                 		<h3><span class="glyphicon glyphicon-book" style="color: #337ab7"></span> Material extra</h3>
                 		<p>Material de blogs e textos</p>
-                		<a class="btn btn-primary" href="linkLicao1.jsp">Material extra <span class="glyphicon glyphicon-chevron-right"></span></a>
+                		<a class="btn btn-primary" href="linkLicao1.html">Material extra <span class="glyphicon glyphicon-chevron-right"></span></a>
                 	</div>
                 	<div class="row">
                 		<h3><span class="glyphicon glyphicon-pencil" style="color: #337ab7"></span> Exercícios</h3>
                 		<p>Exercite o conhecimento adquirido</p>
-                		<a class="btn btn-primary" onclick="loadQuestions(1)" >Exercícios <span class="glyphicon glyphicon-chevron-right"></span></a>
+                		<!--<a class="btn btn-primary" onclick="loadQuestions(1)" >Exercícios <span class="glyphicon glyphicon-chevron-right"></span></a>-->
+                		<a class="btn btn-primary" onclick="loadQuestions(3)" >Exercícios <span class="glyphicon glyphicon-chevron-right"></span></a>
                 	</div>
             </div>
         </div>
@@ -158,10 +160,12 @@
             type:'get',
             cache:false,
             success:function(data){
-            	window.location = ("/ProjetoSI/videoLicao" + lessonId + ".jsp");
+            	//window.location = ("/ProjetoSI/videoLicao" + lessonId + ".jsp");
+            	window.location = ("/ProjetoSI/videoLicao" + (lessonId - 2) + ".jsp");
             },
             error:function(){
-            	window.location = ("/ProjetoSI/videoLicao" + lessonId + ".jsp");
+            	//window.location = ("/ProjetoSI/videoLicao" + lessonId + ".jsp");
+            	window.location = ("/ProjetoSI/videoLicao" + (lessonId - 2) + ".jsp");
             }
 		})
 	}

@@ -28,6 +28,10 @@ public class Question implements Serializable {
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "quiz_id", referencedColumnName = "id", nullable = false)
 	public Quiz quiz;
+	
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "subject_id", referencedColumnName = "id", nullable = false)
+	public Subject subject;
 
 	@OneToMany(fetch = FetchType.EAGER,mappedBy = "question")
 	private List<Answer> answers;
@@ -70,6 +74,14 @@ public class Question implements Serializable {
 
 	public void setAnswers(List<Answer> answers) {
 		this.answers = answers;
+	}	
+
+	public Subject getSubject() {
+		return subject;
+	}
+
+	public void setSubject(Subject subject) {
+		this.subject = subject;
 	}
 
 	public Question() {

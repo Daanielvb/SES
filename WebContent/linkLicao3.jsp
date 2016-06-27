@@ -1,6 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>859-1" ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
@@ -25,7 +25,43 @@
     	</style>
 	</head>
 	<body>
-		<%@ include file="header.jsp" %>
+		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        	<div class="container">
+            	<!-- Brand and toggle get grouped for better mobile display -->
+            		<div class="navbar-header">
+                		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    		<span class="sr-only">Toggle navigation</span>
+                    		<span class="icon-bar"></span>
+                    		<span class="icon-bar"></span>
+                    		<span class="icon-bar"></span>
+                		</button>
+                		<a class="navbar-brand" href="index.html"><span class="glyphicon glyphicon-home"></span> PyLearning</a>
+            		</div>
+            	<!-- Collect the nav links, forms, and other content for toggling -->
+            	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                	<ul class="nav navbar-nav navbar-right">
+                    	<li>
+                        	<a href="licao.jsp"><span class="glyphicon glyphicon-th-list"></span> Lições</a>
+                    	</li>
+                    	<li class="dropdown">
+                        	<a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon glyphicon-user"></span> Usuario <span class="glyphicon glyphicon-triangle-bottom"></span></a>
+                        	<ul class="dropdown-menu">
+                            	<li>
+                                	<a href="estatisticas.jsp"><span class="glyphicon glyphicon-stats"></span> Estatisticas</a>
+                                	<a href="alterarUser.jsp"><span class="glyphicon glyphicon glyphicon-cog"></span> Configurações</a>
+                            	</li>
+                            		<li role="separator" class="divider"></li>
+                            	<li>
+                                	<a href="#"><span class="glyphicon glyphicon glyphicon-log-out"></span> Sair</a>
+                            	</li>
+                        	</ul>
+                    	</li>
+                	</ul>
+            	</div>
+            	<!-- /.navbar-collapse -->
+        	</div>
+        <!-- /.container -->
+    	</nav>
 		
 		    <!-- Page Content -->
     <div class="container">
@@ -35,7 +71,7 @@
             <div class="col-lg-12">
             <h3>Material Extra</h3>
                 <ol class="breadcrumb">
-                	<li><a href="aulaLicao1.jsp">Lição 1</a></li>
+                	<li><a href="aulaLicao3.jsp">Lição 3</a></li>
                 	<li class="active">Material extra</li>
                 </ol>
             </div>
@@ -47,9 +83,9 @@
         		<h1>Links</h1>
         	</div>
         		<div class="text-right">
-        		<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal1">
- 				 Link 1
-				</button>
+        		    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal1">
+ 				        Link 1
+				        </button>
                 <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal2">
                  Link 2
                 </button>
@@ -71,12 +107,6 @@
                 <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal8">
                  Link 8
                 </button>
-                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal9">
-                 Link 9
-                </button>
-                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal10">
-                 Link 10
-                </button>
         		</div>
         	</div>
         </hr>       
@@ -93,10 +123,10 @@
         <h4 class="modal-title" id="myModal1Label">Material extra</h4>
       </div>
       <div class="modal-body">
-        Wiki em português sobre Python
+        Aprendendo a programar em python estruturas condicionais  If
       </div>
       <div class="modal-footer">
-        <form action="http://wiki.python.org.br/">
+        <form action="http://www.devmedia.com.br/aprendendo-a-programar-em-python-estruturas-condicionais-if/17358">
             <input type="submit" class="btn btn-primary" value="Ir para página">
         </form>
 
@@ -113,10 +143,10 @@
         <h4 class="modal-title" id="myModal2Label">Material extra</h4>
       </div>
       <div class="modal-body">
-        Python/Conceitos básicos/Tipos e operadores
+        Estruturas condicionais em python (Parte 1)
       </div>
       <div class="modal-footer">
-        <form action="https://pt.wikibooks.org/wiki/Python/Conceitos_b%C3%A1sicos/Tipos_e_operadores ">
+        <form action="http://programeempython.com.br/blog/estruturas-condicionais-em-python-parte-1/">
             <input type="submit" class="btn btn-primary" value="Ir para página">
         </form>
 
@@ -133,10 +163,10 @@
         <h4 class="modal-title" id="myModal3Label">Material extra</h4>
       </div>
       <div class="modal-body">
-        Tipos numéricos integrados de Python
+        Estruturas condicionais em python (Parte 2)
       </div>
       <div class="modal-footer">
-        <form action="http://www.ibm.com/developerworks/br/library/os-python1/ ">
+        <form action="http://programeempython.com.br/blog/estruturas-condicionais-em-python-parte-2/">
             <input type="submit" class="btn btn-primary" value="Ir para página">
         </form>
 
@@ -153,10 +183,10 @@
         <h4 class="modal-title" id="myModal4Label">Material extra</h4>
       </div>
       <div class="modal-body">
-        Tipos Básicos
+        Aprendendo python -4- estruturas de decisão
       </div>
       <div class="modal-footer">
-        <form action="http://www.dcc.ufrj.br/~fabiom/mab225/02tipos.pdf ">
+        <form action="https://dtutoriais.wordpress.com/2010/07/20/aprendendo-python-4-estruturas-de-decisao/">
             <input type="submit" class="btn btn-primary" value="Ir para página">
         </form>
 
@@ -173,10 +203,10 @@
         <h4 class="modal-title" id="myModal5Label">Material extra</h4>
       </div>
       <div class="modal-body">
-        Dicionários em Python
+        Estruturas de repetição (Parte 1) - while
       </div>
       <div class="modal-footer">
-        <form action="http://www3.ifrn.edu.br/~jurandy/fdp/doc/aprenda-python/capitulo_10.html ">
+        <form action="http://programeempython.com.br/blog/estruturas-de-repeticao-parte-1-while/">
             <input type="submit" class="btn btn-primary" value="Ir para página">
         </form>
 
@@ -193,10 +223,10 @@
         <h4 class="modal-title" id="myModal6Label">Material extra</h4>
       </div>
       <div class="modal-body">
-        Tuplas em python
+        Estrutura de repetição (Parte 2) - for
       </div>
       <div class="modal-footer">
-        <form action="http://www3.ifrn.edu.br/~jurandy/fdp/doc/aprenda-python/capitulo_09.html ">
+        <form action="http://programeempython.com.br/blog/estruturas-de-repeticao-parte-2-for/">
             <input type="submit" class="btn btn-primary" value="Ir para página">
         </form>
 
@@ -213,10 +243,10 @@
         <h4 class="modal-title" id="myModal7Label">Material extra</h4>
       </div>
       <div class="modal-body">
-        Conceitos básicos, variáveis e indicadores
+        Curso de python  aula 11  estrutura de repetição for e while
       </div>
       <div class="modal-footer">
-        <form action="https://pt.wikibooks.org/wiki/Python/Conceitos_b%C3%A1sicos/Vari%C3%A1veis_e_identificadores ">
+        <form action="https://desenvolvo.wordpress.com/2013/03/18/curso-de-python-aula-11-estruturas-de-repeticao-for-e-while/">
             <input type="submit" class="btn btn-primary" value="Ir para página">
         </form>
 
@@ -233,50 +263,10 @@
         <h4 class="modal-title" id="myModal8Label">Material extra</h4>
       </div>
       <div class="modal-body">
-        Variáveis, expressões e comandos
+        Aprendendo python 5- laços de repetição
       </div>
       <div class="modal-footer">
-        <form action="http://www3.ifrn.edu.br/~jurandy/fdp/doc/aprenda-python/capitulo_02.html">
-            <input type="submit" class="btn btn-primary" value="Ir para página">
-        </form>
-
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="myModal9" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModal9Label">Material extra</h4>
-      </div>
-      <div class="modal-body">
-        Introdução à Programação (Iniciantes)
-      </div>
-      <div class="modal-footer">
-        <form action="http://www.livrariacultura.com.br/p/introducao-a-programacao-com-python-42273748?id_link=8787&adtype=pla&gclid=CKXxyPHJqcwCFYyAkQod1u4IMA">
-            <input type="submit" class="btn btn-primary" value="Ir para página">
-        </form>
-
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="myModal10" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModal10Label">Material extra</h4>
-      </div>
-      <div class="modal-body">
-        Python Para Desenvolvedores
-      </div>
-      <div class="modal-footer">
-        <form action="https://ark4n.files.wordpress.com/2010/01/python_para_desenvolvedores_2ed.pdf">
+        <form action="https://dtutoriais.wordpress.com/2010/07/24/aprendendo-python-5-lacos-de-repeticao/">
             <input type="submit" class="btn btn-primary" value="Ir para página">
         </form>
 

@@ -50,6 +50,20 @@ public class QuestionService {
 		questionDAO.deleteAll();
 		questionDAO.closeCurrentSessionwithTransaction();
 	}
+	
+	public List<Question> findEasyQuestionsByLessonId(int lessonId){
+		questionDAO.openCurrentSession();
+		List <Question> qs = questionDAO.findEasyQuestionsByLessonId(lessonId);
+		questionDAO.closeCurrentSession();
+		return qs;
+	}
+	
+	public List<Question> findHardQuestionsByLessonId(int lessonId){
+		questionDAO.openCurrentSession();
+		List <Question> qs = questionDAO.findHardQuestionsByLessonId(lessonId);
+		questionDAO.closeCurrentSession();
+		return qs;
+	}
 
 	public QuestionDAO QuestionDAO() {
 		return questionDAO;

@@ -23,6 +23,10 @@ public class QuizDAO extends GenericDAO {
 	public void update(Quiz entity) {
 		getCurrentSession().update(entity);
 	}
+	
+	public void update(QuizTracking entity) {
+		getCurrentSession().update(entity);
+	}
 
 	public Quiz findById(int id) {
 		Quiz Quiz = (Quiz) getCurrentSession().get(Quiz.class, id);

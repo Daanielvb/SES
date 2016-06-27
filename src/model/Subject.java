@@ -21,9 +21,12 @@ public class Subject implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
+	
 	private String name;
+	
 	@Column(name = "text_beginner")
 	private String textBeginner;
+	
 	@Column(name = "text_adv")
 	private String textAdv;
 	private int difficulty;

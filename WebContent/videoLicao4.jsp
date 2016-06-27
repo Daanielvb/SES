@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 	<head>
@@ -24,7 +25,43 @@
     	</style>
 	</head>
 	<body>
-		<%@ include file="header.jsp" %>
+		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        	<div class="container">
+            	<!-- Brand and toggle get grouped for better mobile display -->
+            		<div class="navbar-header">
+                		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    		<span class="sr-only">Toggle navigation</span>
+                    		<span class="icon-bar"></span>
+                    		<span class="icon-bar"></span>
+                    		<span class="icon-bar"></span>
+                		</button>
+                		<a class="navbar-brand" href="index.html"><span class="glyphicon glyphicon-home"></span> PyLearning</a>
+            		</div>
+            	<!-- Collect the nav links, forms, and other content for toggling -->
+            	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                	<ul class="nav navbar-nav navbar-right">
+                    	<li>
+                        	<a href="licao.jsp"><span class="glyphicon glyphicon-th-list"></span> Lições</a>
+                    	</li>
+                    	<li class="dropdown">
+                        	<a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon glyphicon-user"></span> Usuario <span class="glyphicon glyphicon-triangle-bottom"></span></a>
+                        	<ul class="dropdown-menu">
+                            	<li>
+                                	<a href="estatisticas.jsp"><span class="glyphicon glyphicon-stats"></span> Estatisticas</a>
+                                	<a href="alterarUser.jsp"><span class="glyphicon glyphicon glyphicon-cog"></span> Configurações</a>
+                            	</li>
+                            		<li role="separator" class="divider"></li>
+                            	<li>
+                                	<a href="#"><span class="glyphicon glyphicon glyphicon-log-out"></span> Sair</a>
+                            	</li>
+                        	</ul>
+                    	</li>
+                	</ul>
+            	</div>
+            	<!-- /.navbar-collapse -->
+        	</div>
+        <!-- /.container -->
+    	</nav>
 		
 		    <!-- Page Content -->
     <div class="container">
@@ -34,33 +71,23 @@
             <div class="col-lg-12">
             <h3>Material Extra</h3>
                 <ol class="breadcrumb">
-                	<li><a href="aulaLicao1.jsp">Tipos Primitivos e Variáveis</a></li>
+                	<li><a href="aulaLicao4.jsp">Funções</a></li>
                 	<li class="active">Material extra</li>
                 </ol>
             </div>
         </div>
         </hr>
         <hr>
-        <h2> Vídeos já assitidos </h2>	
-        <c:forEach items="${vtracking}" var="vts" varStatus="myIndex">
-		<p> ID: ${vts.video.id} - Nome: ${vts.video.name}</p>
-		</c:forEach>
         <div class="row">
-        
         	<div class="col-lg-12">
-        		<h1>Tópico 1.2</h1>
+        		<h1>Tópico 4.1</h1>
         	</div>
         		<div class="text-right">
-        		
-        		<button type="button" onclick="createVideoTracking(1)" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal1">
+        		<button id = "22" onclick="createVideoTracking(22)" type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal1">
  				 Video 1
 				</button>
-				 
-                <button type="button" onclick="createVideoTracking(2)" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal2">
+                <button id = "23" onclick="createVideoTracking(23)" type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal2">
                  Video 2
-                </button>
-                <button type="button" onclick="createVideoTracking(3)" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal3">
-                 Video 3
                 </button>
         		</div>
         	</div>
@@ -68,17 +95,28 @@
         <hr>
         <div class="row">
             <div class="col-lg-12">
-                <h1>Tópico 1.3</h1>
+                <h1>Tópico 4.2</h1>
             </div>
                 <div class="text-right">
-                <button type="button" onclick="createVideoTracking(4)" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal4">
+                <button id = "24" onclick="createVideoTracking(24)" type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal3">
                  Video 1
                 </button>
-                <button type="button" onclick="createVideoTracking(5)" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal5">
-                 Video 2
+                </div>
+            </div>
+        </hr>
+        <hr>
+        <div class="row">
+            <div class="col-lg-12">
+                <h1>Tópico 4.3</h1>
+            </div>
+                <div class="text-right">
+                <button id = "25" type="button" onclick="createVideoTracking(25)" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal4">
+                 Video 1
                 </button>
                 </div>
-            </div>      
+            </div>
+        </hr>       
+        </div>       
         </div>
     </div>
     <!-- /.container -->
@@ -93,7 +131,7 @@
       </div>
       <div class="modal-body">
       	<div class="embed-responsive embed-responsive-16by9">
- 		 	<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/SYioCdLPmfw"></iframe>
+ 		 	<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/ruHkhrXmTRE"></iframe>
 		</div>
       </div>
       <div class="modal-footer">
@@ -112,7 +150,7 @@
       </div>
       <div class="modal-body">
         <div class="embed-responsive embed-responsive-16by9">
-            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/jcAYuBI32mg "></iframe>
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/JIl7XZ6nKng"></iframe>
         </div>
       </div>
       <div class="modal-footer">
@@ -131,7 +169,7 @@
       </div>
       <div class="modal-body">
         <div class="embed-responsive embed-responsive-16by9">
-            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/ezumS6fmV9A "></iframe>
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/UKqkEbDayoM"></iframe>
         </div>
       </div>
       <div class="modal-footer">
@@ -150,26 +188,7 @@
       </div>
       <div class="modal-body">
         <div class="embed-responsive embed-responsive-16by9">
-            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/jT0MOEKnauM"></iframe>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="myModal5" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModal5Label">Videos</h4>
-      </div>
-      <div class="modal-body">
-        <div class="embed-responsive embed-responsive-16by9">
-            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/B1_xcXDNafc"></iframe>
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/f-WFYiebIEI"></iframe>
         </div>
       </div>
       <div class="modal-footer">
@@ -184,7 +203,8 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
-    <script>
+	
+	<script>
 	
 	function createVideoTracking(videoId){
 	         $.ajax({
@@ -203,5 +223,4 @@
 	}
 	
 	</script>
-		
 </body>

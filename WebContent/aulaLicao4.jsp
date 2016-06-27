@@ -34,43 +34,87 @@
         <hr>
         <div class="row">
             <div class="col-lg-12">
-                <h1>Lição 4</h1>
+                <h1>4 - Funções</h1>
             </div>
         </div>
-        <!-- /.row -->
-        </hr>
-
-
         <div class="row">
             <div class="col-md-9 aula" >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed volutpat aliquam felis. Suspendisse imperdiet cursus augue, eget vulputate nulla vulputate eu. Sed sed dolor blandit, rhoncus odio quis, pretium erat. In tellus ex, tincidunt eu magna et, pulvinar convallis ex. Pellentesque gravida dolor ut augue scelerisque iaculis. Phasellus massa nibh, molestie et diam eget, convallis ultrices sapien. Donec pharetra diam at ipsum convallis, ac lobortis metus cursus. Aliquam bibendum turpis viverra interdum dictum. Donec aliquet sapien sit amet dignissim suscipit. Duis quis tortor at libero cursus convallis. Vivamus aliquet, neque sit amet hendrerit congue, nisi ligula ultrices purus, et eleifend odio purus eget nisi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus non elementum augue, quis cursus erat. Aliquam et elit a dolor auctor elementum.
+                <b>4.1 - Introdução</b>
+                <p>Uma função é um bloco de código organizado e reusável que é utilizado para desempenhar uma ação simples e relacionada. As funções dão à aplicação uma melhor modularidade e um grau maior de reuso de código. Python já vem com diversas funções implementadas (built-in) mas você pode criar suas próprias funções. A sintaxe básica para a definição de função em Python é:</p>
 
-Nulla mollis nec eros nec pretium. Donec vel nibh nec urna blandit molestie. Cras at risus elementum, lobortis nunc vel, gravida sem. Proin non sollicitudin orci, ac tristique nisl. Donec consequat ut massa in ultricies. Integer fermentum, lorem nec volutpat fringilla, tortor eros facilisis dui, sed lacinia ante mi in neque. Ut at bibendum ex. Donec eget erat lorem. Pellentesque accumsan vulputate nibh sed hendrerit. Maecenas posuere, nisi non cursus fermentum, erat tellus eleifend nisi, sed placerat quam augue eget risus. Ut porta, ex porttitor tempor euismod, orci justo euismod orci, eget eleifend felis mi vehicula est. Aliquam in hendrerit lacus. Aliquam et orci dapibus, aliquet dolor nec, lacinia mi.
+                <p>Assim como faz com estruturas de controle, Python usa indentação para delimitar o corpo da definição da função. O exemplo a seguir coloca um código fatorial dentro do corpo da função, assim, podemos chamar a função fatorial para obter o fatorial de um número:</p>
 
-Maecenas arcu quam, blandit at sollicitudin eu, elementum ut enim. Nam ultricies consequat dignissim. Sed condimentum scelerisque iaculis. Sed scelerisque purus ac lorem tincidunt gravida. Suspendisse potenti. Praesent fermentum massa ac interdum vehicula. Nam fringilla leo in velit molestie, sed mollis quam convallis. Suspendisse sapien lacus, finibus quis ullamcorper sed, porttitor sed velit. Phasellus suscipit mollis felis vitae imperdiet.
+                <P><img src="images/Imagem1Licao4.png"></P></P>
 
-Sed eget lacinia orci, ultricies tempor est. Praesent venenatis, lectus ut ultricies condimentum, orci lorem scelerisque velit, id suscipit sapien odio at lectus. Aliquam neque elit, efficitur a pulvinar placerat, gravida eu lorem. Suspendisse potenti. Ut mollis tincidunt fringilla. Aliquam erat volutpat. Sed eget metus eget sapien blandit porttitor. Nam eu enim turpis. Morbi ultrices, velit sit amet volutpat convallis, lacus metus egestas neque, sed blandit felis risus ut massa. Etiam elit dui, interdum ut ultricies id, pulvinar vitae risus. Proin ante neque, commodo a eleifend ac, viverra eu odio.
+                <p>Todos os procedimentos de Python são funções; se não está explicito o return no corpo do procedimento, então, o valor especial none é retornado, e se return arg é executado, então, o valor arg será imediatamente retornado. Nada mais na função é executado uma vez que o return é executado.</p>
 
-Donec at maximus ex. Aenean a diam vel orci pretium varius id a mi. Ut ac neque tortor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce luctus turpis ac magna efficitur tincidunt. Donec ac lacus sem. Quisque at felis a sapien sollicitudin hendrerit. Vestibulum quis quam ipsum. Aenean et odio eu mi accumsan imperdiet. Phasellus sollicitudin consequat facilisis. Nulla a eleifend turpis. Praesent pulvinar felis posuere lectus convallis, non aliquam quam placerat. Vestibulum scelerisque, urna ut feugiat cursus, lorem dolor commodo leo, finibus vestibulum nulla quam ut lorem. Nullam non eros nec leo lacinia faucibus ac id dolor. Fusce mattis cursus lacus dictum tincidunt.
+                <b>4.2 - Parâmetros</b>
+                <p>A maioria das funções precisam de parâmetros, e cada linguagem tem sua própria especificação de como os parâmetros são definidos. Python é flexível e fornece três opções de definição de parâmetros.</p>
+
+                <b>4.2.1 - Parâmetros</b>
+                <p>A maneira mais simples para passar parâmetros para uma função em Python é por posição. Na primeira linha da função, você especifica nomes de variáveis de definição para cada parâmetro; quando a função é chamada, os parâmetros utilizados no código são compatíveis com as variáveis de parâmetro de função com base em sua ordem. A função a seguir calcula x elevado a y:</p>
+
+                <P><img src="images/Imagem2Licao4.png"></P></P>
+
+                <p>Este método requer que os números de parâmetros usados pelo código de chamada correspondam ao número de parâmetros na definição da função, ou uma exceção TypeError será mostrada:</p>
+
+                <P><img src="images/Imagem3Licao4.png"></P></P>
+
+                <p>A função a seguir também calcula x elevado a y. Mas se y não for dado na chamada da função, o valor padrão de 2 é usado, e a função vira apenas uma função quadrado:</p>
+
+                <P><img src="images/Imagem4Licao4.png"></P></P>
+
+                <b>4.2.2 - Passar argumentos pelo nome do parâmetro</b>
+
+                <p>Você também pode passar argumentos para uma função usando o nome correspondente ao parâmetro de função, em vez de a sua posição. Continuando com o exemplo anterior, podemos escrever:</p>
+
+                <P><img src="images/Imagem5Licao4.png"></P></P>
+
+                <b>4.3 - Variável local e global</b>
+
+                <p>Vamos voltar a nossa função fator do começo desse capítulo:</p>
+
+                <P><img src="images/Imagem6Licao4.png"></P></P>
+
+                <p>Ambas as variáveis r e x são locais para qualquer chamada particular da função fatorial; Alterações nelas feitas quando a função está em execução não têm efeito sobre quaisquer variáveis fora da função. Todas as variáveis na lista de parâmetros de uma função, e quaisquer variáveis criadas dentro de uma função por uma atribuição (como r = 1 na verdade), são locais para a função.</p>
+
+                <p>Você pode explicitamente fazer uma variável global, declarando-a antes da variável ser usada, utilizando a instrução global. As variáveis globais podem ser acessadas e alteradas pela função. Elas existem fora da função e também podem ser acessadas e alteradas por outras funções que lhes declarar global ou pelo código que não está dentro de uma função. Vamos ver um exemplo para ver a diferença entre variáveis locais e globais:</p>
+
+                <P><img src="images/Imagem7Licao4.png"></P></P>
+
+                <p>Isto define uma função que trata a como uma variável global e b como uma variável local e tentativas de modificar tanto a e b.</p>
+
+                <p>Agora, teste esta função:</p>
+
+                <P><img src="images/Imagem8Licao4.png"></P></P>
+
+                <p>A atribuição a um dentro de diversao é uma atribuição para a variável global que também existe fora de diversao. Porque a é designado global em diversao, a atribuição modifica essa variável global para armazenar o valor 1 em vez do valor "one". O mesmo não é verdade para b. A variável local chamada de b dentro de diversao começa referindo-se ao mesmo valor que a variável b fora de diversao, mas a atribuição provoca b para apontar para um novo valor que é local para a função diversao.</p>
+
+                <p>Para fixar todo o conteúdo visto nessa aula é recomendável que sejam realizados os exercícios de fixação e que sejam seguidas as instruções oferecidas no portal para tirar suas dúvidas.</p>
             </div>
             <div class="col-md-3">
             		<div class="row">
                 		<h3><span class="glyphicon glyphicon-facetime-video" style="color: #337ab7"></span> Vídeos</h3>
                 		<p>Material em vídeo</p>
-                		<a class="btn btn-primary" href="video4.jsp">Vídeos <span class="glyphicon glyphicon-chevron-right"></span></a>
+                		<a class="btn btn-primary" onclick="loadVideos(6)">Vídeos <span class="glyphicon glyphicon-chevron-right"></span></a> 
                 	</div>
                 	<div class="row">
                 		<h3><span class="glyphicon glyphicon-book" style="color: #337ab7"></span> Material extra</h3>
                 		<p>Material de blogs e textos</p>
-                		<a class="btn btn-primary" href="link4.jsp">Material extra <span class="glyphicon glyphicon-chevron-right"></span></a>
+                		<a class="btn btn-primary" href="linkLicao4.jsp">Material extra <span class="glyphicon glyphicon-chevron-right"></span></a>
                 	</div>
                 	<div class="row">
                 		<h3><span class="glyphicon glyphicon-pencil" style="color: #337ab7"></span> Exercícios</h3>
                 		<p>Exercite o conhecimento adquirido</p>
-                		<a class="btn btn-primary" href="exercicio4.jsp">Exercícios <span class="glyphicon glyphicon-chevron-right"></span></a>
+                		<a class="btn btn-primary" onclick="loadQuestions(6)" >Exercícios <span class="glyphicon glyphicon-chevron-right"></span></a>
                 	</div>
             </div>
         </div>
+        
+        <!-- /.row -->
+        </hr>
+
+		
         <!-- /.row -->
 
         <hr>
@@ -93,6 +137,43 @@ Donec at maximus ex. Aenean a diam vel orci pretium varius id a mi. Ut ac neque 
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
-		
+	<script>
+	
+	function loadVideos(lessonId){
+		$.ajax({
+            url:'LessonController',
+            data:{lessonId:lessonId,action:"video"},
+            type:'get',
+            cache:false,
+            success:function(data){
+            	//window.location = ("/ProjetoSI/videoLicao" + lessonId + ".jsp");
+            	window.location = ("/ProjetoSI/videoLicao" + (lessonId - 2) + ".jsp");
+            },
+            error:function(){
+            	//window.location = ("/ProjetoSI/videoLicao" + lessonId + ".jsp");
+            	window.location = ("/ProjetoSI/videoLicao" + (lessonId - 2) + ".jsp");
+            }
+		})
+	}
+	
+	function loadQuestions(lessonId){
+         $.ajax({
+            url:'LessonController',
+            data:{lessonId:lessonId,action:"question"},
+            type:'get',
+            cache:false,
+            success:function(data){
+            	window.location = ("/ProjetoSI/exercicio.jsp");
+            },
+            error:function(){
+             	console.log("deu ruim");
+             	window.location = ("/ProjetoSI/exercicio.jsp");
+            }
+         }
+    );
+}
+	
+	
+	</script>	
 	</body>
 </html>

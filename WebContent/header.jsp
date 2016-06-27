@@ -18,7 +18,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="licao.jsp"><span class="glyphicon glyphicon-th-list"></span> Lições</a>
+                        <a href="home.jsp"><span class="glyphicon glyphicon-th-list"></span> Lições</a>
                     </li>
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon glyphicon-user"></span> ${fn:toUpperCase(user.name)}  <span class="glyphicon glyphicon-triangle-bottom"></span></a>

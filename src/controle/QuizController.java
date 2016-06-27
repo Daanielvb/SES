@@ -2,6 +2,7 @@ package controle;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -31,20 +32,29 @@ public class QuizController extends HttpServlet {
             throws ServletException, IOException, SQLException {
 		try{
 			response.setContentType("text/html;charset=UTF-8");
-			int quizId = Integer.parseInt(request.getParameter("quizId"));
-			float score = Float.parseFloat(request.getParameter("score"));
-			String questionId = request.getParameter("questionsId");
-			Quiz q = qs.findById(quizId);
-			User u = (User) request.getSession().getAttribute("user");
-			QuizTracking qt = qs.findQuizTrackingByQuizAndUserId(u.getId(), quizId);
-			if(qt == null){
-				QuizTracking qtr = new QuizTracking();
-				qtr.setQuiz(q);
-				qtr.setUser(u);
-				qtr.setScore(score);
-				qs.persist(qtr);
-			}
+			String action = request.getParameter("action");
+			if(action.equals("submit")){
+				//int quizId = Integer.parseInt(request.getParameter("quizId"));
+				//float score = Float.parseFloat(request.getParameter("score"));
+				String json = request.getParameter("simulado");
+				//Quiz q = qs.findById(quizId);
+				//User u = (User) request.getSession().getAttribute("user");
+				QuizTracking qt = qs.findQuizTrackingByQuizAndUserId(1, 1);
+				if(qt == null){
+			//		QuizTracking qtr = new QuizTracking();
+				//	qtr.setQuiz(q);
+				//	qtr.setUser(u);
+				//	qtr.setScore(score);
+				//	qtr.setQuizLevel("easy");
+				//	qs.persist(qtr);
+				}
+				else{
+					//qt.setScore(qt.getScore() + score);
+					//qt.setQuizLevel("hard");
+					//qs.update(qt);
+				}
 			//return response.setStatus(HttpServletResponse.SC_ACCEPTED);
+			}
 		}
 		catch (Exception e) {
 			e.printStackTrace();

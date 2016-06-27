@@ -17,16 +17,6 @@
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom CSS -->
-    <link href="css/heroic-features.css" rel="stylesheet">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
 </head>
 
 <body>
@@ -45,18 +35,25 @@
         </div>
         </hr>
        	<hr>
+       	<c:choose>
+    <c:when test="${(not empty qtracking) and (qtracking.quizLevel != 'easy')}">
+        <h1> Exercício já respondido</h1>
+    </c:when>
+    <c:otherwise>	
        	<div class="panel panel-primary">
        		<div class="panel-heading">
        			<h3 class="panel-title">${quiz.lesson.theme} </h3>
+       			<input type="hidden" class="quizId" value="${quiz.id}"/>
        		</div>
        		<div class="panel-body">
        			<c:forEach items="${questions}" var="qts" varStatus="myQuest">
        				<div class="panel panel-default" >
 		       			<div class="panel-heading">	
-		       					Questão ${myQuest.index + 1} - ${qts.question}
+		       					${myQuest.index + 1})  ${qts.question} 
 		       			</div>
-		       			<input type="hidden" value="${qts.id}"/>
-						
+		       			<input type="hidden" class="qtsId" value="${qts.id}"/>
+						<input type="hidden" class="sbjName" value="${qts.subject.name}"/>
+						<input type="hidden" class="sbjId" value="${qts.subject.id}"/>
 					<c:forEach items="${qts.answers}" var="qtsA" varStatus="myQuestA">
 					<div class="input-group">
        						<input type="radio" id="${qtsA.id}" name="${qts.id}" value="${qtsA.isCorrect}" />
@@ -73,8 +70,30 @@
        				</div>
        			
        		</div>	
+		</c:otherwise>
+	</c:choose>
+
        	</div>
        	</hr>
+    </div>
+    <div>
+    <h2> Resultado :</h2>
+    <ul> 
+    <li>
+    
+    
+    </li>
+    <h3> Resultado da avaliação:</h3><p id="score"></p>
+    <h3> Questoes corretas:</h3><p id="questoesOK"></p>
+    <h3> Questoes erradas:</h3><p id="questoesErr"></p>
+    <h3> Sugestoes:</h3> <p id="sugestoes"></p>
+     <li>
+    
+    
+    </li>
+    
+    </ul>
+    
     </div>
     <!-- /.container -->
 
@@ -85,36 +104,58 @@
     <script src="js/bootstrap.min.js"></script>
 	<script>
 	
-	function submitQuiz(quizId){
-		score = 0;
+
+	
+	function submitQuiz(){
+		var quizId = $(".quizId").val();
 		var answers = $('input[type=radio]:checked');
-		var questions = $("input[type=hidden]");
-		var questionsId = [];
-		for (var i = 0; i < answers.length; i++){
-			questionsId.push(questions[i].value);
-			if(answers[i].value == "true")
-				score++;
+		var questions = $(".qtsId");
+		var subjectId = $(".sbjId");
+		var subjectName = $(".sbjName");
+		
+		var simulado = {
+				quizId : quizId,
+				correctQuestions : [],
+				wrongQuestions : [],
+				wrongSubjectsId : [],
+				wrongSubjectsName: [],
+				score: 0,
+				
+		};
+		
+		for (var i = 0; i < answers.length; i++){		
+			if(answers[i].value == "true"){
+				simulado.score += 1;
+				simulado.correctQuestions.push(questions[i].value);
+			}
+			else{
+				simulado.wrongQuestions.push(questions[i].value);
+				simulado.wrongSubjectsId.push(subjectId[i].value);
+				simulado.wrongSubjectsName.push(subjectName[i].value);
+			}
 		}
 		
-		console.log(score);
-		console.log(questionsId);
-		console.log(quizId);
 		
-		$.ajax({
-            url:'QuizController',
-            data:{quizId:quizId,questionsId:questionsId,score:score},
-            type:'get',
-            cache:false,
-            success:function(data){
-            	window.location = ("/ProjetoSI/exercicio.jsp");
-            },
-            error:function(){
-             	console.log("deu ruim");
-            }
-         }
-    );
-	}
-	
+        $.ajax({
+           url:'QuizController',
+           dataType:'json',
+           data: {
+        		   action:"submit",
+        		   simulado:JSON.stringify(simulado)
+        		   },
+           type:'get',
+           cache:false,
+           success:function(data){
+        	   console.log("sucess");
+           //	window.location = ("/ProjetoSI/exercicio.jsp");
+           },
+           error:function(){
+            	console.log("deu ruim");
+            	//window.location = ("/ProjetoSI/exercicio.jsp");
+           }
+        }
+   );
+}
 	
 	</script>
 </body>

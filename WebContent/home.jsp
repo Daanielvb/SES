@@ -79,43 +79,8 @@
                         <h3>Tipos primitivos e variáveis</h3>
                         <p>Lição sobre os conceitos basicos de tipos primitivos e variáveis</p>
                         <p>
-                            <a href="" onclick="createLessonTracking(1)" class="btn btn-primary text-center">Continuar</a> 
-                        </p>
-                        <c:forEach items="${lessonTrackings}" var="lts" varStatus="myIndex">
-							<c:if test="${lts.lesson.id == 1}">
-								<p class="seen"> Já assistida </p>
-							</c:if>
-						</c:forEach>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3 col-sm-6 hero-feature">
-                <div class="thumbnail">
-                    <img src="images/progress.png" alt="">
-                    <div class="caption">
-                        <h3>Operações</h3>
-                        <p>Lição sobre operações aritmeticas, lógicas e com strings</p>
-                        <p>
-                            <a href="#" onclick="createLessonTracking(2)" class="btn btn-primary text-center">Continuar</a> 
-                        </p>
-                        <c:forEach items="${lessonTrackings}" var="lts" varStatus="myIndex">
-							<c:if test="${lts.lesson.id == 2}">
-								<p class="seen"> Já assistida </p>
-							</c:if>
-						</c:forEach>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3 col-sm-6 hero-feature">
-                <div class="thumbnail">
-                    <img src="images/progress.png" alt="">
-                    <div class="caption">
-                        <h3>Estruturas de controle</h3>
-                        <p>Lição sobre as estruturas existentes no controle do código</p>
-                        <p>
-                            <a href="#" onclick="createLessonTracking(3)" class="btn btn-primary text-center">Continuar</a> 
+                        	<a href="#" onclick="createLessonTracking(3)" class="btn btn-primary text-center">Continuar</a>  
+                            <!--<a href="#" onclick="createLessonTracking(1)" class="btn btn-primary text-center">Continuar</a> -->
                         </p>
                         <c:forEach items="${lessonTrackings}" var="lts" varStatus="myIndex">
 							<c:if test="${lts.lesson.id == 3}">
@@ -130,13 +95,52 @@
                 <div class="thumbnail">
                     <img src="images/progress.png" alt="">
                     <div class="caption">
-                        <h3>Funções</h3>
-                        <p>Lição sobre o que são funções e como utilizá-las</p>
+                        <h3>Operações</h3>
+                        <p>Lição sobre operações aritmeticas, lógicas e com strings</p>
                         <p>
-                            <a href="#" onclick="createLessonTracking(4)" class="btn btn-primary text-center">Continuar</a> 
+                       	 <a href="#" onclick="createLessonTracking(4)" class="btn btn-primary text-center">Continuar</a>  
+                           <!-- <a href="#" onclick="createLessonTracking(2)" class="btn btn-primary text-center">Continuar</a>--> 
                         </p>
                         <c:forEach items="${lessonTrackings}" var="lts" varStatus="myIndex">
 							<c:if test="${lts.lesson.id == 4}">
+								<p class="seen"> Já assistida </p>
+							</c:if>
+						</c:forEach>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6 hero-feature">
+                <div class="thumbnail">
+                    <img src="images/progress.png" alt="">
+                    <div class="caption">
+                        <h3>Estruturas de controle</h3>
+                        <p>Lição sobre as estruturas existentes no controle do código</p>
+                        <p>
+                        	<a href="#" onclick="createLessonTracking(5)" class="btn btn-primary text-center">Continuar</a>  
+                            <!--<a href="#" onclick="createLessonTracking(3)" class="btn btn-primary text-center">Continuar</a>--> 
+                        </p>
+                        <c:forEach items="${lessonTrackings}" var="lts" varStatus="myIndex">
+							<c:if test="${lts.lesson.id == 5}">
+								<p class="seen"> Já assistida </p>
+							</c:if>
+						</c:forEach>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6 hero-feature">
+                <div class="thumbnail">
+                    <img src="images/progress.png" alt="">
+                    <div class="caption">
+                        <h3>Funções</h3>
+                        <p>Lição sobre o que são funções e como utilizá-las</p>
+                        <p>
+                        	<a href="#" onclick="createLessonTracking(6)" class="btn btn-primary text-center">Continuar</a> 
+                            <!--<a href="#" onclick="createLessonTracking(4)" class="btn btn-primary text-center">Continuar</a>-->  
+                        </p>
+                        <c:forEach items="${lessonTrackings}" var="lts" varStatus="myIndex">
+							<c:if test="${lts.lesson.id == 6}">
 								<p class="seen"> Já assistida </p>
 							</c:if>
 						</c:forEach>
@@ -175,13 +179,17 @@
 	            console.log(lessonId);
 	            switch(lessonId) {
 	            
-                case 1:
-                	window.location = ("/ProjetoSI/aulaLicao1.jsp");
+                case 3:
+                //case 1:
+                	window.location = "/ProjetoSI/aulaLicao1.jsp";
+                	console.log(window.location);
                     break;
-                case 2:
+                case 4:
+               // case 2:
                 	window.location = ("/ProjetoSI/aulaLicao2.jsp");
                     break;
-                case 3:
+               case 5:
+                //case 3:
                 	window.location = ("/ProjetoSI/aulaLicao3.jsp");
                     break;
                 default:

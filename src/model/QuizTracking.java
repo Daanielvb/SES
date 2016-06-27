@@ -30,6 +30,9 @@ public class QuizTracking implements Serializable {
 	private User user;
 	
 	private float score;
+	
+	@Column(name = "quiz_level")
+	private String quizLevel;
 
 	public QuizTracking() {
 	}
@@ -65,7 +68,14 @@ public class QuizTracking implements Serializable {
 	public void setScore(float score) {
 		this.score = score;
 	}
-	
-	
 
+	public String getQuizLevel() {
+		return quizLevel;
+	}
+
+	public void setQuizLevel(String quizLevel) {
+		this.quizLevel = quizLevel;
+	}
+	
+	
 }
