@@ -54,6 +54,7 @@
 		       			<input type="hidden" class="qtsId" value="${qts.id}"/>
 						<input type="hidden" class="sbjName" value="${qts.subject.name}"/>
 						<input type="hidden" class="sbjId" value="${qts.subject.id}"/>
+						<input type="hidden" class="points" value="${qts.difficulty}"/>
 					<c:forEach items="${qts.answers}" var="qtsA" varStatus="myQuestA">
 					<div class="input-group">
        						<input type="radio" id="${qtsA.id}" name="${qts.id}" value="${qtsA.isCorrect}" />
@@ -112,6 +113,7 @@
 		var questions = $(".qtsId");
 		var subjectId = $(".sbjId");
 		var subjectName = $(".sbjName");
+		var points = $(".points");
 		
 		var simulado = {
 				quizId : quizId,
@@ -120,6 +122,7 @@
 				wrongSubjectsId : [],
 				wrongSubjectsName: [],
 				score: 0,
+				points: 0
 				
 		};
 		
@@ -127,6 +130,7 @@
 			if(answers[i].value == "true"){
 				simulado.score += 1;
 				simulado.correctQuestions.push(questions[i].value);
+				simulado.points += points[i].value;
 			}
 			else{
 				simulado.wrongQuestions.push(questions[i].value);
@@ -134,28 +138,40 @@
 				simulado.wrongSubjectsName.push(subjectName[i].value);
 			}
 		}
+		//todo limpar valores repetidoss
+		uniqueList = [];
+		for (var i = 0; i < simulado.wrongSubjectsId.length; i++){
+			console.log(simulado.wrongSubjectsId[i]);
+			console.log(uniqueList.indexOf(simulado.wrongSubjectsId[i]));
+			if(uniqueList.indexOf(simulado.wrongSubjectsId[i]) == "-1")
+				uniqueList.push(simulado.wrongSubjectsId[i]);
+			}
 		
-		
-        $.ajax({
-           url:'QuizController',
-           dataType:'json',
-           data: {
-        		   action:"submit",
-        		   simulado:JSON.stringify(simulado)
-        		   },
-           type:'get',
-           cache:false,
-           success:function(data){
-        	   console.log("sucess");
-           //	window.location = ("/ProjetoSI/exercicio.jsp");
-           },
-           error:function(){
-            	console.log("deu ruim");
-            	//window.location = ("/ProjetoSI/exercicio.jsp");
-           }
+	
+	simulado.wrongSubjectsId = uniqueList;
+	
+	console.log(simulado);
+	$.ajax({
+        url:'QuizController',
+        dataType:'json',
+        data: {
+     		   action:"submit",
+     		   simulado:JSON.stringify(simulado)
+     		   },
+        type:'get',
+        cache:false,
+        success:function(data){
+     	   console.log("sucess");
+        	window.location = ("/ProjetoSI/result.jsp");
+        },
+        error:function(){
+         	console.log("deu ruim");
+         	window.location = ("/ProjetoSI/result.jsp");
         }
-   );
-}
+     }
+);
+	
+	}
 	
 	</script>
 </body>

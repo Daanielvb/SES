@@ -76,7 +76,7 @@
                 <div class="thumbnail">
                     <img src="images/progress.png" alt="">
                     <div class="caption">
-                        <h3>Tipos primitivos e variáveis</h3>
+                        <h3>1 - Tipos primitivos e variáveis</h3>
                         <p>Lição sobre os conceitos basicos de tipos primitivos e variáveis</p>
                         <p>
                         	<a href="#" onclick="createLessonTracking(3)" class="btn btn-primary text-center">Continuar</a>  
@@ -95,7 +95,7 @@
                 <div class="thumbnail">
                     <img src="images/progress.png" alt="">
                     <div class="caption">
-                        <h3>Operações</h3>
+                        <h3>2 - Operações</h3>
                         <p>Lição sobre operações aritmeticas, lógicas e com strings</p>
                         <p>
                        	 <a href="#" onclick="createLessonTracking(4)" class="btn btn-primary text-center">Continuar</a>  
@@ -114,7 +114,7 @@
                 <div class="thumbnail">
                     <img src="images/progress.png" alt="">
                     <div class="caption">
-                        <h3>Estruturas de controle</h3>
+                        <h3>3 - Estruturas de controle</h3>
                         <p>Lição sobre as estruturas existentes no controle do código</p>
                         <p>
                         	<a href="#" onclick="createLessonTracking(5)" class="btn btn-primary text-center">Continuar</a>  
@@ -134,7 +134,7 @@
                     <img src="images/progress.png" alt="">
                     <div class="caption">
                         <h3>Funções</h3>
-                        <p>Lição sobre o que são funções e como utilizá-las</p>
+                        <p>4 - Lição sobre o que são funções e como utilizá-las</p>
                         <p>
                         	<a href="#" onclick="createLessonTracking(6)" class="btn btn-primary text-center">Continuar</a> 
                             <!--<a href="#" onclick="createLessonTracking(4)" class="btn btn-primary text-center">Continuar</a>-->  

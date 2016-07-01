@@ -1,9 +1,10 @@
 package services;
 
+import java.util.ArrayList;
 import java.util.List;
 
-import dao.LinkDAO;
 import model.Link;
+import dao.LinkDAO;
 
 public class LinkService {
 	private static LinkDAO linkDAO;
@@ -53,6 +54,14 @@ public class LinkService {
 
 	public LinkDAO LinkDAO() {
 		return linkDAO;
+	}
+	
+	public List<Link> findLinksBySubjectId(int subjectId){
+		List <Link> links = new ArrayList<Link>();
+		linkDAO.openCurrentSession();
+		links = linkDAO.findLinksBySubject(subjectId);
+		linkDAO.closeCurrentSession();
+		return links;
 	}
 
 }

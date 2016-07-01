@@ -3,6 +3,7 @@
   <display-name>Pylearning</display-name>
   <welcome-file-list>
   	<welcome-file>login.jsp</welcome-file>
+  	<welcome-file>login2.jsp</welcome-file>
     <welcome-file>index.html</welcome-file>
     <welcome-file>index.htm</welcome-file>
     <welcome-file>index.jsp</welcome-file>
@@ -53,6 +54,15 @@
 <servlet-mapping>
   <servlet-name>LessonController</servlet-name>
   <url-pattern>/LessonController</url-pattern>
+</servlet-mapping>
+
+<servlet>
+  <servlet-name>QuizController</servlet-name>
+  <servlet-class>controle.QuizController</servlet-class>
+</servlet>
+<servlet-mapping>
+  <servlet-name>QuizController</servlet-name>
+  <url-pattern>/QuizController</url-pattern>
 </servlet-mapping>
 
 <listener>  

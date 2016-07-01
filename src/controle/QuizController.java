@@ -2,6 +2,7 @@ package controle;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -10,18 +11,31 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import model.Link;
 import model.Quiz;
 import model.QuizTracking;
+import model.Subject;
 import model.User;
+import model.Video;
+import services.LinkService;
 import services.QuizService;
-import services.UserService;
+import services.SubjectService;
+import services.VideoService;
+
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 
 @WebServlet(name = "QuizController", urlPatterns = {"/QuizController"})
 public class QuizController extends HttpServlet {
-
-	private UserService us;
 	
 	private QuizService qs;
+	
+	private VideoService vs;
+	
+	private LinkService ls;
+	
+	private SubjectService ss;
 
 	private static final long serialVersionUID = 1L;
 	
@@ -34,26 +48,50 @@ public class QuizController extends HttpServlet {
 			response.setContentType("text/html;charset=UTF-8");
 			String action = request.getParameter("action");
 			if(action.equals("submit")){
-				//int quizId = Integer.parseInt(request.getParameter("quizId"));
-				//float score = Float.parseFloat(request.getParameter("score"));
 				String json = request.getParameter("simulado");
-				//Quiz q = qs.findById(quizId);
-				//User u = (User) request.getSession().getAttribute("user");
+				JsonObject jsonObject = new JsonParser().parse(json).getAsJsonObject();
+				float score = Float.parseFloat(jsonObject.get("score").getAsString());
+				int quizId = Integer.parseInt(jsonObject.get("quizId").getAsString());
+				int points = Integer.parseInt(jsonObject.get("points").getAsString());
+				JsonArray subjectsId = jsonObject.get("wrongSubjectsId").getAsJsonArray();
+				ArrayList<Integer> subjects = new ArrayList<Integer>();
+				ArrayList <Video> videos = new ArrayList<Video>();
+				ArrayList <Link> links = new ArrayList<Link>();
+				ArrayList <String> subjectsTxt = new ArrayList<String>();
+				//TODO - Ler o array de subject e trazer os materiais (Link / Videos n assistidos)
+				for (int i = 0, size = subjectsId.size(); i < size; i++)
+			    {
+					int currentSubj = subjectsId.get(i).getAsInt();
+					subjects.add(currentSubj);
+					List<Video> vts = vs.findVideosBySubjectId(currentSubj);
+					List<Link> lts = ls.findLinksBySubjectId(currentSubj);
+					videos.addAll(vts);
+					links.addAll(lts);
+					subjectsTxt.add((((Subject)ss.findById(String.valueOf(currentSubj))).getTextAdv()));
+					
+			    }
+				request.getSession().setAttribute("links" , links);
+				request.getSession().setAttribute("videos" , videos);
+				request.getSession().setAttribute("subjects",subjectsTxt);
+				Quiz q = qs.findById(quizId);
+				User u = (User) request.getSession().getAttribute("user");
 				QuizTracking qt = qs.findQuizTrackingByQuizAndUserId(1, 1);
 				if(qt == null){
-			//		QuizTracking qtr = new QuizTracking();
-				//	qtr.setQuiz(q);
-				//	qtr.setUser(u);
-				//	qtr.setScore(score);
-				//	qtr.setQuizLevel("easy");
-				//	qs.persist(qtr);
+					QuizTracking qtr = new QuizTracking();
+					qtr.setQuiz(q);
+					qtr.setUser(u);
+					qtr.setScore(score);
+					qtr.setQuizLevel("easy");
+					qtr.setPoints(points);
+					qs.persist(qtr);
 				}
 				else{
-					//qt.setScore(qt.getScore() + score);
-					//qt.setQuizLevel("hard");
-					//qs.update(qt);
+					qt.setScore(qt.getScore() + score);
+					qt.setPoints(qt.getPoints() + points);
+					qt.setQuizLevel("hard");
+					qs.update(qt);
 				}
-			//return response.setStatus(HttpServletResponse.SC_ACCEPTED);
+				response.sendRedirect("/result.jsp");
 			}
 		}
 		catch (Exception e) {
@@ -67,6 +105,9 @@ public class QuizController extends HttpServlet {
             throws ServletException, IOException {
         try {        	
         	this.qs = new QuizService();
+        	this.vs = new VideoService();
+        	this.ls = new LinkService();
+        	this.ss = new SubjectService();
 			processRequest(request, response);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -79,6 +120,8 @@ public class QuizController extends HttpServlet {
             throws ServletException, IOException {
         try {   	
         	this.qs = new QuizService();
+        	this.vs = new VideoService();
+        	this.ls = new LinkService();
 			processRequest(request, response);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

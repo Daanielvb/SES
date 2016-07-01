@@ -17,7 +17,7 @@ public class SubjectDAO extends GenericDAO {
 		getCurrentSession().update(entity);
 	}
 
-	public Subject findById(String id) {
+	public Subject findById(int id) {
 		Subject subject = (Subject) getCurrentSession().get(Subject.class, id);
 		return subject;
 	}

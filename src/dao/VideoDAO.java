@@ -2,6 +2,9 @@ package dao;
 
 import java.util.List;
 
+import org.hibernate.Query;
+
+import model.User;
 import model.Video;
 
 public class VideoDAO extends GenericDAO {
@@ -38,5 +41,18 @@ public class VideoDAO extends GenericDAO {
 			delete(entity);
 
 		}
+	}
+	
+	@SuppressWarnings("unchecked")
+	public List <Video> findVideosBySubjectId(int subjectId){
+		List <Video> result = null;
+		try {
+			Query query = getCurrentSession().createQuery("from Video v where v.subjects.id =:subjectId ");
+			query.setParameter("subjectId", subjectId);
+			result = (List <Video>) query.list();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return result;
 	}
 }

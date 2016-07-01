@@ -26,14 +26,14 @@ public class SubjectService {
 
 	public Subject findById(String id) {
 		subjectDAO.openCurrentSession();
-		Subject subject = subjectDAO.findById(id);
+		Subject subject = subjectDAO.findById(Integer.parseInt(id));
 		subjectDAO.closeCurrentSession();
 		return subject;
 	}
 
 	public void delete(String id) {
 		subjectDAO.openCurrentSessionwithTransaction();
-		Subject subject = subjectDAO.findById(id);
+		Subject subject = subjectDAO.findById(Integer.parseInt(id));
 		subjectDAO.delete(subject);
 		subjectDAO.closeCurrentSessionwithTransaction();
 	}

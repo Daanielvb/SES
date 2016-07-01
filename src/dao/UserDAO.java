@@ -11,7 +11,7 @@ import org.hibernate.cfg.Configuration;
 
 import model.User;
 
-public class UserDAO {
+public class UserDAO extends GenericDAO{
 	private Session currentSession;
 
 	private Transaction currentTransaction;
@@ -102,5 +102,9 @@ public class UserDAO {
 			e.printStackTrace();
 		}
 		return null;
+	}
+	
+	public void persist(User entity) {
+		getCurrentSession().save(entity);
 	}
 }

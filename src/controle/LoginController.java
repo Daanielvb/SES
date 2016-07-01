@@ -20,7 +20,6 @@ import services.UserService;
 @WebServlet(name = "LoginController", urlPatterns = {"/LoginController"})
 public class LoginController extends HttpServlet{
 		private UserService us;
-		private UserDAO ud;
 		private LessonTrackingService lts;
 		private LessonTrackingDAO ld;
 
@@ -35,7 +34,12 @@ public class LoginController extends HttpServlet{
 		protected void processRequest(HttpServletRequest request, HttpServletResponse response)
 	            throws ServletException, IOException, SQLException {
 			response.setContentType("text/html;charset=UTF-8");
-	        getStudentAndLessons(request,response);
+			String action = request.getParameter("action");
+			if(action.equals("login"))
+				getStudentAndLessons(request,response);
+			else{
+				registerStudentAndLog(request,response);
+			}
 	        
 	        
 			    
@@ -46,6 +50,26 @@ public class LoginController extends HttpServlet{
 	    	User u = us.findUserByEmail(email);
 	    	request.setAttribute("user", u);
 			request.getRequestDispatcher("home.jsp").forward(request, response);
+		}
+		
+		public void registerStudentAndLog(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException{
+			String email = request.getParameter("email");
+			String name = request.getParameter("name");
+			String cpf = request.getParameter("cpf");
+			User u = us.findUserByEmail(email);
+	    	if( u == null){
+	    		User usr = new User();
+	    		usr.setName(name);
+	    		usr.setEmail(email);
+	    		usr.setCpf(cpf);
+	    		us.persist(usr);
+	    		request.getSession().setAttribute("user", us.findUserByEmail(email));
+	    		request.getRequestDispatcher("home.jsp").forward(request, response);
+	    	}
+	    	else{
+	    		request.getSession().setAttribute("user", u);
+				request.getRequestDispatcher("home.jsp").forward(request, response);
+	    	}
 		}
 		
 		

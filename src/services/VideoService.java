@@ -54,5 +54,12 @@ public class VideoService {
 	public VideoDAO videoDAO() {
 		return videoDAO;
 	}
+	
+	public List<Video> findVideosBySubjectId(int videoId){
+		videoDAO.openCurrentSessionwithTransaction();
+		List<Video> videos = videoDAO.findVideosBySubjectId(videoId);
+		videoDAO.closeCurrentSessionwithTransaction();
+		return videos;
+	}
 
 }

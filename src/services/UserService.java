@@ -1,7 +1,9 @@
 package services;
 
 import dao.UserDAO;
+import model.Question;
 import model.User;
+import model.Video;
 
 public class UserService {
 
@@ -9,6 +11,14 @@ public class UserService {
 
 	public UserService() {
 		userDAO = new UserDAO();
+	}
+	
+	public void persist(User entity) {
+		User u = null;
+		userDAO.openCurrentSessionwithTransaction();
+		userDAO.persist(entity);
+		userDAO.closeCurrentSessionwithTransaction();
+		//return u;
 	}
 
 	public User findUserByName(String name) {

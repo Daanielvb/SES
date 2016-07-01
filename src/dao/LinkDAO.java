@@ -2,7 +2,10 @@ package dao;
 
 import java.util.List;
 
+import org.hibernate.Query;
+
 import model.Link;
+import model.Video;
 
 public class LinkDAO extends GenericDAO {
 
@@ -38,5 +41,20 @@ public class LinkDAO extends GenericDAO {
 			delete(entity);
 
 		}
+	}
+
+
+	
+	@SuppressWarnings("unchecked")
+	public List <Link> findLinksBySubject(int subjectId){
+		List <Link> result = null;
+		try {
+			Query query = getCurrentSession().createQuery("from Link l where l.subjects.id =:subjectId ");
+			query.setParameter("subjectId", subjectId);
+			result = (List <Link>) query.list();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return result;
 	}
 }
