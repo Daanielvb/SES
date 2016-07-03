@@ -10,7 +10,7 @@
     	<meta name="viewport" content="width=device-width, initial-scale=1">
     	<meta name="description" content="">
     	<meta name="author" content="">
-
+		<link rel="icon" type="image/png" href="favicon.ico" />
     	<title>PyLearning</title>
 
     	<!-- Bootstrap Core CSS -->
@@ -40,250 +40,58 @@
                 </ol>
             </div>
         </div>
-        </hr>
-        <hr>
         <div class="row">
         	<div class="col-lg-12">
         		<h1>Links</h1>
         	</div>
-        		<div class="text-right">
-        		<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal1">
- 				 Link 1
-				</button>
-                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal2">
-                 Link 2
-                </button>
-                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal3">
-                 Link 3
-                </button>
-                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal4">
-                 Link 4
-                </button>
-                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal5">
-                 Link 5
-                </button>
-                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal6">
-                 Link 6
-                </button>
-                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal7">
-                 Link 7
-                </button>
-                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal8">
-                 Link 8
-                </button>
-                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal9">
-                 Link 9
-                </button>
-                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal10">
-                 Link 10
-                </button>
-        		</div>
+        	<div class="col-lg-7">
+        		<a href="http://wiki.python.org.br/" target= "_blank" class="btn btn-block btn-primary" >
+        		Wiki em português sobre Python
+				</a>
+				</br>
+				<a href="https://pt.wikibooks.org/wiki/Python/Conceitos_b%C3%A1sicos/Tipos_e_operadores" target= "_blank" class="btn btn-block btn-primary" >
+        		Conceitos básicos - Tipos e operadores
+				</a>
+				</br>
+				<a href="http://www.ibm.com/developerworks/br/library/os-python1/" target= "_blank" class="btn btn-block btn-primary" >
+        		Tipos numéricos integrados de Python
+				</a>
+				</br>
+				<a href="http://www.dcc.ufrj.br/~fabiom/mab225/02tipos.pdf" target= "_blank" class="btn btn-block btn-primary" >
+        		Tipos Básicos
+				</a>
+				</br>
+				<a href="http://www3.ifrn.edu.br/~jurandy/fdp/doc/aprenda-python/capitulo_10.html" target= "_blank" class="btn btn-block btn-primary" >
+        		Dicionários em Python
+				</a>
+				</br>
+				<a href="http://www3.ifrn.edu.br/~jurandy/fdp/doc/aprenda-python/capitulo_09.html" target= "_blank" class="btn btn-block btn-primary" >
+        		Tuplas em python
+				</a>
+				</br>
+				<a href="https://pt.wikibooks.org/wiki/Python/Conceitos_b%C3%A1sicos/Vari%C3%A1veis_e_identificadores" target= "_blank" class="btn btn-block btn-primary" >
+        		Conceitos básicos, variáveis e indicadores
+				</a>
+				</br>
+				<a href="http://www3.ifrn.edu.br/~jurandy/fdp/doc/aprenda-python/capitulo_02.html" target= "_blank" class="btn btn-block btn-primary" >
+        		Variáveis, expressões e comandos
+				</a>
+				</br>
+				<a href="http://www.livrariacultura.com.br/p/introducao-a-programacao-com-python-42273748?id_link=8787&adtype=pla&gclid=CKXxyPHJqcwCFYyAkQod1u4IMA" target= "_blank" class="btn btn-block btn-primary" >
+        		Introdução à Programação (Iniciantes)
+				</a>
+				</br>
+				<a href="https://ark4n.files.wordpress.com/2010/01/python_para_desenvolvedores_2ed.pdf" target= "_blank" class="btn btn-block btn-primary" >
+        		Python Para Desenvolvedores
+				</a>
+			</div>
+        </div>
         	</div>
         </hr>       
         </div>
     </div>
     <!-- /.container -->
     
-    <!-- Modal -->
-<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModal1Label">Material extra</h4>
-      </div>
-      <div class="modal-body">
-        Wiki em português sobre Python
-      </div>
-      <div class="modal-footer">
-        <form action="http://wiki.python.org.br/">
-            <input type="submit" class="btn btn-primary" value="Ir para página">
-        </form>
-
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModal2Label">Material extra</h4>
-      </div>
-      <div class="modal-body">
-        Python/Conceitos básicos/Tipos e operadores
-      </div>
-      <div class="modal-footer">
-        <form action="https://pt.wikibooks.org/wiki/Python/Conceitos_b%C3%A1sicos/Tipos_e_operadores ">
-            <input type="submit" class="btn btn-primary" value="Ir para página">
-        </form>
-
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModal3Label">Material extra</h4>
-      </div>
-      <div class="modal-body">
-        Tipos numéricos integrados de Python
-      </div>
-      <div class="modal-footer">
-        <form action="http://www.ibm.com/developerworks/br/library/os-python1/ ">
-            <input type="submit" class="btn btn-primary" value="Ir para página">
-        </form>
-
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModal4Label">Material extra</h4>
-      </div>
-      <div class="modal-body">
-        Tipos Básicos
-      </div>
-      <div class="modal-footer">
-        <form action="http://www.dcc.ufrj.br/~fabiom/mab225/02tipos.pdf ">
-            <input type="submit" class="btn btn-primary" value="Ir para página">
-        </form>
-
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="myModal5" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModal5Label">Material extra</h4>
-      </div>
-      <div class="modal-body">
-        Dicionários em Python
-      </div>
-      <div class="modal-footer">
-        <form action="http://www3.ifrn.edu.br/~jurandy/fdp/doc/aprenda-python/capitulo_10.html ">
-            <input type="submit" class="btn btn-primary" value="Ir para página">
-        </form>
-
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="myModal6" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModal6Label">Material extra</h4>
-      </div>
-      <div class="modal-body">
-        Tuplas em python
-      </div>
-      <div class="modal-footer">
-        <form action="http://www3.ifrn.edu.br/~jurandy/fdp/doc/aprenda-python/capitulo_09.html ">
-            <input type="submit" class="btn btn-primary" value="Ir para página">
-        </form>
-
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="myModal7" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModal7Label">Material extra</h4>
-      </div>
-      <div class="modal-body">
-        Conceitos básicos, variáveis e indicadores
-      </div>
-      <div class="modal-footer">
-        <form action="https://pt.wikibooks.org/wiki/Python/Conceitos_b%C3%A1sicos/Vari%C3%A1veis_e_identificadores ">
-            <input type="submit" class="btn btn-primary" value="Ir para página">
-        </form>
-
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="myModal8" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModal8Label">Material extra</h4>
-      </div>
-      <div class="modal-body">
-        Variáveis, expressões e comandos
-      </div>
-      <div class="modal-footer">
-        <form action="http://www3.ifrn.edu.br/~jurandy/fdp/doc/aprenda-python/capitulo_02.html">
-            <input type="submit" class="btn btn-primary" value="Ir para página">
-        </form>
-
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="myModal9" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModal9Label">Material extra</h4>
-      </div>
-      <div class="modal-body">
-        Introdução à Programação (Iniciantes)
-      </div>
-      <div class="modal-footer">
-        <form action="http://www.livrariacultura.com.br/p/introducao-a-programacao-com-python-42273748?id_link=8787&adtype=pla&gclid=CKXxyPHJqcwCFYyAkQod1u4IMA">
-            <input type="submit" class="btn btn-primary" value="Ir para página">
-        </form>
-
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="myModal10" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModal10Label">Material extra</h4>
-      </div>
-      <div class="modal-body">
-        Python Para Desenvolvedores
-      </div>
-      <div class="modal-footer">
-        <form action="https://ark4n.files.wordpress.com/2010/01/python_para_desenvolvedores_2ed.pdf">
-            <input type="submit" class="btn btn-primary" value="Ir para página">
-        </form>
-
-      </div>
-    </div>
-  </div>
-</div>
     
     <!-- jQuery -->
     <script src="js/jquery.js"></script>

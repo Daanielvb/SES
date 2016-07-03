@@ -70,7 +70,7 @@ public class QuizTrackingDAO extends GenericDAO {
 		getCurrentSession().update(entity);
 	}
 
-	public QuizTracking findById(String id) {
+	public QuizTracking findById(int id) {
 		QuizTracking qt = (QuizTracking) getCurrentSession().get(QuizTracking.class, id);
 		return qt;
 	}
@@ -131,20 +131,57 @@ public class QuizTrackingDAO extends GenericDAO {
 		}
 	}
 	
-	public List findQuizTrackingByUserID(int userId) {
+	public List<QuizTracking> findQuizTrackingByUserID(int userId) {
+		List <QuizTracking> result = null;
 		try {
 			Query q = getCurrentSession().createQuery("select qt from QuizTracking qt inner join qt.user u"
-					+ "inner join qt.quiz q inner join fetch q.lesson l where l.id=:lessonId AND u.id=:userId");
+					+ " where u.id=:userId");
 			q.setParameter("userId", userId);
-			List list = q.list();
-			return list;
-		}
+			result = (List<QuizTracking>) q.list();
 
+		}
 		catch (Exception e) {
 			e.printStackTrace();
+			return result;
+			
 		}
-		return null;
+		return result;
 	}
+	
+	public List<Double> findAvaregeScoreAndPointsByUserID(int userId) {
+		List <Double> result = null;
+		try {
+			Query q = getCurrentSession().createQuery("select avg(qt.score),sum(qt.points) from QuizTracking qt inner join qt.user u where u.id=:userId");
+			q.setParameter("userId", userId);
+			result = (List<Double>) q.list();
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+			return result;
+			
+		}
+		return result;
+	}
+	
+	public List<Double> findAvaregeScoreAndPointsByLessonId(int lessonId) {
+		List <Double> result = null;
+		try {
+			Query q = getCurrentSession().createQuery("select avg(qt.score),sum(qt.points) from QuizTracking qt "
+					+ "inner join qt.quiz q join q.lesson l where l.id=:lessonId");
+			q.setParameter("lessonId", lessonId);
+			result = (List<Double>) q.list();
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+			return result;
+			
+		}
+		return result;
+	}
+	
+	
+	
+	
 
 	public void deleteAll() {
 		List<QuizTracking> entityList = findAll();

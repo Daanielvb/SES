@@ -10,7 +10,7 @@
     	<meta name="viewport" content="width=device-width, initial-scale=1">
     	<meta name="description" content="">
     	<meta name="author" content="">
-
+		<link rel="icon" type="image/png" href="favicon.ico" />
     	<title>PyLearning</title>
 
     	<!-- Bootstrap Core CSS -->
@@ -76,113 +76,32 @@
                 </ol>
             </div>
         </div>
-        </hr>
-        <hr>
         <div class="row">
         	<div class="col-lg-12">
         		<h1>Links</h1>
         	</div>
-        		<div class="text-right">
-        		    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal1">
- 				        Link 1
-				        </button>
-                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal2">
-                 Link 2
-                </button>
-                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal3">
-                 Link 3
-                </button>
-                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal4">
-                 Link 4
-                </button>
-        		</div>
-        	</div>
-        </hr>       
+        		<div class="col-lg-7">
+        		<a href="https://pt.wikibooks.org/wiki/Python/Conceitos_b%C3%A1sicos/Fun%C3%A7%C3%B5es" target= "_blank" class="btn btn-block btn-primary" >
+        		Conceitos básicos - Funções
+				</a>
+				</br>
+				<a href="https://powerpython.wordpress.com/2012/03/06/aula-python-criando-funcoes/" target= "_blank" class="btn btn-block btn-primary" >
+        		 Aula Python  Criando Funções (powerpython)
+				</a>
+				</br>
+				<a href="http://www.tocadoelfo.com.br/2012/11/python-parametros.html" target= "_blank" class="btn btn-block btn-primary" >
+        		Python - Passagem de Parâmetros
+				</a>
+				</br>
+				<a href="https://pythonhelp.wordpress.com/2013/09/15/pegadinha-com-funcoes-e-variaveis-globais/" target= "_blank" class="btn btn-block btn-primary" >
+        		Pegadinha com funções e variáveis globais
+				</a>
+				</br>
+			</div>
+        	</div>      
         </div>
-    </div>
     <!-- /.container -->
-    
-    <!-- Modal -->
-<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModal1Label">Material extra</h4>
-      </div>
-      <div class="modal-body">
-        Python/Conceitos básicos/Funções:
-      </div>
-      <div class="modal-footer">
-        <form action="https://pt.wikibooks.org/wiki/Python/Conceitos_b%C3%A1sicos/Fun%C3%A7%C3%B5es">
-            <input type="submit" class="btn btn-primary" value="Ir para página">
-        </form>
-
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModal2Label">Material extra</h4>
-      </div>
-      <div class="modal-body">
-        Aula Python  Criando Funções (powerpython):
-      </div>
-      <div class="modal-footer">
-        <form action="https://powerpython.wordpress.com/2012/03/06/aula-python-criando-funcoes/">
-            <input type="submit" class="btn btn-primary" value="Ir para página">
-        </form>
-
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModal3Label">Material extra</h4>
-      </div>
-      <div class="modal-body">
-        Python - Passagem de Parâmetros:
-      </div>
-      <div class="modal-footer">
-        <form action="http://www.tocadoelfo.com.br/2012/11/python-parametros.html">
-            <input type="submit" class="btn btn-primary" value="Ir para página">
-        </form>
-
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModal4Label">Material extra</h4>
-      </div>
-      <div class="modal-body">
-        Pegadinha com funções e variáveis globais:
-      </div>
-      <div class="modal-footer">
-        <form action="https://pythonhelp.wordpress.com/2013/09/15/pegadinha-com-funcoes-e-variaveis-globais/">
-            <input type="submit" class="btn btn-primary" value="Ir para página">
-        </form>
-
-      </div>
-    </div>
-  </div>
-</div>
-    
+   
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
 

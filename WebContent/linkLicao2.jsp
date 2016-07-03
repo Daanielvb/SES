@@ -10,7 +10,7 @@
     	<meta name="viewport" content="width=device-width, initial-scale=1">
     	<meta name="description" content="">
     	<meta name="author" content="">
-
+		<link rel="icon" type="image/png" href="favicon.ico" />
     	<title>PyLearning</title>
 
     	<!-- Bootstrap Core CSS -->
@@ -76,135 +76,39 @@
                 </ol>
             </div>
         </div>
-        </hr>
-        <hr>
+
         <div class="row">
         	<div class="col-lg-12">
         		<h1>Links</h1>
         	</div>
-        		<div class="text-right">
-        		    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal1">
- 				        Link 1
-				        </button>
-                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal2">
-                 Link 2
-                </button>
-                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal3">
-                 Link 3
-                </button>
-                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal4">
-                 Link 4
-                </button>
-                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal5">
-                 Link 5
-                </button>
-        		</div>
+        		<div class="col-lg-7">
+        		<a href="http://www.pbx-brasil.com/outrasDisciplinas/FisComp_Python/Notas/Iarea/aula106/mathPython.html" target= "_blank" class="btn btn-block btn-primary" >
+        		Matemática no Python
+				</a>
+				</br>
+				<a href="http://www.ibm.com/developerworks/br/library/os-python1/" target= "_blank" class="btn btn-block btn-primary" >
+        		Tipos Numéricos Integrados de Python
+				</a>
+				</br>
+				<a href="https://gabrielacavalcante.gitbooks.io/python/content/operadores_logicos/README.html" target= "_blank" class="btn btn-block btn-primary" >
+        		Operadores Lógicos
+				</a>
+				</br>
+				<a href="http://www.tutorialspoint.com/python/python_strings.htm" target= "_blank" class="btn btn-block btn-primary" >
+        		Strings in python
+				</a>
+				</br>
+				<a href="http://image.slidesharecdn.com/cursobsicodealgoritmoscompython-111118184014-phpapp01/95/curso-bsico-de-algoritmos-com-python-30-728.jpg?cb=1354887162" target= "_blank" class="btn btn-block btn-primary" >
+        		Tabela verdade
+				</a>
+				</br>
+			</div>
         	</div>
         </hr>       
         </div>
     </div>
     <!-- /.container -->
     
-    <!-- Modal -->
-<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModal1Label">Material extra</h4>
-      </div>
-      <div class="modal-body">
-        Matemática no Python
-      </div>
-      <div class="modal-footer">
-        <form action="http://www.pbx-brasil.com/outrasDisciplinas/FisComp_Python/Notas/Iarea/aula106/mathPython.html">
-            <input type="submit" class="btn btn-primary" value="Ir para página">
-        </form>
-
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModal2Label">Material extra</h4>
-      </div>
-      <div class="modal-body">
-        Tipos Numéricos Integrados de Python
-      </div>
-      <div class="modal-footer">
-        <form action="http://www.ibm.com/developerworks/br/library/os-python1/">
-            <input type="submit" class="btn btn-primary" value="Ir para página">
-        </form>
-
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModal3Label">Material extra</h4>
-      </div>
-      <div class="modal-body">
-        Operadores Lógicos
-      </div>
-      <div class="modal-footer">
-        <form action="https://gabrielacavalcante.gitbooks.io/python/content/operadores_logicos/README.html">
-            <input type="submit" class="btn btn-primary" value="Ir para página">
-        </form>
-
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModal4Label">Material extra</h4>
-      </div>
-      <div class="modal-body">
-        Strings in python
-      </div>
-      <div class="modal-footer">
-        <form action="http://www.tutorialspoint.com/python/python_strings.htm">
-            <input type="submit" class="btn btn-primary" value="Ir para página">
-        </form>
-
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="myModal5" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModal5Label">Material extra</h4>
-      </div>
-      <div class="modal-body">
-        Tabela verdade
-      </div>
-      <div class="modal-footer">
-        <form action="http://image.slidesharecdn.com/cursobsicodealgoritmoscompython-111118184014-phpapp01/95/curso-bsico-de-algoritmos-com-python-30-728.jpg?cb=1354887162">
-            <input type="submit" class="btn btn-primary" value="Ir para página">
-        </form>
-
-      </div>
-    </div>
-  </div>
-</div>
     
     <!-- jQuery -->
     <script src="js/jquery.js"></script>

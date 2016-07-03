@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-
+	<link rel="icon" type="image/png" href="favicon.ico" />
     <title>PyLearning</title>
 
     <!-- Bootstrap Core CSS -->
@@ -55,6 +55,7 @@
 						<input type="hidden" class="sbjName" value="${qts.subject.name}"/>
 						<input type="hidden" class="sbjId" value="${qts.subject.id}"/>
 						<input type="hidden" class="points" value="${qts.difficulty}"/>
+						<input type="hidden" class="questions" value="${qts.question}"/>
 					<c:forEach items="${qts.answers}" var="qtsA" varStatus="myQuestA">
 					<div class="input-group">
        						<input type="radio" id="${qtsA.id}" name="${qts.id}" value="${qtsA.isCorrect}" />
@@ -78,22 +79,6 @@
        	</hr>
     </div>
     <div>
-    <h2> Resultado :</h2>
-    <ul> 
-    <li>
-    
-    
-    </li>
-    <h3> Resultado da avaliação:</h3><p id="score"></p>
-    <h3> Questoes corretas:</h3><p id="questoesOK"></p>
-    <h3> Questoes erradas:</h3><p id="questoesErr"></p>
-    <h3> Sugestoes:</h3> <p id="sugestoes"></p>
-     <li>
-    
-    
-    </li>
-    
-    </ul>
     
     </div>
     <!-- /.container -->
@@ -114,6 +99,7 @@
 		var subjectId = $(".sbjId");
 		var subjectName = $(".sbjName");
 		var points = $(".points");
+		var questionsName = $(".questions");
 		
 		var simulado = {
 				quizId : quizId,
@@ -122,7 +108,8 @@
 				wrongSubjectsId : [],
 				wrongSubjectsName: [],
 				score: 0,
-				points: 0
+				points: 0,
+				size: 0
 				
 		};
 		
@@ -130,12 +117,13 @@
 			if(answers[i].value == "true"){
 				simulado.score += 1;
 				simulado.correctQuestions.push(questions[i].value);
-				simulado.points += points[i].value;
+				simulado.points += parseInt(points[i].value);
 			}
 			else{
 				simulado.wrongQuestions.push(questions[i].value);
 				simulado.wrongSubjectsId.push(subjectId[i].value);
 				simulado.wrongSubjectsName.push(subjectName[i].value);
+				simulado.wrongQuestions.push(questionsName[i].value);
 			}
 		}
 		//todo limpar valores repetidoss
@@ -149,27 +137,29 @@
 		
 	
 	simulado.wrongSubjectsId = uniqueList;
-	
-	console.log(simulado);
+	simulado.size = questions.length;
 	$.ajax({
         url:'QuizController',
         dataType:'json',
         data: {
-     		   action:"submit",
-     		   simulado:JSON.stringify(simulado)
-     		   },
+           action:"submit",
+           simulado:JSON.stringify(simulado)
+           },
         type:'get',
         cache:false,
         success:function(data){
-     	   console.log("sucess");
-        	window.location = ("/ProjetoSI/result.jsp");
+         console.log("sucess");
+          window.location = ("/ProjetoSI/result.jsp");
         },
         error:function(){
-         	console.log("deu ruim");
-         	window.location = ("/ProjetoSI/result.jsp");
+          console.log("deu ruim");
+          window.location = ("/ProjetoSI/result.jsp");
         }
      }
 );
+	
+	console.log(simulado);
+	
 	
 	}
 	

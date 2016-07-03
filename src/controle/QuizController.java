@@ -50,15 +50,21 @@ public class QuizController extends HttpServlet {
 			if(action.equals("submit")){
 				String json = request.getParameter("simulado");
 				JsonObject jsonObject = new JsonParser().parse(json).getAsJsonObject();
-				float score = Float.parseFloat(jsonObject.get("score").getAsString());
+				int score = Integer.parseInt(jsonObject.get("score").getAsString());
 				int quizId = Integer.parseInt(jsonObject.get("quizId").getAsString());
 				int points = Integer.parseInt(jsonObject.get("points").getAsString());
+				int quizSize = Integer.parseInt(jsonObject.get("size").getAsString());
 				JsonArray subjectsId = jsonObject.get("wrongSubjectsId").getAsJsonArray();
+				JsonArray wrongQuestionsName = jsonObject.get("wrongQuestions").getAsJsonArray();
+				ArrayList<String> wrongQuestions = new ArrayList<String>();
+				for (int i = 0; i < wrongQuestionsName.size(); i++) {
+					wrongQuestions.add(wrongQuestionsName.get(i).getAsString());
+					
+				}
 				ArrayList<Integer> subjects = new ArrayList<Integer>();
 				ArrayList <Video> videos = new ArrayList<Video>();
 				ArrayList <Link> links = new ArrayList<Link>();
 				ArrayList <String> subjectsTxt = new ArrayList<String>();
-				//TODO - Ler o array de subject e trazer os materiais (Link / Videos n assistidos)
 				for (int i = 0, size = subjectsId.size(); i < size; i++)
 			    {
 					int currentSubj = subjectsId.get(i).getAsInt();
@@ -67,15 +73,19 @@ public class QuizController extends HttpServlet {
 					List<Link> lts = ls.findLinksBySubjectId(currentSubj);
 					videos.addAll(vts);
 					links.addAll(lts);
-					subjectsTxt.add((((Subject)ss.findById(String.valueOf(currentSubj))).getTextAdv()));
+					subjectsTxt.add((((Subject)ss.findById(String.valueOf(currentSubj))).getName()));
 					
 			    }
 				request.getSession().setAttribute("links" , links);
 				request.getSession().setAttribute("videos" , videos);
-				request.getSession().setAttribute("subjects",subjectsTxt);
+				request.getSession().setAttribute("subjectsTxt",subjectsTxt);
+				request.getSession().setAttribute("wrongQuestions",wrongQuestions);
+				request.getSession().setAttribute("score",score);
+				request.getSession().setAttribute("points",points);
+				request.getSession().setAttribute("quizSize",quizSize);
 				Quiz q = qs.findById(quizId);
 				User u = (User) request.getSession().getAttribute("user");
-				QuizTracking qt = qs.findQuizTrackingByQuizAndUserId(1, 1);
+				QuizTracking qt = qs.findQuizTrackingByQuizAndUserId(u.getId(), quizId);
 				if(qt == null){
 					QuizTracking qtr = new QuizTracking();
 					qtr.setQuiz(q);

@@ -10,7 +10,7 @@
     	<meta name="viewport" content="width=device-width, initial-scale=1">
     	<meta name="description" content="">
     	<meta name="author" content="">
-
+		<link rel="icon" type="image/png" href="favicon.ico" />
     	<title>PyLearning</title>
 
     	<!-- Bootstrap Core CSS -->
@@ -76,204 +76,50 @@
                 </ol>
             </div>
         </div>
-        </hr>
-        <hr>
         <div class="row">
         	<div class="col-lg-12">
         		<h1>Links</h1>
         	</div>
-        		<div class="text-right">
-        		    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal1">
- 				        Link 1
-				        </button>
-                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal2">
-                 Link 2
-                </button>
-                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal3">
-                 Link 3
-                </button>
-                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal4">
-                 Link 4
-                </button>
-                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal5">
-                 Link 5
-                </button>
-                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal6">
-                 Link 6
-                </button>
-                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal7">
-                 Link 7
-                </button>
-                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal8">
-                 Link 8
-                </button>
-        		</div>
-        	</div>
-        </hr>       
+        		<div class="col-lg-7">
+        		<a href="http://www.devmedia.com.br/aprendendo-a-programar-em-python-estruturas-condicionais-if/17358" target= "_blank" class="btn btn-block btn-primary" >
+        		Aprendendo a programar em python - estruturas condicionais (IF)
+				</a>
+				</br>
+				<a href="http://programeempython.com.br/blog/estruturas-condicionais-em-python-parte-1/" target= "_blank" class="btn btn-block btn-primary" >
+        		 Estruturas condicionais em python (Parte 1)
+				</a>
+				</br>
+				<a href="http://programeempython.com.br/blog/estruturas-condicionais-em-python-parte-2/" target= "_blank" class="btn btn-block btn-primary" >
+        		Estruturas condicionais em python (Parte 2)
+				</a>
+				</br>
+				<a href="https://dtutoriais.wordpress.com/2010/07/20/aprendendo-python-4-estruturas-de-decisao/" target= "_blank" class="btn btn-block btn-primary" >
+        		Aprendendo python - estruturas de decisão
+				</a>
+				</br>
+				<a href="http://programeempython.com.br/blog/estruturas-de-repeticao-parte-1-while/" target= "_blank" class="btn btn-block btn-primary" >
+        		Estruturas de repetição (Parte 1) - while
+				</a>
+				</br>
+				<a href="http://programeempython.com.br/blog/estruturas-de-repeticao-parte-2-for/" target= "_blank" class="btn btn-block btn-primary" >
+        		Estrutura de repetição (Parte 2) - for
+				</a>
+				</br>
+				<a href="https://desenvolvo.wordpress.com/2013/03/18/curso-de-python-aula-11-estruturas-de-repeticao-for-e-while/" target= "_blank" class="btn btn-block btn-primary" >
+        		Curso de python  aula 11 estrutura de repetição for e while
+				</a>
+				</br>
+				<a href="https://dtutoriais.wordpress.com/2010/07/24/aprendendo-python-5-lacos-de-repeticao/" target= "_blank" class="btn btn-block btn-primary" >
+        		Aprendendo python 5- laços de repetição
+				</a>
+				</br>
+			</div>
+        	</div>     
         </div>
     </div>
     <!-- /.container -->
     
-    <!-- Modal -->
-<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModal1Label">Material extra</h4>
-      </div>
-      <div class="modal-body">
-        Aprendendo a programar em python estruturas condicionais  If
-      </div>
-      <div class="modal-footer">
-        <form action="http://www.devmedia.com.br/aprendendo-a-programar-em-python-estruturas-condicionais-if/17358">
-            <input type="submit" class="btn btn-primary" value="Ir para página">
-        </form>
-
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModal2Label">Material extra</h4>
-      </div>
-      <div class="modal-body">
-        Estruturas condicionais em python (Parte 1)
-      </div>
-      <div class="modal-footer">
-        <form action="http://programeempython.com.br/blog/estruturas-condicionais-em-python-parte-1/">
-            <input type="submit" class="btn btn-primary" value="Ir para página">
-        </form>
-
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModal3Label">Material extra</h4>
-      </div>
-      <div class="modal-body">
-        Estruturas condicionais em python (Parte 2)
-      </div>
-      <div class="modal-footer">
-        <form action="http://programeempython.com.br/blog/estruturas-condicionais-em-python-parte-2/">
-            <input type="submit" class="btn btn-primary" value="Ir para página">
-        </form>
-
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModal4Label">Material extra</h4>
-      </div>
-      <div class="modal-body">
-        Aprendendo python -4- estruturas de decisão
-      </div>
-      <div class="modal-footer">
-        <form action="https://dtutoriais.wordpress.com/2010/07/20/aprendendo-python-4-estruturas-de-decisao/">
-            <input type="submit" class="btn btn-primary" value="Ir para página">
-        </form>
-
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="myModal5" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModal5Label">Material extra</h4>
-      </div>
-      <div class="modal-body">
-        Estruturas de repetição (Parte 1) - while
-      </div>
-      <div class="modal-footer">
-        <form action="http://programeempython.com.br/blog/estruturas-de-repeticao-parte-1-while/">
-            <input type="submit" class="btn btn-primary" value="Ir para página">
-        </form>
-
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="myModal6" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModal6Label">Material extra</h4>
-      </div>
-      <div class="modal-body">
-        Estrutura de repetição (Parte 2) - for
-      </div>
-      <div class="modal-footer">
-        <form action="http://programeempython.com.br/blog/estruturas-de-repeticao-parte-2-for/">
-            <input type="submit" class="btn btn-primary" value="Ir para página">
-        </form>
-
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="myModal7" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModal7Label">Material extra</h4>
-      </div>
-      <div class="modal-body">
-        Curso de python  aula 11  estrutura de repetição for e while
-      </div>
-      <div class="modal-footer">
-        <form action="https://desenvolvo.wordpress.com/2013/03/18/curso-de-python-aula-11-estruturas-de-repeticao-for-e-while/">
-            <input type="submit" class="btn btn-primary" value="Ir para página">
-        </form>
-
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="myModal8" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModal8Label">Material extra</h4>
-      </div>
-      <div class="modal-body">
-        Aprendendo python 5- laços de repetição
-      </div>
-      <div class="modal-footer">
-        <form action="https://dtutoriais.wordpress.com/2010/07/24/aprendendo-python-5-lacos-de-repeticao/">
-            <input type="submit" class="btn btn-primary" value="Ir para página">
-        </form>
-
-      </div>
-    </div>
-  </div>
-</div>
+ 
     
     <!-- jQuery -->
     <script src="js/jquery.js"></script>

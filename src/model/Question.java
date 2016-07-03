@@ -3,6 +3,7 @@ package model;
 import java.io.Serializable;
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -20,7 +21,8 @@ public class Question implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
-
+	
+	@Column(name = "question", nullable = false, length = 500)
 	private String question;
 
 	private int difficulty;
