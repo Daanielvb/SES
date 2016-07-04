@@ -29,7 +29,7 @@
                             </li>
                             <li role="separator" class="divider"></li>
                             <li>
-                                <a href="#"><span class="glyphicon glyphicon glyphicon-log-out"></span> Sair</a>
+                                <a href="login.jsp"><span class="glyphicon glyphicon glyphicon-log-out"></span> Sair</a>
                             </li>
                         </ul>
                     </li>

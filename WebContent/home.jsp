@@ -41,10 +41,10 @@
 		<!-- Jumbotron Header -->
 		<header class="jumbotron hero-spacer">
 			<h1>PyLearning</h1>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-				Ipsa, ipsam, eligendi, in quo sunt possimus non incidunt odit vero
-				aliquid similique quaerat nam nobis illo aspernatur vitae fugiat
-				numquam repellat.</p>
+			<p>PyLearning é uma plataforma inteligente para o aprendizado da linguagem de programação Python.
+			 A plataforma contém 4 lições básicas com o intuito de introduzir conhecimento de maneira iterativa.
+			  A plataforma contém as estatísticas do usuário sobre as aulas lidas, exercícios já resolvidos,sugestões de 
+			  vídeos e links para consulta de conteúdo..</p>
 			<div class="text-center">
 				<a id="texto" onclick="mudar(flag)" class="btn btn-primary btn-lg"
 					data-toggle="collapse" href="#collapseExample"
@@ -53,41 +53,43 @@
 			</div>
 			<div class="collapse" id="collapseExample">
 				<hr>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-					volutpat aliquam felis. Suspendisse imperdiet cursus augue, eget
-					vulputate nulla vulputate eu. Sed sed dolor blandit, rhoncus odio
-					quis, pretium erat. In tellus ex, tincidunt eu magna et, pulvinar
-					convallis ex. Pellentesque gravida dolor ut augue scelerisque
-					iaculis. Phasellus massa nibh, molestie et diam eget, convallis
-					ultrices sapien. Donec pharetra diam at ipsum convallis, ac
-					lobortis metus cursus. Aliquam bibendum turpis viverra interdum
-					dictum. Donec aliquet sapien sit amet dignissim suscipit. Duis quis
-					tortor at libero cursus convallis. Vivamus aliquet, neque sit amet
-					hendrerit congue, nisi ligula ultrices purus, et eleifend odio
-					purus eget nisi. Pellentesque habitant morbi tristique senectus et
-					netus et malesuada fames ac turpis egestas. Phasellus non elementum
-					augue, quis cursus erat. Aliquam et elit a dolor auctor elementum.
-
-					Nulla mollis nec eros nec pretium. Donec vel nibh nec urna blandit
-					molestie. Cras at risus elementum, lobortis nunc vel, gravida sem.
-					Proin non sollicitudin orci, ac tristique nisl. Donec consequat ut
-					massa in ultricies. Integer fermentum, lorem nec volutpat
-					fringilla, tortor eros facilisis dui, sed lacinia ante mi in neque.
-					Ut at bibendum ex. Donec eget erat lorem. Pellentesque accumsan
-					vulputate nibh sed hendrerit. Maecenas posuere, nisi non cursus
-					fermentum, erat tellus eleifend nisi, sed placerat quam augue eget
-					risus. Ut porta, ex porttitor tempor euismod, orci justo euismod
-					orci, eget eleifend felis mi vehicula est. Aliquam in hendrerit
-					lacus. Aliquam et orci dapibus, aliquet dolor nec, lacinia mi.
-
-					Maecenas arcu quam, blandit at sollicitudin eu, elementum ut enim.
-					Nam ultricies consequat dignissim. Sed condimentum scelerisque
-					iaculis. Sed scelerisque purus ac lorem tincidunt gravida.
-					Suspendisse potenti. Praesent fermentum massa ac interdum vehicula.
-					Nam fringilla leo in velit molestie, sed mollis quam convallis.
-					Suspendisse sapien lacus, finibus quis ullamcorper sed, porttitor
-					sed velit. Phasellus suscipit mollis felis vitae imperdiet. Sed
-					eget lacinia orci, ultricies tempor est.</p>
+				<p>Por que aprender python? Aprender linguagem de programação é uma
+					atividade que exige tempo e dedicação para que seja corretamente
+					compreendida. Acredita-se que deve existir uma grande motivação
+					para o aprendizado pois a maioria das pessoas acaba desistindo,acha
+					difiícil continuar gostando de programar.A linguagem de programção
+					Python é bastante interessante, geralmente é usada como primeira
+					linguagem de aprendizado devido a sua facilidade de entendimento e
+					clareza. Python é software livre e pode ser usada na maioria das
+					arquiteturas de computadores ou sistemas operacionais,mas
+					independente da simplicidade é bastante poderosa e vem crescendo
+					desde que adentrou nas áreas mais complexas como inteligencia
+					artificial,animaçãao 3D,biotecnologia, jogos e desenvolvimento de
+					plataformas web.Python tambem aparece no mercado com usuários como
+					o Youtube, Nasa,Google e estudios de cinema como disney e
+					dreamworks. Fazendo uma avaliação mais técnica da linguagem podemos
+					listar alguns motivos para aprender Python:</p>
+					<ul style="list-style:none;">
+					<li class="topic"><p>1-Livre e de código
+					aberto:Como ja citado anteriormente, a linguagem segue modelo de
+					desenvolvimento com licenciamento livre para o design,tem
+					redistribuição universal e oferece possibilidade para que qualquer
+					um consulte, examine ou modifique-a.</p> </li>
+					
+					<li class="topic"><p>2-Alto Nível:Linguagem com
+					fácil nivel de abstraçao,menos parecida com a linguagem de maquina
+					e mais proxima à linguagem humana.</p> </li>
+					<li class="topic"><p>3-Orientada a Objetos: Segue um
+					modelo de análise, projeto e programação de sistemas baseado na
+					composição e interação entre diversas unidades de software chamadas
+					de objetos. </p></li>
+					<li class="topic"> <p>4-Sintaxe:Em Python um bloco de código é feito através
+					de indentações(recuo de um texto em relação a sua margem.) Isso
+					força o desenvolvedor a indentar seu código fonte e garante uma boa
+					legibilidade.</p> </li>
+					<li> <p>5-Documentação:Possui comunidades( uma delas
+					brasileira) com uma lista de fontes de estudos e informações sobre
+					a linguagem.</p></li></ul> 
 			</div>
 		</header>
 

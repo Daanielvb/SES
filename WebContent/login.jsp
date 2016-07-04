@@ -69,7 +69,12 @@ body {
 	  border-top-right-radius: 0;
 	}
 }
-			
+
+	.imgHome{
+	    margin-left: 25%;
+	    margin-bottom: 15%;
+	    margin-top: 5%;
+			}
 		</STYLE>
 	</head>
 	<body>
@@ -85,7 +90,9 @@ body {
     	
 
 	<div class="wrapper" id="cadastro">
-    	<div class="form-signin">       
+		<h1> PyLearning, um ambiente de aprendizado inteligente</h1>
+    	<div class="form-signin"> 
+    		<img class="imgHome"  src="images/python.png">      
       		<input type="text" class="form-control" name="nome" id="email" placeholder="Email" required autofocus="" />
       		<BR />
       		<input type="password" class="form-control" name="senha" placeholder="Senha" required/>      
@@ -106,7 +113,7 @@ body {
       		<input type="password" class="form-control" name="senha" placeholder="Senha" required/> 
       		<br/>
       		<button class="btn btn-lg btn-primary btn-block" onclick="register()">Submeter</button>
-      		<a href="/login.jsp" class="btn btn-lg btn-default btn-block">cancelar</a>   
+      		<a href="login.jsp" class="btn btn-lg btn-default btn-block">cancelar</a>   
     	</div>
       		</div>;
   
