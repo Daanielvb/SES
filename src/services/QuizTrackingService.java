@@ -78,5 +78,13 @@ public class QuizTrackingService {
 		return result;
 	}
 	
+	public List<Double> findGeneralAvaregeScoreAndPoints(){
+		quizTrackingDAO.openCurrentSession();
+		List<Double> result = quizTrackingDAO.findGeneralAvaregeScoreAndPoints();
+		quizTrackingDAO.closeCurrentSession();
+		return result;
+	}
+	
+	
 
 }

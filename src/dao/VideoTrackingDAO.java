@@ -81,17 +81,17 @@ public class VideoTrackingDAO extends GenericDAO {
 	}
 
 	public List<VideoTracking> findVideoTrackingByUserId(int userId) {
-		try {
-			List<VideoTracking> videos = null;
+		List<VideoTracking> videos = null;
+		try {	
 			Query query = getCurrentSession()
 					.createQuery("select vt from VideoTracking vt " + "inner join vt.user u where u.id=:userId");
 			query.setParameter("userId", userId);
 			videos = (List<VideoTracking>) query.list();
-			return videos;
 		} catch (Exception e) {
 			e.printStackTrace();
+			return null;
 		}
-		return null;
+		return videos;
 	}
 	
 	public VideoTracking findVideoTrackingByUserAndVideoId(Video video, User user) {

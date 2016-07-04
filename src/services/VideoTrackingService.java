@@ -58,5 +58,6 @@ public class VideoTrackingService {
 		videoTrackingDAO.closeCurrentSession();
 		return vt;
 	}
+	
 
 }

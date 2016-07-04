@@ -142,7 +142,7 @@ public class QuizTrackingDAO extends GenericDAO {
 		}
 		catch (Exception e) {
 			e.printStackTrace();
-			return result;
+			return null;
 			
 		}
 		return result;
@@ -157,7 +157,7 @@ public class QuizTrackingDAO extends GenericDAO {
 		}
 		catch (Exception e) {
 			e.printStackTrace();
-			return result;
+			return null;
 			
 		}
 		return result;
@@ -173,7 +173,22 @@ public class QuizTrackingDAO extends GenericDAO {
 		}
 		catch (Exception e) {
 			e.printStackTrace();
-			return result;
+			return null;
+			
+		}
+		return result;
+	}
+	
+	public List<Double> findGeneralAvaregeScoreAndPoints() {
+		List <Double> result = null;
+		try {
+			Query q = getCurrentSession().createQuery("select qt.quiz, avg(qt.score),sum(qt.points) from QuizTracking qt "
+					+ "group by qt.quiz");
+			result = (List<Double>) q.list();
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+			return null;
 			
 		}
 		return result;
