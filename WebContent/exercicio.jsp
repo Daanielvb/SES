@@ -48,7 +48,7 @@
        		<div class="panel-body">
        			<c:forEach items="${questions}" var="qts" varStatus="myQuest">
        				<div class="panel panel-default" >
-		       			<div class="panel-heading">	
+		       			<div class="panel-heading" style="font-size:1.1em;">	
 		       					${myQuest.index + 1})  ${qts.question} 
 		       			</div>
 		       			<input type="hidden" class="qtsId" value="${qts.id}"/>
@@ -67,7 +67,6 @@
 				</c:forEach>
        			</div>    			
        			<div class="text-right">
-       					<a href="#" class="btn btn-default text-center">Pular</a>
        					<a href="#" onclick="submitQuiz(1)" class="btn btn-primary text-center">Responder</a>
        				</div>
        			
@@ -149,11 +148,11 @@
         cache:false,
         success:function(data){
          console.log("sucess");
-          window.location = ("/ProjetoSI/result.jsp");
+          window.location = ("/ProjetoSI/resultTest.jsp");
         },
         error:function(){
           console.log("deu ruim");
-          window.location = ("/ProjetoSI/result.jsp");
+          window.location = ("/ProjetoSI/resultTest.jsp");
         }
      }
 );

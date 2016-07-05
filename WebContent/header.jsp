@@ -24,7 +24,7 @@
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon glyphicon-user"></span> ${fn:toUpperCase(user.name)}  <span class="glyphicon glyphicon-triangle-bottom"></span></a>
                         <ul class="dropdown-menu">
                             <li>
-                                <a href="estatisticas.jsp"><span class="glyphicon glyphicon-stats"></span> Estatisticas</a>
+                                <a href="profile.jsp"><span class="glyphicon glyphicon-stats"></span> Estatisticas</a>
                                 <a href="alterarUser.jsp"><span class="glyphicon glyphicon glyphicon-cog"></span> Configurações</a>
                             </li>
                             <li role="separator" class="divider"></li>

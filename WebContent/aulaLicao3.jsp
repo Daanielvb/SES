@@ -127,7 +127,7 @@
                 <b>(a) Sem o uso do continue</b>
 
                 <P><img src="images/Imagem9Licao3.png"></P></P>
-                <b>(a) Com o uso do continue</b>
+                <b>(b) Com o uso do continue</b>
 
                 <p>Comparando as imagens (a) e (b) podemos notar que na imagem (a) existe a repetição dos valores que são múltiplos de dois, isto ocorre porque é executado o “print” relacionado ao “IF” e o que não está relacionado a ele, na imagem (b) isto não ocorre, pois o uso do continue ignora o resto do bloco indo para a próxima iteração do programa.</p>
 
@@ -157,9 +157,6 @@
         <hr>
 
         <!-- Pagination -->
-        <div class="row text-center">
-            	<a class="btn btn-primary btn-large" href=#> <span class="glyphicon glyphicon-file"></span> Lição Completa </a>
-            </div>
         </div>
         <!-- /.row -->
 
@@ -211,5 +208,17 @@
 	
 	
 	</script>
+	<style>
+	
+	.col-md-9.aula p{
+		font-size:1.2em;
+		}
+	b{
+		font-size:1.3em;
+		}
+	li{
+	font-size:1.1em;
+	}
+	</style>
 	</body>
 </html>

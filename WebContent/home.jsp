@@ -38,60 +38,39 @@
 	<!-- Page Content -->
 	<div class="container">
 
-		<!-- Jumbotron Header -->
-		<header class="jumbotron hero-spacer">
-			<h1>PyLearning</h1>
-			<p>PyLearning é uma plataforma inteligente para o aprendizado da linguagem de programação Python.
-			 A plataforma contém 4 lições básicas com o intuito de introduzir conhecimento de maneira iterativa.
-			  A plataforma contém as estatísticas do usuário sobre as aulas lidas, exercícios já resolvidos,sugestões de 
-			  vídeos e links para consulta de conteúdo..</p>
-			<div class="text-center">
-				<a id="texto" onclick="mudar(flag)" class="btn btn-primary btn-lg"
-					data-toggle="collapse" href="#collapseExample"
-					aria-expanded="false" aria-controls="collapseExample"> Saiba
-					Mais </a>
-			</div>
-			<div class="collapse" id="collapseExample">
-				<hr>
-				<p>Por que aprender python? Aprender linguagem de programação é uma
-					atividade que exige tempo e dedicação para que seja corretamente
-					compreendida. Acredita-se que deve existir uma grande motivação
-					para o aprendizado pois a maioria das pessoas acaba desistindo,acha
-					difiícil continuar gostando de programar.A linguagem de programção
-					Python é bastante interessante, geralmente é usada como primeira
-					linguagem de aprendizado devido a sua facilidade de entendimento e
-					clareza. Python é software livre e pode ser usada na maioria das
-					arquiteturas de computadores ou sistemas operacionais,mas
-					independente da simplicidade é bastante poderosa e vem crescendo
-					desde que adentrou nas áreas mais complexas como inteligencia
-					artificial,animaçãao 3D,biotecnologia, jogos e desenvolvimento de
-					plataformas web.Python tambem aparece no mercado com usuários como
-					o Youtube, Nasa,Google e estudios de cinema como disney e
-					dreamworks. Fazendo uma avaliação mais técnica da linguagem podemos
-					listar alguns motivos para aprender Python:</p>
-					<ul style="list-style:none;">
-					<li class="topic"><p>1-Livre e de código
-					aberto:Como ja citado anteriormente, a linguagem segue modelo de
-					desenvolvimento com licenciamento livre para o design,tem
-					redistribuição universal e oferece possibilidade para que qualquer
-					um consulte, examine ou modifique-a.</p> </li>
-					
-					<li class="topic"><p>2-Alto Nível:Linguagem com
-					fácil nivel de abstraçao,menos parecida com a linguagem de maquina
-					e mais proxima à linguagem humana.</p> </li>
-					<li class="topic"><p>3-Orientada a Objetos: Segue um
-					modelo de análise, projeto e programação de sistemas baseado na
-					composição e interação entre diversas unidades de software chamadas
-					de objetos. </p></li>
-					<li class="topic"> <p>4-Sintaxe:Em Python um bloco de código é feito através
-					de indentações(recuo de um texto em relação a sua margem.) Isso
-					força o desenvolvedor a indentar seu código fonte e garante uma boa
-					legibilidade.</p> </li>
-					<li> <p>5-Documentação:Possui comunidades( uma delas
-					brasileira) com uma lista de fontes de estudos e informações sobre
-					a linguagem.</p></li></ul> 
-			</div>
-		</header>
+		<script src="js/Util.js"></script>
+        <header class="jumbotron hero-spacer">
+            <h1>PyLearning</h1>
+            <p style="text-align: justify">PyLearning é uma plataforma inteligente para o aprendizado da linguagem de programação Python. A plataforma contém 4 lições básicas com o intuito de introduzir conhecimento de maneira iterativa. A plataforma contém as estatísticas do usuário sobre as aulas lidas, exercícios já resolvidos,sugestões de vídeos e links para consulta de conteúdo.</p>
+            <div class="collapse" id="collapseExample">
+             <hr>
+             <h3 style="text-align: justify; font-weight: bold; ">Por que aprender python?</h3>
+             <p style="text-align: justify">Aprender linguagem de programação é uma atividade  que exige tempo e dedicação para que seja corretamente compreendida. 
+             Acredita-se que deve existir uma grande motivação para o aprendizado pois a maioria das pessoas acaba desistindo,acha difiícil continuar gostando de programar.
+             A linguagem de programção Python é bastante interessante, geralmente é usada como primeira linguagem de aprendizado devido a sua facilidade de entendimento e clareza.</p>
+             <p style="text-align: justify">Python é software livre e pode ser usada na maioria das arquiteturas de computadores
+              ou sistemas operacionais,mas independente da simplicidade é bastante poderosa e vem crescendo desde que adentrou nas
+              áreas mais complexas como inteligencia artificial,animaçãao 3D,biotecnologia, jogos e desenvolvimento de plataformas web.
+              Python tambem aparece no mercado com usuários como o Youtube, Nasa,Google e estudios de cinema como disney e dreamworks.</p>	
+              </br>
+              <p style="text-align: justify">Fazendo uma avaliação mais técnica da linguagem podemos listar alguns motivos para aprender Python:</p>
+              <p style="text-align: justify; font-weight: bold;">1-Livre e de código aberto:</p> 
+              <p style="text-align: justify">Como ja citado anteriormente, a linguagem segue modelo de desenvolvimento com licenciamento livre para o design,tem  redistribuição universal e oferece possibilidade para que qualquer um consulte, examine ou modifique-a.</p>
+              <p style="text-align: justify; font-weight: bold;">2-Alto Nível:</p>
+              <p style="text-align: justify">Linguagem com fácil nivel de abstraçao,menos parecida com a linguagem de maquina e mais proxima à linguagem humana.</p>
+              <p style="text-align: justify; font-weight: bold;">3-Orientada a Objetos:</p>
+              <p style="text-align: justify">Segue um modelo de análise, projeto e programação de sistemas  baseado na composição e interação entre diversas unidades de software chamadas de objetos.</p>
+              <p style="text-align: justify; font-weight: bold;">4-Sintaxe:</p>
+              <p style="text-align: justify">Em Python um bloco de código é feito através de indentações(recuo de um texto em relação a sua margem.) Isso força o desenvolvedor a indentar seu código fonte e garante uma boa legibilidade.</p>
+              <p style="text-align: justify; font-weight: bold;">5-Documentação:</p>
+              <p style="text-align: justify">Possui comunidades( uma delas brasileira) com uma lista de fontes de estudos  e informações sobre a linguagem.</p>
+            </div>
+            <div class="text-center">
+            	<a id="texto" onclick="mudar(flag)" class="btn btn-primary btn-lg" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    				Saiba Mais
+  				</a>
+            </div>
+        </header>
 
 		<hr>
 

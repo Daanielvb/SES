@@ -75,6 +75,12 @@ body {
 	    margin-bottom: 15%;
 	    margin-top: 5%;
 			}
+			
+	.intro{
+		margin: 0 auto;
+	    text-align: center;
+	    margin-bottom: 1.5em;
+	    }
 		</STYLE>
 	</head>
 	<body>
@@ -90,7 +96,7 @@ body {
     	
 
 	<div class="wrapper" id="cadastro">
-		<h1> PyLearning, um ambiente de aprendizado inteligente</h1>
+		<h1 class="intro"> PyLearning, um ambiente de aprendizado inteligente</h1>
     	<div class="form-signin"> 
     		<img class="imgHome"  src="images/python.png">      
       		<input type="text" class="form-control" name="nome" id="email" placeholder="Email" required autofocus="" />

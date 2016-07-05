@@ -189,5 +189,17 @@
 	
 	
 	</script>
+	<style>
+	
+	.col-md-9.aula p{
+		font-size:1.2em;
+		}
+	b{
+		font-size:1.3em;
+		}
+	li{
+	font-size:1.1em;
+	}
+	</style>
 	</body>
 </html>

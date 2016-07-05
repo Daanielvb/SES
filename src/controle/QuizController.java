@@ -101,7 +101,7 @@ public class QuizController extends HttpServlet {
 					qt.setQuizLevel("hard");
 					qs.update(qt);
 				}
-				response.sendRedirect("/result.jsp");
+				response.sendRedirect("/resultTest.jsp");
 			}
 		}
 		catch (Exception e) {

@@ -117,9 +117,7 @@
         <hr>
 
         <!-- Pagination -->
-        <div class="row text-center">
-            	<a class="btn btn-primary btn-large" href=#> <span class="glyphicon glyphicon-file"></span> Lição Completa </a>
-            </div>
+
         </div>
         <!-- /.row -->
 
@@ -172,6 +170,17 @@
 	
 	
 	</script>
+	<style>
 	
+	.col-md-9.aula p{
+		font-size:1.2em;
+		}
+	b{
+		font-size:1.3em;
+		}
+	li{
+	font-size:1.1em;
+	}
+	</style>
 	</body>
 </html>
